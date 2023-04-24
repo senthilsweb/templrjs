@@ -1,5 +1,0 @@
-const ProseCodeCopyButton_vue_vue_type_style_index_0_scoped_4a003820_transformed_true_lang = "button[data-v-4a003820]{border-radius:3px;margin:4px;opacity:0;padding:4px;transform:scale(.75);transition:all .2s}button[data-v-4a003820]:hover{background-color:var(--elements-surface-secondary-backgroundColor)}button[data-v-4a003820]:focus{box-shadow:0 0 0 2px var(--color-blue-500);opacity:1;outline:none}button.show[data-v-4a003820]{opacity:1;transform:scale(1)}button .icon-wrapper[data-v-4a003820]{display:block;height:18px;position:relative;width:18px}button .icon-wrapper .icon[data-v-4a003820]{display:block;position:absolute}button .icon-wrapper .fade-enter-active[data-v-4a003820],button .icon-wrapper .fade-leave-active[data-v-4a003820]{transition:opacity .2s}button .icon-wrapper .fade-enter-from[data-v-4a003820],button .icon-wrapper .fade-leave-to[data-v-4a003820]{opacity:0}";
-
-const ProseCodeCopyButtonStyles_4f4c683a = [ProseCodeCopyButton_vue_vue_type_style_index_0_scoped_4a003820_transformed_true_lang];
-
-export { ProseCodeCopyButtonStyles_4f4c683a as default };

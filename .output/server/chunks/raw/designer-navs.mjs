@@ -1,4 +1,0 @@
-// ROLLUP_NO_REPLACE 
- const designerNavs = "{\"parsed\":{\"_path\":\"/_navigation/designer-navs\",\"_dir\":\"_navigation\",\"_draft\":false,\"_partial\":true,\"_locale\":\"\",\"menu\":[{\"name\":\"Business card\",\"description\":\"\",\"href\":\"/designer/business-card\",\"icon\":\"\",\"click_event\":\"noops\",\"iconForeground\":\"text-indigo-700\",\"iconBackground\":\"bg-indigo-50\"},{\"name\":\"Social card\",\"description\":\"\",\"href\":\"/designer/social-card\",\"icon\":\"\",\"click_event\":\"noops\",\"iconForeground\":\"text-indigo-700\",\"iconBackground\":\"bg-indigo-50\"}],\"_id\":\"content:_navigation:designer-navs.json\",\"_type\":\"json\",\"title\":\"Designer Navs\",\"_source\":\"content\",\"_file\":\"_navigation/designer-navs.json\",\"_extension\":\"json\"},\"hash\":\"6qsditcMto\"}";
-
-export { designerNavs as default };
