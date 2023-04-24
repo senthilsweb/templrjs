@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "code": "Associate Software Engineer",
+            "name": "Associate Software Engineer"
+        },
+        {
+            "code": "Senior Software Engineer",
+            "name": "Senior Software Engineer"
+        },
+        {
+            "code": "Solutions Architect",
+            "name": "Solutions Architect"
+        },
+        {
+            "code": "IT Specialist",
+            "name": "IT Specialist"
+        },
+        {
+            "code": "Finance Controller",
+            "name": "Finance Controller"
+        }
+    ]
+}

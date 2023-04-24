@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "code": "IBM",
+            "name": "IBM"
+        },
+        {
+            "code": "Microsoft",
+            "name": "Microsoft"
+        },
+        {
+            "code": "Joshson & Johnson",
+            "name": "Joshson & Johnson"
+        },
+        {
+            "code": "Workday",
+            "name": "Workday"
+        }
+    ]
+}

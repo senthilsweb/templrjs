@@ -1,0 +1,68 @@
+<template>
+  <div id="mobile_sidebar" v-if="useState('isMobileNavVisible').value" class="fixed z-40 inset-0 flex-none h-full bg-opacity-25 w-full lg:bg-white lg:static lg:h-auto lg:overflow-y-visible lg:pt-0 lg:w-60 xl:w-72 md:hidden">
+    <div id="navwrapper" class="h-full overflow-y-auto scrolling-touch lg:h-auto lg:block lg:sticky lg:bg-transparent overflow-hidden shadow-2xl lg:top-18 bg-white mr-24 lg:mr-0">
+      <div class="lg:block h-12 pointer-events-none absolute inset-x-0 z-10 bg-gradient-to-b from-white"></div>
+      <div class="px-5 pt-4 flex items-center justify-between">
+        <div>
+          <NuxtLink to="/">
+            <IconLogo class="w-14 h-14 text-center" />
+          </NuxtLink>
+        </div>
+        <div class="-mr-2">
+          <button type="button" @click="useState('isMobileNavVisible').value = !useState('isMobileNavVisible').value" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-600">
+            <span class="sr-only">Close menu</span>
+            <!-- Heroicon name: outline/x -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!--Mobile Nav(Start)-->
+      <nav id="nav" class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
+        <div class="mt-5 flex-grow flex flex-col">
+          <nav class="flex-1 px-2 space-y-1 bg-white" aria-label="Sidebar">
+            <ul v-for="(menu, idx) in navigation.menu" :key="`mob_mnu_${idx}`">
+              <li class="mt-2">
+                <h5 class="mb-4 lg:mb-3 font-semibold text-gray-900 dark:text-gray-200">
+                  <Icon v-if="menu.icon" :name="menu.icon" class="h-4 w-4 flex-shrink-0 text-primary-600 mr-2" />
+                  <a :href="menu.href">
+                    {{ menu.name }}
+                  </a>
+                </h5>
+                <div v-if="menu.children">
+                  <ul v-for="(c_menu, c_idx) in menu.children.menu" :key="`mob_mnu_chd_${c_idx}`" :href="c_menu.href" class="space-y-2 lg:space-y-2 border-l border-gray-100 dark:border-gray-800">
+                    <li>
+                      <a class="block border-l pl-4 -ml-px border-transparent hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300" :href="c_menu.href">{{ c_menu.name }}</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </nav>
+      <!--Mobile Nav(End)-->
+    </div>
+  </div>
+  <!--Mobile menu activator button (start)-->
+  <div @click="useState('isMobileNavVisible').value = !useState('isMobileNavVisible').value" class="-mr-2 items-center sm:hidden">
+    <button type="button" class="fixed z-50 top-4 right-4 rounded-md p-2 inline-flex items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-primary-500" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <!-- Heroicon name: outline/menu -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-300 hover:text-primary-500" fill="fill-white" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
+  <!--Mobile menu activator button (end)-->
+</template>
+<script setup>
+const { data: navigation } = await useAsyncData(`site-nav-links`, () => {
+  return queryContent().where({ _path: props.api_end_point }).findOne();
+});
+const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
+//console.log('Mobile-navigation', JSON.stringify(navigation.value.menu));
+
+const props = defineProps(['api_end_point']);
+</script>

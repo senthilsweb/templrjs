@@ -1,0 +1,40 @@
+{
+    "menu": [
+        {
+            "name": "Profile",
+            "description": "",
+            "href": "/account/kr@zynomi.com",
+            "click_event": "noops",
+            "icon": "icon-park-twotone:id-card-h",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Password",
+            "description": "",
+            "href": "/account/change-password",
+            "click_event": "noops",
+            "icon": "icon-park-twotone:lock",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Subscription",
+            "description": "",
+            "href": "/account/billing",
+            "click_event": "noops",
+            "icon": "icon-park-twotone:halo",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Personalization",
+            "description": "",
+            "href": "/account/billing",
+            "click_event": "noops",
+            "icon": "icon-park-twotone:setting",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        }
+    ]
+}

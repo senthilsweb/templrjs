@@ -1,0 +1,248 @@
+[
+    {
+        "code": "navigation-by-modules",
+        "name": "Navigation modules",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "landing-page",
+        "name": "Landing page",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "setups-page",
+        "name": "Setups Page",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "contacts",
+        "name": "Contacts",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "logo",
+        "name": "Logo",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "mega-menu",
+        "name": "Mega Menu",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "site-layout-style",
+        "name": "Site layout style",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "primary-left-nav",
+        "name": "Primary left navigation",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "pick-list-inquiry-reason",
+        "name": "Inquiry reason pick list",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "general-inquiry",
+        "name": "General Inquiry",
+        "parent_code": "pick-list-inquiry-reason",
+        "is_active": true
+    },
+    {
+        "code": "footer-links",
+        "name": "Footer links",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "social-media-links",
+        "name": "Social media links",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "social-media-head-metadata",
+        "name": "social-media-head-metadata",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "og:type",
+        "name": "website",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "bg-color",
+        "name": "bg-white",
+        "parent_code": "mega-menu",
+        "is_active": true
+    },
+    {
+        "code": "text-style",
+        "name": "text-gray-800 hover:bg-gray-200",
+        "parent_code": "mega-menu",
+        "is_active": true
+    },
+    {
+        "code": "application-hero",
+        "name": "Application Hero",
+        "parent_code": "navigation-by-modules",
+        "is_active": false
+    },
+    {
+        "code": "component-app-hero",
+        "name": "component-app-hero",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "component-instagram-post",
+        "name": "component-instagram-post",
+        "parent_code": null,
+        "is_active": false
+    },
+    {
+        "code": "logo-css",
+        "name": "h-9",
+        "parent_code": "logo",
+        "is_active": true
+    },
+    {
+        "code": "popover-style",
+        "name": "narrow",
+        "parent_code": "mega-menu",
+        "is_active": true
+    },
+    {
+        "code": "zodiac-star-code",
+        "name": "zodiac-star-code",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "copy-right",
+        "name": "© 2021 TemplrJS, Inc. All rights reserved.",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "carousel-component",
+        "name": "Carousel component",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "secondary-title",
+        "name": "Templr, Inc.",
+        "parent_code": "component-app-hero",
+        "is_active": true
+    },
+    {
+        "code": "component-carousel",
+        "name": "component-carousel",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "og:description",
+        "name": "An IT Services and consulting company that Makes Technology Work",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "og:site_name",
+        "name": "TemplrJS Inc.",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "og:image",
+        "name": "https://gljxektlzceahoihtufl.supabase.co/storage/v1/object/public/assets/white_girl_subscribe_illustration@2.png",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "description",
+        "name": "An IT Services and consulting company that Makes Technology Work",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "og:title",
+        "name": "TemplrJS Inc.",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "app-page-head-title",
+        "name": "TemplrJS Inc., an software product development company",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "hero-image",
+        "name": "https://gljxektlzceahoihtufl.supabase.co/storage/v1/object/public/assets/apps.png",
+        "parent_code": "component-app-hero",
+        "is_active": true
+    },
+    {
+        "code": "primary-title",
+        "name": "Your Trusted Source for all your Development needs",
+        "parent_code": "component-app-hero",
+        "is_active": true
+    },
+    {
+        "code": "product-demo",
+        "name": "Project Development",
+        "parent_code": "pick-list-inquiry-reason",
+        "is_active": true
+    },
+    {
+        "code": "rpa-consulting",
+        "name": "Staffing Requirement",
+        "parent_code": "pick-list-inquiry-reason",
+        "is_active": true
+    },
+    {
+        "code": "layout-width",
+        "name": "lg:max-w-8xl",
+        "parent_code": "site-layout-style",
+        "is_active": true
+    },
+    {
+        "code": "logo-url",
+        "name": "https://res.cloudinary.com/nathansweb/image/upload/v1682295188/www.templrjs.com/logo.svg",
+        "parent_code": "logo",
+        "is_active": true
+    },
+    {
+        "code": "logo-url-dark",
+        "name": "https://res.cloudinary.com/nathansweb/image/upload/v1682295188/www.templrjs.com/logo.svg",
+        "parent_code": "logo",
+        "is_active": true
+    },
+    {
+        "code": "app-hero-description",
+        "name": "Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "parent_code": "component-app-hero",
+        "is_active": true
+    },
+    {
+        "code": "inquiry-pick-list-professional-service",
+        "name": "Professional Services",
+        "parent_code": "pick-list-inquiry-reason",
+        "is_active": true
+    }
+]

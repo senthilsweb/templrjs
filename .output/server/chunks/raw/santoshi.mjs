@@ -1,0 +1,4 @@
+// ROLLUP_NO_REPLACE 
+ const santoshi = "{\"parsed\":{\"_path\":\"/instructors/santoshi\",\"_dir\":\"instructors\",\"_draft\":false,\"_partial\":false,\"_locale\":\"\",\"instructor_full_name\":\"Santoshi Iyer\",\"instructor_display_name\":\"santoshi\",\"instructor_picture\":\"https://rklgzgwmoofqwprgukxg.supabase.co/storage/v1/object/public/avatars/santoshi.JPG\",\"instructor_punch_title\":\"I’m the Artistic Director and Carnatic Music Teacher.\",\"instructor_id\":\"02\",\"instructor_designation\":\"Instructor\",\"instructor_specialities\":[],\"instructor_content_paragraphs\":[\"Work in progress\"],\"_id\":\"content:instructors:santoshi.json\",\"_type\":\"json\",\"title\":\"Santoshi\",\"_source\":\"content\",\"_file\":\"instructors/santoshi.json\",\"_extension\":\"json\"},\"hash\":\"svq8nYZt8n\"}";
+
+export { santoshi as default };

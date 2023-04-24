@@ -1,0 +1,31 @@
+{
+    "menu": [
+        {
+            "name": "Quotes",
+            "description": "",
+            "href": "/quotes",
+            "click_event": "noops",
+            "icon": "icon-park-outline:doc-detail",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Purchase Orders",
+            "description": "Your company logo",
+            "href": "/purchase-orders",
+            "click_event": "noops",
+            "icon": "icon-park-outline:doc-success",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Invoices",
+            "description": "Your company logo",
+            "href": "/invoices",
+            "click_event": "noops",
+            "icon": "icon-park-outline:bill",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        }
+    ]
+}

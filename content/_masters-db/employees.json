@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "_id": "6379a690c7dd2b464d4ca97b",
+            "first_name": "Jayateerth",
+            "last_name": "Kaveri",
+            "email": "Jay.kaveri",
+            "profile_picture": "https://res.cloudinary.com/nathansweb/image/upload/v1668727797/zytes.com/avatars/jayatheerth_epzfz3.jpg",
+            "mobile_phone": "+1 9632319730",
+            "department": "DevOps",
+            "role": "IT Specialist",
+            "billable": false,
+            "createdAt": "2022-11-20T04:01:19.864Z",
+            "updatedAt": "2022-11-20T04:01:19.864Z"
+        },
+        {
+            "_id": "637a2fa9ffe387501df5a87b",
+            "first_name": "Sureshbabu",
+            "last_name": "Karuppaiah",
+            "email": "hisuresh@hotmail.com",
+            "mobile_phone": "+919886647787",
+            "department": "Mobile App Development",
+            "role": "Solutions Architect",
+            "profile_picture": "https://media-exp1.licdn.com/dms/image/C4E03AQEQSgNV8-z_1g/profile-displayphoto-shrink_800_800/0/1560839929194?e=1674691200&v=beta&t=2jwN6gK8csceXfxxUxaW14195Z7dLQ-9D90sYQzSxuc",
+            "createdAt": "2022-11-20T13:46:17.131Z",
+            "updatedAt": "2022-11-20T13:46:17.131Z",
+            "billable": true,
+            "client": "zynomilabs"
+        },
+        {
+            "_id": "63799596c3afbf1115b93cc0",
+            "first_name": "Venkata",
+            "last_name": "Krishnan",
+            "email": "venkat.krish@rmail.com",
+            "mobile_phone": "+1897-786-1123",
+            "department": "DevOps",
+            "role": "IT Specialist",
+            "createdAt": "2022-11-20T02:48:54.441Z",
+            "updatedAt": "2022-11-20T02:48:54.441Z",
+            "billable": true,
+            "client": "infosys"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+[
+    {
+        "id": 13,
+        "code": "e56ac1b5-d7a3-4049-893c-238bd2fdb10b",
+        "company_name": "TemplrJS, Inc.",
+        "tin_ein_number": "MMM00000000",
+        "date_of_incorporation": "1955-01-01T00:00:00+00:00",
+        "country_of_incorporation": "United States",
+        "company_website": "www.templrjs.com",
+        "company_email": "contact@templrjs.com",
+        "logo_url": null,
+        "phone_number": "+1 478-555-0198",
+        "address": {
+            "city": "Dublin",
+            "state": "DE",
+            "street": "302 Main St, Suite #101",
+            "country": "US",
+            "apartment": "",
+            "postal_code": "19711-43ND",
+            "country_name": "United States"
+        },
+        "description": "",
+        "tenant": "www.templrjs.com",
+        "additional_attributes": null,
+        "is_active": true,
+        "is_archived": false,
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2023-03-19T12:22:05.753861+00:00",
+        "updated_at": "2023-04-01T15:08:29.861+00:00",
+        "update_count": null
+    }
+]

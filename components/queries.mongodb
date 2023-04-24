@@ -1,0 +1,80 @@
+
+const database = 'zyn-katallai-db';
+const collection = 'pureent_water_purifiers';
+
+// The current database to use.
+use(database);
+
+
+// The prototype form to create a collection:
+db.createCollection("pureent_water_purifiers",
+    {
+       timeseries: {
+          timeField: "timestamp",
+          metaField: "metadata",
+          granularity: "hours"
+       }
+    }
+) 
+
+db.pureent_water_purifiers.insertMany( [
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-18T00:00:00.000Z"),
+      "flow_rate": 12
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-18T04:00:00.000Z"),
+      "flow_rate": 11
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-18T08:00:00.000Z"),
+      "flow_rate": 11
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-18T12:00:00.000Z"),
+      "flow_rate": 12
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-18T16:00:00.000Z"),
+      "flow_rate": 16
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-18T20:00:00.000Z"),
+      "flow_rate": 15
+   }, {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-19T00:00:00.000Z"),
+      "flow_rate": 13
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-19T04:00:00.000Z"),
+      "flow_rate": 12
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-19T08:00:00.000Z"),
+      "flow_rate": 11
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-19T12:00:00.000Z"),
+      "flow_rate": 12
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-19T16:00:00.000Z"),
+      "flow_rate": 17
+   },
+   {
+      "metadata": { "sensorId": 5578, "type": "health" },
+      "timestamp": ISODate("2021-05-19T20:00:00.000Z"),
+      "flow_rate": 12
+   }
+] )

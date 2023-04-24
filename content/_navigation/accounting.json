@@ -1,0 +1,30 @@
+{
+    "menu": [
+        {
+            "name": "Expenses",
+            "description": "",
+            "href": "/expenses",
+            "click_event": "noops",
+            "icon": "icon-park-outline:expenses",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Payments",
+            "description": "Your company logo",
+            "href": "/payments",
+            "click_event": "noops",
+            "icon": "icon-park-outline:flash-payment",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Credits",
+            "description": "Credits",
+            "href": "/credits",
+            "icon": "icon-park-outline:credit",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        }
+    ]
+}

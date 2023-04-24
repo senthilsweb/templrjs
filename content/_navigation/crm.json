@@ -1,0 +1,31 @@
+{
+    "menu": [
+        {
+            "name": "Clients",
+            "description": "",
+            "href": "/clients",
+            "click_event": "noops",
+            "icon": "icon-park-twotone:peoples-two",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Contacts",
+            "description": "",
+            "href": "/contacts",
+            "click_event": "noops",
+            "icon": "icon-park-outline:peoples",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Vendors",
+            "description": "Client's tagged with suppliers/vendors and their contacts",
+            "href": "/clients",
+            "click_event": "noops",
+            "icon": "icon-park-outline:shop",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        }
+    ]
+}

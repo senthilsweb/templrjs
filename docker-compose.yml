@@ -1,0 +1,29 @@
+version: "3.7"
+
+networks:
+  traefik-public:
+    external: true
+
+services:
+  templr:
+    ports:
+      - "1337:3000"
+    image: senthilsweb/templrjs:latest
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - SUPABASE_KEY_SERVICE_KEY=${SUPABASE_KEY_SERVICE_KEY}
+      - STORAGE_DRIVER = ${STORAGE_DRIVER}
+      - CLOUDFLARE_ACCOUNT_ID = ${CLOUDFLARE_ACCOUNT_ID}
+      - CLOUDFLARE_NAMESPACE_ID = ${CLOUDFLARE_NAMESPACE_ID}
+      - CLOUDFLARE_API_KEY = ${CLOUDFLARE_API_KEY}
+      - CLOUDFLARE_EMAIL = ${CLOUDFLARE_EMAIL}
+    working_dir: /app
+    #volumes:
+    #    - ./.output:/app/.output/
+    command: sh -c "node ./.output/server/index.mjs"
+    #command: tail -f /dev/null
+    stdin_open: true
+    tty: true
+    networks:
+      - traefik-public

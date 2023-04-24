@@ -1,0 +1,7 @@
+export const useSettings = async () => {
+	const {data: settings, pending} = await useFetch("/api/settings", {
+		method: "post",
+		body: {projection: {}, filter: {}, limit: 1},
+	});
+	return {settings, pending};
+};

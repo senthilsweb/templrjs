@@ -1,0 +1,47 @@
+{
+    "menu": [
+        {
+            "name": "SSO",
+            "description": "Single sign-on configuration",
+            "href": "/setups/sso",
+            "click_event": "noops",
+            "icon": "material-symbols:key-outline-rounded",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Users",
+            "description": "Users in your organization i.e. Employees",
+            "href": "/employees",
+            "icon": "heroicons:users",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Roles",
+            "description": "Roles in your organization.",
+            "href": "/roles",
+            "icon": "heroicons:academic-cap",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Navigations",
+            "description": "Configure application navigation",
+            "href": "/setups/navigations",
+            "click_event": "noops",
+            "icon": "heroicons:square-3-stack-3d",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Audit Logs",
+            "description": "Audit/System logs",
+            "href": "/iam/audit-logs",
+            "click_event": "noops",
+            "icon": "heroicons:viewfinder-circle-20-solid",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        }
+    ]
+}

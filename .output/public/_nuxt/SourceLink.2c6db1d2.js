@@ -1,0 +1,1 @@
+import e from"./ProseP.0926b9f3.js";import{g as r,o as t,m as n}from"./entry.5eee13ba.js";/* empty css                   */import"./_plugin-vue_export-helper.c27b6911.js";const u=r({__name:"SourceLink",props:{source:{type:String,required:!0}},setup(p){return(_,c)=>{const o=e;return t(),n(o)}}});export{u as default};

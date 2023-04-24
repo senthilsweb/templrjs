@@ -1,0 +1,58 @@
+{
+    "menu": [
+        {
+            "name": "Sendgrid",
+            "description": "Email service",
+            "href": "/notification/channel/sendgrid",
+            "click_event": "noops",
+            "icon": "logos:sendgrid-icon",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Mailgun",
+            "description": "Email service",
+            "href": "/notification/channel/mailgun",
+            "click_event": "noops",
+            "icon": "logos:mailgun-icon",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Slack",
+            "description": "Chat service",
+            "href": "/notification/channel/slack",
+            "click_event": "noops",
+            "icon": "logos:slack-icon",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Teams",
+            "description": "Chat service",
+            "href": "/notification/channel/teams",
+            "click_event": "noops",
+            "icon": "logos:microsoft-teams",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Telegram",
+            "description": "Chat service",
+            "href": "/notification/channel/telegram",
+            "click_event": "noops",
+            "icon": "logos:telegram",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        },
+        {
+            "name": "Webhook",
+            "description": "Webhook service",
+            "href": "/notification/channel/webhook",
+            "click_event": "noops",
+            "icon": "logos:webhooks",
+            "iconForeground": "text-primary-700",
+            "iconBackground": "bg-primary-50"
+        }
+    ]
+}

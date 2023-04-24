@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "code": "Active",
+            "name": "Active",
+            "property_type": "record_status"
+        },
+        {
+            "code": "Inactive",
+            "name": "Inactive",
+            "property_type": "record_status"
+        },
+        {
+            "code": "Yes",
+            "name": "Yes",
+            "property_type": "mark_as_delete"
+        },
+        {
+            "code": "No",
+            "name": "No",
+            "property_type": "mark_as_delete"
+        },
+        {
+            "code": "Male",
+            "name": "Male",
+            "property_type": "gender"
+        },
+        {
+            "code": "Female",
+            "name": "Female",
+            "property_type": "gender"
+        },
+        {
+            "code": "Single",
+            "name": "Single",
+            "property_type": "Marital_status"
+        },
+        {
+            "code": "Married",
+            "name": "Married",
+            "property_type": "Marital_status"
+        },
+        {
+            "code": "Divorced",
+            "name": "Divorced",
+            "property_type": "Marital_status"
+        }
+    ]
+}

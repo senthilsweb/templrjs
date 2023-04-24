@@ -1,0 +1,4 @@
+// ROLLUP_NO_REPLACE 
+ const navigationNavs = "{\"parsed\":{\"_path\":\"/_navigation/navigation-navs\",\"_dir\":\"_navigation\",\"_draft\":false,\"_partial\":true,\"_locale\":\"\",\"menu\":[{\"name\":\"Parent Navigation\",\"description\":\"\",\"href\":\"/navigation-parent\",\"icon\":\"icon-park-twotone:all-application\",\"click_event\":\"noops\",\"iconForeground\":\"text-indigo-700\",\"iconBackground\":\"bg-indigo-50\"},{\"name\":\"Child Navigation\",\"description\":\"\",\"href\":\"/navigation-child\",\"icon\":\"icon-park-twotone:copy-link\",\"click_event\":\"noops\",\"iconForeground\":\"text-indigo-700\",\"iconBackground\":\"bg-indigo-50\"}],\"_id\":\"content:_navigation:navigation-navs.json\",\"_type\":\"json\",\"title\":\"Navigation Navs\",\"_source\":\"content\",\"_file\":\"_navigation/navigation-navs.json\",\"_extension\":\"json\"},\"hash\":\"kOmfg4LBOv\"}";
+
+export { navigationNavs as default };

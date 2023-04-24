@@ -1,0 +1,101 @@
+---
+title: Zynomi bots in Agri Tech Industry
+excerpt: Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+timestamp: 2021-12-20T00:00:00.000Z
+article: casestudy
+status: published
+industries: [Healthcare, Telecom]
+about_client: 
+    - 'Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    - 'Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+coverimage: https://unsplash.com/photos/0bKd7l0q1Ys/download?force=true&w=1920
+author:
+  - name: Alex Smith
+  - email: alex.s@youremai.com
+  - phone: +1 123-456-7890
+tags:
+  - Web development
+  - Mobile development
+platforms: [Web, Mobile]
+screenshots:
+  - title: Splash screen
+    path: /image/path/goes/here
+  - title: Dashboard
+    path: /image/path/goes/here
+technologies:
+  - name: Javascript
+    version: 2.7.3
+    icon: logos:javascript
+  - name: Nuxt
+    version: 2.7.3
+    icon: logos:nuxt-icon
+  - name: Tailwindcss
+    version: 2.7.3
+    icon: logos:tailwindcss-icon
+  - name: Supabase
+    version: 2.7.3
+    icon: logos:supabase-icon
+  - name: vercel
+    version: 2.7.3
+    icon: logos:vercel-icon
+  - name: Cloudflare
+    version: 2.7.3
+    icon: logos:cloudflare
+  - name: Github
+    version: 2.7.3
+    icon: logos:github-icon
+  - name: Docker
+    version: 2.7.3
+    icon: logos:docker-icon
+
+stats:
+  - name: Number of deploys
+    description: 
+    value: 405
+    unit: 
+  - name: Average deploy time 
+    description: 
+    value: 3.65
+    unit: mins
+  - name: Number of servers
+    description: 
+    value: 3
+    unit: 
+  - name: Success rate
+    description: 
+    value: 98.5%
+    unit:
+testimonial:
+  - name: John Doe
+    title: CEO, Company
+    avatar: /image/path/goes/here
+    description: >-
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+color:
+  - from: teal
+    to: teal
+    via: cyan
+    title: bg-gradient-to-r from-amber-300 via-orange-500 to-amber-300
+    box: bg-gradient-to-r from-amber-300  to-orange-500
+---
+## Executive Summary
+
+Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+<!--more-->
+
+## Challenges
+ 
+Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+ 
+## Solution
+ 
+* Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+* Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+![background](https://unsplash.com/photos/0bKd7l0q1Ys/download?force=true&w=1920)
+
+ 
