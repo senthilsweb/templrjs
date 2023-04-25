@@ -44,9 +44,9 @@ export default defineNuxtConfig({
     GOOGLE_MAP_TOKEN: process.env.GOOGLE_MAP_TOKEN,
     // Config within public will be also exposed to the client
     public: {
-      TEMPLRJS_BASE_URL: process.env.TEMPLRJS_BASE_URL,
-      SUPABASE_URL: process.env.SUPABASE_URL,
-      SUPABASE_STORAGE_URL: process.env.SUPABASE_URL + '/storage/v1/object/public',
+      TEMPLRJS_BASE_URL: 'http://localhost:3000',
+      SUPABASE_URL: 'https://your_supabase_host.supabase.co',
+      SUPABASE_STORAGE_URL: 'https://your_supabase_host.supabase.co' + '/storage/v1/object/public',
     },
   },
   modules: ['@nuxt/content', '@nuxtjs/supabase', '@tailvue/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon', '@nuxtlabs/github-module', '@nuxthq/studio', 'nuxt-lodash', '@sidebase/nuxt-pdf'],
