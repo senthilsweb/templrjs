@@ -5,7 +5,7 @@ services:
   templr:
     ports:
       - "3000:3000"
-    image: senthilsweb/templrjs:latest
+    image: senthilsweb/templrjs:5e061d2
     environment:
       - TEMPLRJS_DB=${TEMPLRJS_DB}
       - TEMPLRJS_BASE_URL=${TEMPLRJS_BASE_URL}

@@ -61,29 +61,21 @@ export default defineNuxtConfig({
     storage: {
       cms: {
         driver: process.env.STORAGE_DRIVER || 'cloudflare-kv-http',
-        accountId: process.env.CLOUDFLARE_ACCOUNT_ID,
-        namespaceId: process.env.CLOUDFLARE_NAMESPACE_ID,
-        email: process.env.CLOUDFLARE_EMAIL,
-        apiKey: process.env.CLOUDFLARE_API_KEY,
+        driver: process.env.STORAGE_DRIVER || 'cloudflare-kv-http',
+        accountId: process.env.CLOUDFLARE_ACCOUNT_ID || '4ab70cb705b6c844de6565161cd09b11',
+        namespaceId: process.env.CLOUDFLARE_NAMESPACE_ID || '34a3c98ce2a54164ae258f365fdd5c46',
+        email: process.env.CLOUDFLARE_EMAIL || 'nathansweb@icloud.com',
+        apiKey: process.env.CLOUDFLARE_API_KEY || '11d03bdf02f6e55d539ac8bbcd7bc439da5e1',
       },
     },
     // Overwrite cms storage in development using FS. "cms" refers to the physical folder inside .data
     devStorage: {
       cms: {
-        driver: 'fs',
-        base: './.data/cms',
-      },
-      casestudy: {
-        driver: 'fs',
-        base: './.data/casestudy',
-      },
-      blog: {
-        driver: 'fs',
-        base: './.data/blog',
-      },
-      resume: {
-        driver: 'fs',
-        base: './.data/resume',
+        driver: process.env.STORAGE_DRIVER || 'cloudflare-kv-http',
+        accountId: process.env.CLOUDFLARE_ACCOUNT_ID || '4ab70cb705b6c844de6565161cd09b11',
+        namespaceId: process.env.CLOUDFLARE_NAMESPACE_ID || '34a3c98ce2a54164ae258f365fdd5c46',
+        email: process.env.CLOUDFLARE_EMAIL || 'nathansweb@icloud.com',
+        apiKey: process.env.CLOUDFLARE_API_KEY || '11d03bdf02f6e55d539ac8bbcd7bc439da5e1',
       },
     },
   },
