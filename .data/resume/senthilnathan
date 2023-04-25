@@ -1,0 +1,32 @@
+---
+title: Resume of Senthilnathan Karuppaiah
+timestamp: 2023-Apr-23 09:25:55
+article: document
+status: published
+summary:
+  - A Technical Architect with 15+ years of experience in the IT industry.
+  - Adept in leading teams in the development of software applications, web applications, and mobile applications.
+  - Experience in Bid Management, Project Management, and Delivery Management.
+color:
+  - from: teal
+    to: teal
+    via: cyan
+    title: bg-gradient-to-r from-amber-300 via-orange-500 to-amber-300
+    box: bg-gradient-to-r from-amber-300  to-orange-500
+---
+
+::block-hero
+---
+cta:
+  - Get started
+  - /get-started
+secondary:
+  - Open on GitHub →
+  - https://github.com/nuxtlabs/docus
+snippet: npx nuxi@latest init docus-app -t nuxtlabs/docus-starter
+---
+#title
+Document-driven framework
+#description
+Docus reconciles content creators and developers by offering to both the best tools to create and scale content-based websites.
+::
