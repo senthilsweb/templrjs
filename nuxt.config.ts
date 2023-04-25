@@ -44,9 +44,9 @@ export default defineNuxtConfig({
     GOOGLE_MAP_TOKEN: process.env.GOOGLE_MAP_TOKEN,
     // Config within public will be also exposed to the client
     public: {
-      TEMPLRJS_BASE_URL: 'http://localhost:3000',
-      SUPABASE_URL: 'https://your_supabase_host.supabase.co',
-      SUPABASE_STORAGE_URL: 'https://your_supabase_host.supabase.co' + '/storage/v1/object/public',
+      TEMPLRJS_BASE_URL: process.env.TEMPLRJS_BASE_URL,
+      SUPABASE_URL: process.env.SUPABASE_URL,
+      SUPABASE_STORAGE_URL: process.env.SUPABASE_URL + '/storage/v1/object/public',
     },
   },
   modules: ['@nuxt/content', '@nuxtjs/supabase', '@tailvue/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon', '@nuxtlabs/github-module', '@nuxthq/studio', 'nuxt-lodash', '@sidebase/nuxt-pdf'],
@@ -61,20 +61,32 @@ export default defineNuxtConfig({
     storage: {
       cms: {
         driver: process.env.STORAGE_DRIVER || 'cloudflare-kv-http',
-        accountId: process.env.CLOUDFLARE_ACCOUNT_ID || '4ab70cb705b6c844de6565161cd09b11',
-        namespaceId: process.env.CLOUDFLARE_NAMESPACE_ID || '34a3c98ce2a54164ae258f365fdd5c46',
-        email: process.env.CLOUDFLARE_EMAIL || 'nathansweb@icloud.com',
-        apiKey: process.env.CLOUDFLARE_API_KEY || '11d03bdf02f6e55d539ac8bbcd7bc439da5e1',
+        accountId: process.env.CLOUDFLARE_ACCOUNT_ID,
+        namespaceId: process.env.CLOUDFLARE_NAMESPACE_ID,
+        email: process.env.CLOUDFLARE_EMAIL,
+        apiKey: process.env.CLOUDFLARE_API_KEY,
       },
     },
     // Overwrite cms storage in development using FS. "cms" refers to the physical folder inside .data
     devStorage: {
       cms: {
         driver: process.env.STORAGE_DRIVER || 'cloudflare-kv-http',
-        accountId: process.env.CLOUDFLARE_ACCOUNT_ID || '4ab70cb705b6c844de6565161cd09b11',
-        namespaceId: process.env.CLOUDFLARE_NAMESPACE_ID || '34a3c98ce2a54164ae258f365fdd5c46',
-        email: process.env.CLOUDFLARE_EMAIL || 'nathansweb@icloud.com',
-        apiKey: process.env.CLOUDFLARE_API_KEY || '11d03bdf02f6e55d539ac8bbcd7bc439da5e1',
+        accountId: process.env.CLOUDFLARE_ACCOUNT_ID,
+        namespaceId: process.env.CLOUDFLARE_NAMESPACE_ID,
+        email: process.env.CLOUDFLARE_EMAIL,
+        apiKey: process.env.CLOUDFLARE_API_KEY,
+      },
+      casestudy: {
+        driver: 'fs',
+        base: './.data/casestudy',
+      },
+      blog: {
+        driver: 'fs',
+        base: './.data/blog',
+      },
+      resume: {
+        driver: 'fs',
+        base: './.data/resume',
       },
     },
   },
