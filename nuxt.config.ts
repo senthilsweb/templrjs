@@ -61,7 +61,6 @@ export default defineNuxtConfig({
     storage: {
       cms: {
         driver: process.env.STORAGE_DRIVER || 'cloudflare-kv-http',
-        driver: process.env.STORAGE_DRIVER || 'cloudflare-kv-http',
         accountId: process.env.CLOUDFLARE_ACCOUNT_ID || '4ab70cb705b6c844de6565161cd09b11',
         namespaceId: process.env.CLOUDFLARE_NAMESPACE_ID || '34a3c98ce2a54164ae258f365fdd5c46',
         email: process.env.CLOUDFLARE_EMAIL || 'nathansweb@icloud.com',
