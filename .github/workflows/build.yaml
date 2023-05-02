@@ -1,4 +1,4 @@
-name: 'TemplrJS GitHub Actions'
+name: TemplrJS - Docker build
 
 on:
   #push:

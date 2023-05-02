@@ -45,7 +45,7 @@ export default defineNuxtConfig({
     // Config within public will be also exposed to the client
     public: {
       //BASE_URL: process.env.MONGODB_ATLAS_REST_URL,
-      SUPABASE_URL: process.env.SUPABASE_URL,
+      SUPABASE_URL: process.env.SUPABASE_URL || 'http://your-supabase-url',
       SUPABASE_STORAGE_URL: process.env.SUPABASE_URL + '/storage/v1/object/public',
     },
   },

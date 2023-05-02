@@ -1,4 +1,4 @@
-name: 'TemplrJS DB backup GitHub Actions'
+name: TemplrJS - PostgreSQL DB backup
 
 on:
   workflow_dispatch:

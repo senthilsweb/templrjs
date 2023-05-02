@@ -1,4 +1,4 @@
-name: build release candidate
+name: TemplrJS - build release candidate
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 16.14.2
+          - 18.9.0
     env:
       working-directory: .
     outputs:
@@ -30,10 +30,10 @@ jobs:
       - name: Create deployment artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
-        run: tar -czf "${GITHUB_SHA}".tar.gz  --exclude=node_modules --exclude=tests *
+        run: tar -czf "${GITHUB_SHA}".tar.gz  ./.output
           .??*
       - name: Store artifact for distribution
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: app-build
+          name: templrjs_${{ github.sha }}.tar.gz
           path: ${{ github.sha }}.tar.gz
