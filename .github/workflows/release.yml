@@ -1,0 +1,67 @@
+name: Deploy release candidate to int
+
+on:
+  #push:
+  # tags-ignore:
+  #  - '**'
+  workflow_dispatch:
+    branches:
+      - main
+    tags:
+      - 'rc*'s
+      - latest
+jobs:
+  
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.14.2 ]
+    env:
+      working-directory: ./nuxt-app
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: ./nuxt-app/package-lock.json
+      - run: npm ci
+        working-directory: ${{env.working-directory}}
+      - run: npm run build
+        working-directory: ${{env.working-directory}}
+      - run: npm test
+        working-directory: ${{env.working-directory}}
+
+create-deployment-artifacts:
+    name: Create Deployment Artefacts
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.14.2 ]
+    env:
+      working-directory: ./nuxt-app
+    outputs:
+      deployment-matrix: ${{ steps.export-deployment-matrix.outputs.deployment-matrix }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: ./nuxt-app/package-lock.json
+      - run: npm ci
+        working-directory: ${{env.working-directory}}
+      - run: npm run build
+        working-directory: ${{env.working-directory}}
+      - name: Create deployment artifact
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: tar -czf "${GITHUB_SHA}".tar.gz  --exclude=node_modules --exclude=tests * .??*
+
+      - name: Store artifact for distribution
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-build
+          path: ${{ github.sha }}.tar.gz
