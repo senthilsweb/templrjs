@@ -29,10 +29,12 @@ jobs:
         run: cp release.env .env
       - run: npm run build
         working-directory: ${{env.working-directory}}
+      - name: copy .data into .otput folder
+        run: cp ./.data ./.output/.
       - name: Create deployment artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
-        run: tar -czf "${GITHUB_SHA}".tar.gz  ./.output
+        run: tar -czf "${GITHUB_SHA}".tar.gz  ./.output ./.env ./run.sh
       - name: Store artifact for distribution
         uses: actions/upload-artifact@v3
         with:
