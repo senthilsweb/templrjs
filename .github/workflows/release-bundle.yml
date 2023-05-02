@@ -26,7 +26,7 @@ jobs:
       - run: npm ci
         working-directory: ${{env.working-directory}}
       - name: Create .env file
-        run: cp .release.env .env
+        run: cp release.env .env
       - run: npm run build
         working-directory: ${{env.working-directory}}
       - name: Create deployment artifact
