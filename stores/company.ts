@@ -4,8 +4,12 @@ import { useCountryStore } from '~/stores/country';
 export const useCompanyStore = defineStore('company', {
   state: () => ({
     company: {},
+    upserted: false,
   }),
   getters: {
+    loaded: (state) => {
+      return state.upserted;
+    },
     organization: (state) => {
       if (state.company.id) {
         return {
@@ -95,13 +99,14 @@ export const useCompanyStore = defineStore('company', {
   },
   actions: {
     updateCompany(item) {
-      //console.log("Updating company")
-      //console.log("company=", JSON.stringify(item))
-      this.company = item;
+      this.company.push({ item });
       //console.log('updated company');
     },
     reloadCompany(item) {
+      console.log('reloading company');
       this.company = item;
+      this.upserted = true;
+      console.log('reloaded company');
     },
     updateLogoUrl(url) {
       this.company.logo_url = url;

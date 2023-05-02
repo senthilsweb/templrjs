@@ -11,6 +11,7 @@
 
 <script setup>
 import { useNavigationsStore } from '~/stores/navigations';
+console.log("--------------------------------------->>>>>ZynomiSocialLinks")
 const social_links = useNavigationsStore().navigatioins_by_module(props.module_name);
 const props = defineProps(['module_name']);
 </script>

@@ -115,7 +115,7 @@
     },
     {
         "code": "logo-css",
-        "name": "h-9",
+        "name": "h-10 w-auto",
         "parent_code": "logo",
         "is_active": true
     },

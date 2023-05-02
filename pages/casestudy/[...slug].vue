@@ -19,7 +19,7 @@ console.log('path = ', path);
 const pathArray = path.split('/');
 const folder = pathArray[pathArray.length - 2];
 const cms_page = pathArray.pop();
-const storage_key = `${folder}:${cms_page}`;
+const storage_key = `${cms_page}`;
 const edit = ref(useRoute().query.edit || false);
 
 //const pdfSection = ref(null)
@@ -94,7 +94,6 @@ function save() {
                         <!--<p>Since 1901, Jergens skin care has been a leading, trusted brand for moisturizing products. That’s because everything we do is designed to help you feel good – soothing relief from dryness, a touch of summer color, a fruity scent that makes Monday feel like Friday.</p>
                         <p>As a long-established brand, Jergens prioritizes innovative ways to expand awareness and growth by diversifying channels and reaching new audiences.</p>
                       -->
-
                       <p v-for="item in page.parsed.about_client">{{ item }}</p>
                       </div>
                     </div>
@@ -146,7 +145,7 @@ function save() {
     <!--Main Content (Start)-->
     <div class="[usePropertiesStore().layout_width ? usePropertiesStore().layout_width : 'lg:max-w-7xl mx-auto']">
       <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
-        <header v-if="useSupabaseUser().value && edit" class="relative isolate pt-16">
+        <header v-if="edit" class="relative isolate pt-16">
           <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
             <div class="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
               <div class="aspect-[1154/678] w-[72.125rem] bg-gradient-to-br from-[#FF80B5] to-[#9089FC]" style="clip-path: polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)" />

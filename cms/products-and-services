@@ -1,0 +1,67 @@
+---
+title: product-and-services
+---
+
+# Products and Services
+
+At Questpay, Inc. d/b/a V2 Technologies, Inc., our core focus is Enterprise Content and Knowledge Management. We work with software developers and programmers, majority of them from a part of our strategic association partner. Questpay, Inc. d/b/a V2 Technologies, Inc. provides exceptional services and solutions for its valued clients in the areas of  
+
+::list{type="success"}
+- C/C++
+- .NET
+- Java
+- Microsoft Technologies  
+- Oracle and Web Development.
+::
+
+Our Knowledge, experience, and mastery encompasses services include all SDLC phases covering most of the Industrial domains in `F`ortune 500` companies
+
+## Expertise
+
+::list{type="success"}
+- Documentum Installation / Upgrade
+- Implementation & Configuration of Documentum
+- Customization & Development on Documentum
+- Documentum Integration with Legacy Systems
+- Custom Application Integration with Documentum
+- Business Process Management
+- Scanning & Imaging Solutions
+- Content Migration
+::
+
+##
+
+::card-grid
+#title
+Service Offerings
+#root
+:ellipsis
+#default
+  ::card
+  #title
+  Product Development
+  #description
+  We provide end-to-end product development services for our clients.
+  ::
+  ::card
+  #title
+  Consulting Services
+  #description
+  We have a team of experienced consultants who can help you in your business and technology decisions.
+  ::
+  ::card
+  #title
+  Software Development
+  #description
+  Our software development services include development of new software or extending your existing software.
+  ::
+::  
+
+
+
+
+
+
+
+
+

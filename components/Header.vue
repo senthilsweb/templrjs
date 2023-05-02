@@ -1,9 +1,25 @@
+<script setup>
+import { useNavigationsStore } from '~/stores/navigations';
+import { usePropertiesStore } from '~/stores/properties';
+import * as heroIcons from '@heroicons/vue/20/solid';
+import { Popover, PopoverPanel } from '@headlessui/vue';
+const propertiesStore = usePropertiesStore();
+console.log("--------------------------------------->>>>>Header")
+//console.log("Access properties store", properties.app_copyright)
+const navs = useNavigationsStore().navigatioins_by_module('landing-page');
+const isVisible = useState('isVisible', () => ref({})); //This is used to maintain the active hover state of the pophover menu.
+navs.forEach((item) => {
+  useState('isVisible').value[item.name] = false;
+});
+const buttons = useSortBy(useNavigationsStore().navigatioins_by_module('landing-page'), ['sort_order']);
+const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
+</script>
 <template>
-  <header class="sticky top-0 z-50 flex flex-wrap items-center justify-between px-4 py-5 transition duration-500 sm:px-6 lg:px-8 h-20" :class="[usePropertiesStore().megamenu_bg_color ? usePropertiesStore().megamenu_bg_color : 'bg-white', usePropertiesStore().layout_width ? usePropertiesStore().layout_width : 'lg:max-w-8xl']">
+  <header class="sticky top-0 z-50 flex flex-wrap items-center justify-between px-4 py-5 transition duration-500 sm:px-6 lg:px-8 h-20" :class="[propertiesStore.megamenu_bg_color ? propertiesStore.megamenu_bg_color : 'bg-white', propertiesStore.layout_width ? propertiesStore.layout_width : 'lg:max-w-8xl']">
     <!-- Logo (Start)-->
     <div class="relative flex flex-grow basis-0 items-center">
       <NuxtLink to="/">
-        <IconLogo />
+        <IconLogo/>
       </NuxtLink>
     </div>
     <!-- Logo (End) -->
@@ -13,16 +29,16 @@
       <div v-for="(menu, idx) in useSortBy(navs, ['sort_order'])" :key="`mnu_${idx}`">
         <div v-if="menu.children && menu.is_active">
           <div v-on:mouseover="useState('isVisible').value[menu.name] = true" v-on:mouseleave="useState('isVisible').value[menu.name] = false" class="flex items-center">
-            <a :href="menu.href" class="inline-flex items-center rounded-full px-3 py-2 text-lg font-semibold hover:text-primary-700" :class="[usePropertiesStore().megamenu_text_style ? usePropertiesStore().megamenu_text_style : 'text-gray-600 hover:bg-gray-200']">
+            <a :href="menu.href" class="inline-flex items-center rounded-full px-3 py-2 text-lg font-semibold hover:text-primary-700" :class="[propertiesStore.megamenu_text_style ? propertiesStore.megamenu_text_style : 'text-gray-600 hover:bg-gray-200']">
               {{ menu.name }}
               <component :is="heroIcons['ChevronDownIcon']" class="h-6 w-6" aria-hidden="true" />
             </a>
             <!--Pop-over (start)-->
             <Popover class="relative" v-slot="{ open }">
               <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
-                <PopoverPanel v-if="useState('isVisible').value[menu.name]" class="absolute left-1/2 z-50 mt-3 w-screen max-w-md -translate-x-1/2 transform py-4 px-2 sm:px-0" :class="[usePropertiesStore().megamenu_popover_style == 'narrow' ? 'lg:max-sm' : 'lg:max-w-2xl']" static>
-                  <div class="overflow-hidden shadow-xl" :class="[usePropertiesStore().megamenu_bg_color ? 'rounded-xl' : 'rounded-b-xl']">
-                    <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8" :class="[usePropertiesStore().megamenu_popover_style == 'narrow' ? '' : 'lg:grid-cols-2']">
+                <PopoverPanel v-if="useState('isVisible').value[menu.name]" class="absolute left-1/2 z-50 mt-3 w-screen max-w-md -translate-x-1/2 transform py-4 px-2 sm:px-0" :class="[propertiesStore.megamenu_popover_style == 'narrow' ? 'lg:max-sm' : 'lg:max-w-2xl']" static>
+                  <div class="overflow-hidden shadow-xl" :class="[propertiesStore.megamenu_bg_color ? 'rounded-xl' : 'rounded-b-xl']">
+                    <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8" :class="[propertiesStore.megamenu_popover_style == 'narrow' ? '' : 'lg:grid-cols-2']">
                       <div v-for="item in useSortBy(menu.children, ['sort_order'])">
                         <template v-if="item.is_footer_description == false">
                           <a :key="item.code" :href="item.href" class="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out" :class="[item.selected == true ? 'text-gray-900 bg-primary-50 bg-opacity-50' : 'text-gray-800', `hover:${item.iconBackground}`]">
@@ -60,7 +76,7 @@
         </div>
 
         <div v-if="!menu.is_action_button && !menu.children && menu.is_active" class="flex items-center">
-          <a :href="menu.href" class="inline-flex items-center rounded-full px-3 py-2 text-lg font-semibold hover:text-primary-700" :class="[usePropertiesStore().megamenu_text_style ? usePropertiesStore().megamenu_text_style : 'text-gray-600 hover:bg-gray-200']">
+          <a :href="menu.href" class="inline-flex items-center rounded-full px-3 py-2 text-lg font-semibold hover:text-primary-700" :class="[propertiesStore.megamenu_text_style ? propertiesStore.megamenu_text_style : 'text-gray-600 hover:bg-gray-200']">
             {{ menu.name }}
           </a>
         </div>
@@ -86,7 +102,7 @@
         <div class="px-5 pt-4 flex items-center justify-between">
           <div>
             <NuxtLink to="/">
-              <IconLogo class="w-14 h-14 text-center" :logo_url="usePropertiesStore().logo_url_dark" />
+              <IconLogo class="w-14 h-14 text-center" :logo_url="propertiesStore.logo_url_dark" />
             </NuxtLink>
           </div>
           <div class="-mr-2">
@@ -141,17 +157,3 @@
     <!--Mobile Menu (End)-->
   </header>
 </template>
-<script setup>
-import { useNavigationsStore } from '~/stores/navigations';
-import { usePropertiesStore } from '~/stores/properties';
-import * as heroIcons from '@heroicons/vue/20/solid';
-import { Popover, PopoverPanel } from '@headlessui/vue';
-
-const navs = useNavigationsStore().navigatioins_by_module('landing-page');
-const isVisible = useState('isVisible', () => ref({})); //This is used to maintain the active hover state of the pophover menu.
-navs.forEach((item) => {
-  useState('isVisible').value[item.name] = false;
-});
-const buttons = useSortBy(useNavigationsStore().navigatioins_by_module('landing-page'), ['sort_order']);
-const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
-</script>

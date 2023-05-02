@@ -21,5 +21,6 @@
 <script setup>
 import { usePropertiesStore } from '~/stores/properties';
 import { useCompanyStore } from "~/stores/company";
+console.log("--------------------------------------->>>>>Footer")
 //console.log("organization control = ", JSON.stringify(useCompanyStore().organization))
 </script>

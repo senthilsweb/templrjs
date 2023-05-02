@@ -1,5 +1,4 @@
 <script setup>
-import { usePropertiesStore } from '~/stores/properties';
 import { ref } from 'vue';
 import { exportToPDF } from '#imports';
 definePageMeta({
@@ -12,15 +11,15 @@ const saving = ref(false);
 const page = useState('page');
 
 const { path } = useRoute();
-console.log('path = ', path.split('/').pop());
+console.log('path23232323 = ', path.split('/').pop());
 const pdfSection = ref(null);
 // Fetch the page on SSR
 
-console.log('path = ', path);
+console.log('path ABC= ', path);
 const pathArray = path.split('/');
 const folder = pathArray[pathArray.length - 2];
 const cms_page = pathArray.pop();
-const storage_key = `${folder}:${cms_page}`;
+const storage_key = `${cms_page}`;
 const edit = ref(useRoute().query.edit || false);
 
 //const pdfSection = ref(null)
@@ -38,6 +37,7 @@ if (page.value && process.client) {
 }
 
 async function editMode() {
+  console.log('editMode fired');
   editing.value = true;
   await nextTick();
   editor.value.focus();
@@ -66,13 +66,20 @@ function save() {
       alert(err.data.message);
     });
 }
+console.log('Registering event cms_edit')
+useNuxtApp().$bus.$on('cms_edit', (data) => {
+console.log('Firing event cms_edit')
+ //alert('cms_edit');
+  //editMode();
+});
+console.log('Registered event cms_edit')
 </script>
 
 <template>
   <NuxtLayout name="landing">
     <div class="[usePropertiesStore().layout_width ? usePropertiesStore().layout_width : 'lg:max-w-7xl mx-auto']">
       <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
-        <header v-if="useSupabaseUser().value && edit" class="relative isolate pt-16">
+        <header v-if="edit" class="relative isolate pt-16">
           <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
             <div class="absolute left-16 top-full -mt-16 transform-gpu opacity-50 blur-3xl xl:left-1/2 xl:-ml-80">
               <div class="aspect-[1154/678] w-[72.125rem] bg-gradient-to-br from-[#FF80B5] to-[#9089FC]" style="clip-path: polygon(100% 38.5%, 82.6% 100%, 60.2% 37.7%, 52.4% 32.1%, 47.5% 41.8%, 45.2% 65.6%, 27.5% 23.4%, 0.1% 35.3%, 17.9% 0%, 27.7% 23.4%, 76.2% 2.5%, 74.2% 56%, 100% 38.5%)" />
@@ -85,7 +92,7 @@ function save() {
                 <a href="#" @click="exportToPDF(`${page.parsed.title}.pdf`, pdfSection, undefined, { html2canvas: { margin: 1, scale: 0.5, width: 793.92, height: 1122.24, useCORS: true } })" class="rounded-md px-3 py-2 text-sm font-semiboldtransition-all duration-300 zyn-nav-action-button-bordered">Export to PDF</a>
               </div>
               <div class="flex items-center gap-x-4 sm:gap-x-6">
-                <a href="#" @click="editMode" class="rounded-md px-3 py-2 text-sm font-semiboldtransition-all duration-300 zyn-nav-action-button-bordered">{{ editing ? 'Editing' : 'Edit' }} this page</a>
+                <button @click="editMode()" class="rounded-md px-3 py-2 text-sm font-semiboldtransition-all duration-300 zyn-nav-action-button-bordered">{{ editing ? 'Editing' : 'Edit' }} this page</button>
                 <a href="#" v-if="editing" class="rounded-md bg-primary-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">{{ saving ? 'Saving' : 'Save' }}</a>
               </div>
             </div>
@@ -117,7 +124,7 @@ function save() {
         </div>
       </div>
     </div>
-  </NuxtLayout>
+    </NuxtLayout>
 </template>
 
 <style lang="postcss">

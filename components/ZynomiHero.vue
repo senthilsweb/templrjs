@@ -47,8 +47,9 @@
 <script setup>
 import { usePropertiesStore } from '~/stores/properties';
 import { useNavigationsStore } from '~/stores/navigations';
-
+console.log("--------------------------------------->>>>>ZynomiHero.vue")
 const data = usePropertiesStore().properties_by_parent_code('component-app-hero');
+//console.log("data=",useFilter(data, { code: 'primary-title' })[0].name);
 const primary_title = useFilter(data, { code: 'primary-title' })[0].name;
 const secondary_title = useFilter(data, { code: 'secondary-title' })[0].name;
 const app_hero_description = useFilter(data, { code: 'app-hero-description' })[0].name;

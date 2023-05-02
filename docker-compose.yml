@@ -1,26 +1,31 @@
 version: "3.7"
 
+networks:
+  traefik-public:
+    external: true
 
 services:
   templr:
     ports:
-      - "3000:3000"
+      - "1337:3000"
     image: senthilsweb/templrjs:latest
     environment:
-      - TEMPLRJS_DB=${TEMPLRJS_DB}
+      - TEMPLRJS_CMS_DATA=${TEMPLRJS_CMS_DATA}
       - TEMPLRJS_BASE_URL=${TEMPLRJS_BASE_URL}
       - SUPABASE_URL=${SUPABASE_URL}
       - SUPABASE_KEY=${SUPABASE_KEY}
       - SUPABASE_KEY_SERVICE_KEY=${SUPABASE_KEY_SERVICE_KEY}
-      - STORAGE_DRIVER=${STORAGE_DRIVER}
-      - CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID}
-      - CLOUDFLARE_NAMESPACE_ID=${CLOUDFLARE_NAMESPACE_ID}
-      - CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY}
-      - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
+      - STORAGE_DRIVER = ${STORAGE_DRIVER}
+      - CLOUDFLARE_ACCOUNT_ID = ${CLOUDFLARE_ACCOUNT_ID}
+      - CLOUDFLARE_NAMESPACE_ID = ${CLOUDFLARE_NAMESPACE_ID}
+      - CLOUDFLARE_API_KEY = ${CLOUDFLARE_API_KEY}
+      - CLOUDFLARE_EMAIL = ${CLOUDFLARE_EMAIL}
     working_dir: /app
-    #volumes:
-    #    - ./_mnt:/app/.output/
+    volumes:
+      - ${PWD}/.output:/app/.output/
     command: sh -c "node ./.output/server/index.mjs"
     #command: tail -f /dev/null
     stdin_open: true
     tty: true
+    networks:
+      - traefik-public  

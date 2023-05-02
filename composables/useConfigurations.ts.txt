@@ -1,7 +1,0 @@
-export const useConfigurations = async () => {
-	const {data: configurations, pending} = await useFetch("/api/generic", {
-		method: "post",
-		body: {collection: "configurations", projection: {property_type: 1, code: 1, name: 1}, filter: {}},
-	});
-	return {configurations, pending};
-};

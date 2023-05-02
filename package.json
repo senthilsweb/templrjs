@@ -6,8 +6,10 @@
   "private": true,
   "scripts": {
     "dev": "nuxi --max-old-space-size=4096 dev",
-    "build": "nuxi --max-old-space-size=4096 build",
-    "start": "node .output/server/index.mjs"
+    "build": "nuxi --max-old-space-size=8192 build",
+    "start": "node .output/server/index.mjs",
+    "ionic:build": "npm run build",
+    "ionic:serve": "npm run start"
   },
   "devDependencies": {
     "@babel/helper-compilation-targets": "^7.20.7",
@@ -25,7 +27,7 @@
     "@sidebase/nuxt-pdf": "^0.1.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
-    "@types/node": "^18.16.0",
+    "@types/node": "^18.13.0",
     "autoprefixer": "^10.4.13",
     "monaco-editor-core": "^0.34.1",
     "nuxt": "^3.2.0",
@@ -45,6 +47,8 @@
     "vue-underscore": "^0.1.4"
   },
   "dependencies": {
+    "@formkit/nuxt": "^1.0.0-beta.12",
+    "@formkit/themes": "^1.0.0-beta.12",
     "@headlessui/vue": "^1.7.3",
     "@heroicons/vue": "^0.0.0-insiders.bbe210e",
     "@nuxtjs/supabase": "^0.3.5",

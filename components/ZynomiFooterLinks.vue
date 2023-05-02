@@ -18,7 +18,7 @@
 </template>
 <script setup>
 import { useNavigationsStore } from '~/stores/navigations';
-
+console.log("--------------------------------------->>>>>ZynomiFooterLinks")
 const props = defineProps(['module_name']);
 
 const footer_links = useNavigationsStore().navigatioins_by_module(props.module_name);

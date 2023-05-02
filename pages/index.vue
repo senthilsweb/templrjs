@@ -10,4 +10,5 @@
 </template>
 <script setup>
 import { usePropertiesStore } from '~/stores/properties';
+console.log("--------------------------------------->>>>>pages/index")
 </script>

@@ -50,7 +50,7 @@ const c_total = ref(0);
 const active_idx = ref(0);
 const carousel_assets = useNavigationsStore().navigatioins_by_module('carousel-component');
 const active_carousel = useFilter(carousel_assets, { is_active: true });
-
+console.log("--------------------------------------->>>>>Carousel")
 c_total.value = active_carousel.length;
 const carousel = useState('carousel', () => ref({}));
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const print = ref(useRoute().query.print || false);
+console.log("--------------------------------------->>>>>layout/landing")
 </script>
 <template>
    <div class="max-w-8xl mx-auto">
@@ -13,6 +14,4 @@ const print = ref(useRoute().query.print || false);
     </div>
   </div>
    <Footer v-if="!print"/>
-  <CommonsInquiryForm form_title="Enquiry Form" form_description="" />
-  <CommonsSignUpForm form_title="Sign Up Form" form_description="" />
 </template>

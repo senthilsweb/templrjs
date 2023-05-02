@@ -1,7 +1,0 @@
-export const useCountries = async () => {
-	const {data: countries, pending} = await useFetch("/api/generic", {
-		method: "post",
-		body: {collection: "countries", projection: {}, filter: {}, limit: 10000},
-	});
-	return {countries, pending};
-};

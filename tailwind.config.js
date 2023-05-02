@@ -1,6 +1,7 @@
 
 const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
+const formKitTailwind = require('@formkit/themes/tailwindcss')
 module.exports = {
   mode: 'jit',
   content: [
@@ -80,5 +81,5 @@ module.exports = {
   corePlugins: {
     aspectRatio: false,
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), formKitTailwind, require('@tailwindcss/aspect-ratio')],
 };
