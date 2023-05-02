@@ -11,6 +11,9 @@ RUN npm ci && npm cache clean --force
 
 COPY . .
 
+RUN cp ./release.env .env
+
+
 RUN npm run build
 
 
