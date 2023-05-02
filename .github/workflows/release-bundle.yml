@@ -25,13 +25,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
         working-directory: ${{env.working-directory}}
+      - name: Create .env file
+        run: cp .release.env .env
       - run: npm run build
         working-directory: ${{env.working-directory}}
       - name: Create deployment artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
         run: tar -czf "${GITHUB_SHA}".tar.gz  ./.output
-          .??*
       - name: Store artifact for distribution
         uses: actions/upload-artifact@v3
         with:
