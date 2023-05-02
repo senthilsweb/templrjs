@@ -26,5 +26,6 @@ RUN apk update && apk upgrade
 RUN apk add git
 
 COPY --from=build-stage /app/.output /app/.output
+COPY --from=build-stage /app/.data /app/.data
 
 EXPOSE 3000
