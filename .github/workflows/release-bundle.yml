@@ -30,7 +30,7 @@ jobs:
       - run: npm run build
         working-directory: ${{env.working-directory}}
       - name: copy .data into .otput folder
-        run: cp ./.data ./.output/.
+        run: cp -r ./.data ./.output/.
       - name: Create deployment artifact
         env:
           GITHUB_SHA: ${{ github.sha }}
