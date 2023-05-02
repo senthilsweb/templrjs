@@ -8,7 +8,7 @@ on:
     branches:
       - main
     tags:
-      - 'rc*'s
+      - 'rc*'
       - latest
 jobs:
   
