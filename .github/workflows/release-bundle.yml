@@ -4,12 +4,10 @@ on:
   workflow_dispatch:
     branches:
       - main
-    tags:
-      - rc*
 
 jobs:
-  create-deployment-artifacts:
-    name: Create Deployment Artefacts
+  create-deployment-artefacts:
+    name: Create Deployment Artifacts
     runs-on: ubuntu-latest
     strategy:
       matrix:
