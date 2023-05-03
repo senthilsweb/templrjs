@@ -21,11 +21,12 @@ services:
       - CLOUDFLARE_API_KEY=${CLOUDFLARE_API_KEY}
       - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
     working_dir: /app
-    #volumes:
-    #  - ${PWD}/.output:/app/.output/
+    volumes:
+      - "./:/.data/cms:rw"
     command: sh -c "node ./.output/server/index.mjs"
     #command: tail -f /dev/null
     stdin_open: true
     tty: true
+    restart: unless-stopped
     #networks:
     # - traefik-public  
