@@ -74,6 +74,12 @@ CREATE TABLE IF NOT EXISTS country (
 
 COMMENT ON TABLE country IS 'Master tables for list of countries and their details i.e. name, code, phone code, etc.';
 
+/*Identity column start value*/
+SELECT setval(pg_get_serial_sequence('navigation', 'id'),(select max(id) from navigation));
+SELECT setval(pg_get_serial_sequence('properties', 'id'), (select max(id) from properties));
+SELECT setval(pg_get_serial_sequence('company', 'id'), (select max(id) from company));
+SELECT setval(pg_get_serial_sequence('inquiries', 'id'), (select max(id) from inquiries));
+
 /*vw_meta_column*/
 CREATE VIEW vw_meta_column (column_name, description, relname) AS  SELECT a.attname AS column_name,
     d.description,
@@ -85,6 +91,8 @@ CREATE VIEW vw_meta_column (column_name, description, relname) AS  SELECT a.attn
      LEFT JOIN pg_description d ON (((d.objoid = c.oid) AND (d.objsubid = a.attnum))))
   WHERE ((c.relkind = ANY (ARRAY['r'::"char", 'v'::"char"])) AND (c.relname = 'State'::name))
   ORDER BY n.nspname, c.relname, a.attname;
+
+  /*vw_navigation*/
 CREATE VIEW vw_navigation (menuitems) AS  WITH RECURSIVE navigation_from_parents AS (
          SELECT navigation.code,
             navigation.name,
@@ -274,8 +282,4 @@ FROM   navigation_from_children
 WHERE  parent_code IS NULL
 $body$ LANGUAGE sql;
 
-/*Identity column start value*/
-SELECT setval(pg_get_serial_sequence('navigation', 'id'),(select max(id) from navigation));
-SELECT setval(pg_get_serial_sequence('properties', 'id'), (select max(id) from properties));
-SELECT setval(pg_get_serial_sequence('company', 'id'), (select max(id) from company));
-SELECT setval(pg_get_serial_sequence('inquiries', 'id'), (select max(id) from inquiries));
+
