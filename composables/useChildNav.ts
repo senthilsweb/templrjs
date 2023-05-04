@@ -9,9 +9,9 @@
 
 export const useChildNav = async () => {
   let query = '';
-  //query = '/api/postgres/navigation_child';
+
   query = `/api/json/child_nav.json`;
-  if (process.env.TEMPLRJS_CMS_DATA == 'remote') {
+  if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'dbms') {
     query = '/api/postgres/navigation_child';
   }
   console.log('query=', query);

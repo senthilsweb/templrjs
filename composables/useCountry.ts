@@ -8,7 +8,7 @@ export const useCountry = async () => {
   let query = '';
   //query = '/api/country?select=id,code,name';
   query = `/api/json/countries.json`;
-  if (process.env.TEMPLRJS_CMS_DATA == 'remote') {
+  if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'dbms') {
     query = '/api/country?select=id,code,name';
   }
   console.log('query=', query);

@@ -14,7 +14,7 @@ import { useNavigationsStore } from '~/stores/navigations';
 import { useCountryStore } from '~/stores/country';
 import { useCompanyStore } from '~/stores/company';
 console.log('--------------------------------------->>>>>app.vue');
-console.log(`TEMPLRJS_CMS_DATA = [${process.env.TEMPLRJS_CMS_DATA}]`);
+console.log(`TEMPLRJS_WEBSITE_CONFIG_STORE = [${process.env.TEMPLRJS_WEBSITE_CONFIG_STORE}]`);
 
 //#############################################################################################
 //Populate properties master data
@@ -27,11 +27,11 @@ const companyStore = useCompanyStore();
 if (!propertiesStore.loaded) {
   console.log('1) Loading Properties Store-------------------------->>>');
   const properties = await useProperties();
-  console.log('process.env.TEMPLRJS_CMS_DATA=', process.env.TEMPLRJS_CMS_DATA);
-  if (process.env.TEMPLRJS_CMS_DATA != undefined && process.env.TEMPLRJS_CMS_DATA == 'remote') {
+  console.log('process.env.TEMPLRJS_WEBSITE_CONFIG_STORE=', process.env.TEMPLRJS_WEBSITE_CONFIG_STORE);
+  if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE != undefined && process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'dbms') {
     console.log('From remote');
     propertiesStore.reloadProperties(properties.data._rawValue);
-  } else if (process.env.TEMPLRJS_CMS_DATA != undefined && process.env.TEMPLRJS_CMS_DATA == 'local') {
+  } else if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE != undefined && process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'http') {
     console.log('From local');
     propertiesStore.reloadProperties(JSON.parse(properties.data._rawValue));
   }
@@ -45,10 +45,10 @@ if (!countryStore.loaded) {
   console.log('2) Loading Country Store-------------------------->>>');
   const countries = await useCountry();
 
-  if (process.env.TEMPLRJS_CMS_DATA != undefined && process.env.TEMPLRJS_CMS_DATA == 'remote') {
+  if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE != undefined && process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'dbms') {
     console.log('From remote');
     countryStore.reloadCountry(countries.data._rawValue);
-  } else if (process.env.TEMPLRJS_CMS_DATA != undefined && process.env.TEMPLRJS_CMS_DATA == 'local') {
+  } else if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE != undefined && process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'http') {
     console.log('From local');
     countryStore.reloadCountry(JSON.parse(countries.data._rawValue));
   }
@@ -62,10 +62,10 @@ if (!companyStore.loaded) {
   console.log('3) Loading Company Store-------------------------->>>');
   const company = await useCompany();
 
-  if (process.env.TEMPLRJS_CMS_DATA != undefined && process.env.TEMPLRJS_CMS_DATA == 'remote') {
+  if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE != undefined && process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'dbms') {
     console.log('From remote');
     companyStore.reloadCompany(company.data._rawValue[0]);
-  } else if (process.env.TEMPLRJS_CMS_DATA != undefined && process.env.TEMPLRJS_CMS_DATA == 'local') {
+  } else if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE != undefined && process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'http') {
     console.log('From local');
     companyStore.reloadCompany(JSON.parse(company.data._rawValue)[0]);
   }
@@ -81,10 +81,10 @@ if (!navigationsStore.loaded) {
   //console.log('parent_nav.data._rawValue = ', JSON.stringify(parent_nav.data._rawValue)); //Debug code
   //console.log('child_nav.data._rawValue = ', JSON.stringify(child_nav.data._rawValue)); //Debug code
 
-  if (process.env.TEMPLRJS_CMS_DATA != undefined && process.env.TEMPLRJS_CMS_DATA == 'remote') {
+  if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE != undefined && process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'dbms') {
     console.log('From remote');
     navigationsStore.reloadNavigations(useUnion(child_nav.data._rawValue, parent_nav.data._rawValue));
-  } else if (process.env.TEMPLRJS_CMS_DATA != undefined && process.env.TEMPLRJS_CMS_DATA == 'local') {
+  } else if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE != undefined && process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'http') {
     console.log('From local');
     navigationsStore.reloadNavigations(useUnion(JSON.parse(child_nav.data._rawValue), JSON.parse(parent_nav.data._rawValue)));
   }

@@ -8,15 +8,16 @@
 export const useCompany = async () => {
   //let query = '/api/company?is_active=eq.true&is_archived=eq.false&select=code,name,is_active';
   let query = '';
-  //query = '/api/company?select=*';
+
   query = '/api/json/company.json';
 
-  if (process.env.TEMPLRJS_CMS_DATA == 'remote') {
+  if (process.env.TEMPLRJS_WEBSITE_CONFIG_STORE == 'dbms') {
     query = '/api/company?select=*';
   }
   console.log('query=', query);
   const data = await useFetch(query, {
     method: 'get',
   });
+  console.log('data=', JSON.stringify(data));
   return data;
 };
