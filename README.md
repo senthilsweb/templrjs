@@ -38,6 +38,40 @@ You can completely change the application to suit your use case by modifying the
 4. parent_nav.json
 5. child_nav.json
 
+## Environment Variables
+Refer below for the list of environment variables that can be configured for the application.
+
+```bash
+# TEMPLRJS_CMS_STORAGE_MOUNT value can be fs_cms or cf_cms. If fs_cms, the markdown files will be fetched from the local filesystem. If cf_cms, the markdown files will be fetched from Cloudflare KV.
+TEMPLRJS_CMS_STORAGE_MOUNT=fs_cms
+# TEMPLRJS_WEBSITE_CONFIG_STORE value can be http or dbms. If dbms, the website config will be fetched from Supabase. If http, the website config will be fetched from the http endpoint.
+TEMPLRJS_WEBSITE_CONFIG_STORE=http
+TEMPLRJS_BASE_URL=http://localhost:3000
+
+# Mandatory Supabase Configs if TEMPLRJS_CMS_DATA is remote
+SUPABASE_URL=http://your-supabase-url
+SUPABASE_KEY=your-supabase-key
+SUPABASE_KEY_SERVICE_KEY=your-supabase-key
+
+# Optional Supabase Configs 
+SUPABASE_DB_HOST=your-supabase-host
+SUPABASE_DB_PORT=5432
+SUPABASE_PG_DB=postgres
+SUPABASE_PG_USER=postgres
+SUPABASE_PG_PASSWORD=
+
+# Mandatory Storage configs. The default is 'fs' for local development.
+STORAGE_DRIVER=cloudflare-kv-http
+
+# Optional Cloudflare KV configs for dynamic markdown content used for the blog or any CMS
+CLOUDFLARE_ACCOUNT_ID=
+CLOUDFLARE_NAMESPACE_ID=
+CLOUDFLARE_API_KEY=
+CLOUDFLARE_EMAIL=
+
+# node configs
+NODE_TLS_REJECT_UNAUTHORIZED=0
+```
 
 ## Production Deployment
 

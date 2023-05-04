@@ -10,7 +10,7 @@ services:
       - "1337:3000"
     image: senthilsweb/templrjs:latest
     environment:
-      - TEMPLRJS_CMS_DATA=local
+      - TEMPLRJS_CMS_STORAGE_MOUNT=fs_cms
       - TEMPLRJS_WEBSITE_CONFIG_STORE=http
       - TEMPLRJS_BASE_URL=https://raw.githubusercontent.com/senthilsweb/datasets/main
       - SUPABASE_URL=${SUPABASE_URL}
