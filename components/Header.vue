@@ -1,6 +1,7 @@
 <script setup>
 import { useNavigationsStore } from '~/stores/navigations';
 import { usePropertiesStore } from '~/stores/properties';
+import { useThemeStore } from '~/stores/theme';
 import * as heroIcons from '@heroicons/vue/20/solid';
 import { Popover, PopoverPanel } from '@headlessui/vue';
 const propertiesStore = usePropertiesStore();
@@ -29,7 +30,7 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
       <div v-for="(menu, idx) in useSortBy(navs, ['sort_order'])" :key="`mnu_${idx}`">
         <div v-if="menu.children && menu.is_active">
           <div v-on:mouseover="useState('isVisible').value[menu.name] = true" v-on:mouseleave="useState('isVisible').value[menu.name] = false" class="flex items-center">
-            <a :href="menu.href" class="inline-flex items-center rounded-full px-3 py-2 text-lg font-semibold hover:text-primary-700" :class="[propertiesStore.megamenu_text_style ? propertiesStore.megamenu_text_style : 'text-gray-600 hover:bg-gray-200']">
+            <a :href="menu.href" class="inline-flex items-center rounded-full px-3 py-2 text-lg font-semibold" :class="[`hover:text-[${useThemeStore().palette('700')}]`,propertiesStore.megamenu_text_style ? propertiesStore.megamenu_text_style : 'text-gray-600 hover:bg-gray-200']">
               {{ menu.name }}
               <component :is="heroIcons['ChevronDownIcon']" class="h-6 w-6" aria-hidden="true" />
             </a>
@@ -41,15 +42,15 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
                     <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8" :class="[propertiesStore.megamenu_popover_style == 'narrow' ? '' : 'lg:grid-cols-2']">
                       <div v-for="item in useSortBy(menu.children, ['sort_order'])">
                         <template v-if="item.is_footer_description == false">
-                          <a :key="item.code" :href="item.href" class="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out" :class="[item.selected == true ? 'text-gray-900 bg-primary-50 bg-opacity-50' : 'text-gray-800', `hover:${item.iconBackground}`]">
-                            <div v-if="item.icon" class="bg-primary-50 rounded-lg inline-flex p-3">
-                              <Icon :name="item.icon" class="h-6 w-6 flex-shrink-0 text-primary-600" />
+                          <a :key="item.code" :href="item.href" class="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out" :class="[item.selected == true ? 'text-gray-900 bg-[#fefce8] bg-opacity-50' : 'text-gray-800', `hover:bg-[${useThemeStore().palette('50')}]`]">
+                            <div v-if="item.icon" class="rounded-lg inline-flex p-3" :class="[`text-[${useThemeStore().palette('50')}]`]">
+                              <Icon :name="item.icon" class="h-6 w-6 flex-shrink-0" :class="[`text-[${useThemeStore().palette('700')}]`]" />
                             </div>
                             <div class="ml-4">
-                              <p class="text-small font-normal text-gray-800 hover:text-primary-700">
+                              <p class="text-small font-normal text-gray-800" :class="[`hover:text-[${useThemeStore().palette('700')}]`]">
                                 {{ item.name }}
                               </p>
-                              <p class="mt-1 text-sm text-gray-500 hover:text-primary-600">{{ item.description }}</p>
+                              <p class="mt-1 text-sm text-gray-500" :class="[`hover:text-[${useThemeStore().palette('700')}]`]">{{ item.description }}</p>
                             </div>
                           </a>
                         </template>
@@ -57,10 +58,10 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
                     </div>
                     <!--Popover Footer(start). Though it is inside forloop but guarnteed that only one footer per children-->
                     <div v-for="item in menu.children">
-                      <div v-if="item.is_footer_description" class="bg-primary-600 p-5 sm:p-8">
+                      <div v-if="item.is_footer_description" class="p-5 sm:p-8" :class="[`bg-[${useThemeStore().palette('600')}]`]">
                         <a :href="item.href" class="-m-3 flow-root rounded-md p-3 transition duration-150 ease-in-out">
                           <span class="flex items-center">
-                            <span class="text-lg font-bold text-white hover:text-primary-300">{{ item.name }}</span>
+                            <span class="text-lg font-bold text-white hover:text-[#fde047]">{{ item.name }}</span>
                           </span>
                           <span class="mt-1 block text-sm text-white">{{ item.description }}</span>
                         </a>
@@ -76,7 +77,7 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
         </div>
 
         <div v-if="!menu.is_action_button && !menu.children && menu.is_active" class="flex items-center">
-          <a :href="menu.href" class="inline-flex items-center rounded-full px-3 py-2 text-lg font-semibold hover:text-primary-700" :class="[propertiesStore.megamenu_text_style ? propertiesStore.megamenu_text_style : 'text-gray-600 hover:bg-gray-200']">
+          <a :href="menu.href" class="inline-flex items-center rounded-full px-3 py-2 text-lg font-semibold" :class="[`hover:text-[${useThemeStore().palette('700')}]`,propertiesStore.megamenu_text_style ? propertiesStore.megamenu_text_style : 'text-gray-600 hover:bg-gray-200']">
             {{ menu.name }}
           </a>
         </div>
@@ -85,14 +86,11 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
     <!--Nav Action button start-->
     <div class="hidden relative lg:flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
       <div v-for="(cta, idx) in buttons.filter((o) => {return (o.is_action_button && o.is_active)})" :key="`cta_${idx}`" class="relative z-10">
-        <a :href="cta.href" @click="useNuxtApp().$bus.$emit(`${cta.click_event}`)" class="flex px-5 py-2 text-md items-center justify-center rounded-full transition-all duration-300" :class="cta.css_class">
-          {{ cta.name }}
+        <a :href="cta.href" @click="useNuxtApp().$bus.$emit(`${cta.click_event}`)" class="px-4 py-2 relative inline-flex items-center rounded-full border border-transparent text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2  transition duration-150 ease-in-out" :class="[`bg-[${useThemeStore().palette('500')}]`,`hover:bg-[${useThemeStore().palette('700')}]`]">
+          {{ cta.name}}
         </a>
       </div>
     </div>
-
-    
-
     <!--Nav action button end-->
     <!--Desktop Menu with action buttons on the right side (End)-->
     <!--Mobile Menu (Start)-->
@@ -122,7 +120,7 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
               <ul v-for="(menu, idx) in useSortBy(navs, ['sort_order'])" :key="`mob_mnu_${idx}`">
                 <li v-if="!menu.is_action_button" class="mt-2">
                   <h5 class="mb-4 lg:mb-3 font-semibold text-gray-900 dark:text-gray-200">
-                    <Icon v-if="menu.icon" :name="menu.icon" class="h-4 w-4 flex-shrink-0 text-primary-600 mr-2" />
+                    <Icon v-if="menu.icon" :name="menu.icon" class="h-4 w-4 flex-shrink-0 text-[#ca8a04] mr-2" />
                     <a :href="menu.href">
                       {{ menu.name }}
                     </a>
@@ -141,13 +139,13 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
         </nav>
         <!--Mobile Nav(End)-->
       </div>
-    </div>
+    </div>  
     <!--Mobile menu activator button (start)-->
     <div @click="useState('isMobileNavVisible').value = !useState('isMobileNavVisible').value" class="-mr-2 items-center sm:hidden">
       <button type="button" class="fixed z-50 top-4 right-4 rounded-md p-2 inline-flex items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-primary-500" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <!-- Heroicon name: outline/menu -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-300 hover:text-primary-500" fill="fill-white" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#fde047] hover:text-[#eab308]" fill="fill-white" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>

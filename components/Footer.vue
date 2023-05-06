@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-r from-footer-900 via-primary-800 to-footer-900 ... lg:max-w-8xl">
+  <div class="" :class="[`bg-[${useThemeStore().palette('800')}]`, `lg:max-w-8xl`]">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div class="xl:grid xl:grid-cols-3 xl:gap-3">
         <!--Footer Links (Start)-->
@@ -21,6 +21,7 @@
 <script setup>
 import { usePropertiesStore } from '~/stores/properties';
 import { useCompanyStore } from "~/stores/company";
+import { useThemeStore } from '~/stores/theme';
 console.log("--------------------------------------->>>>>Footer")
 //console.log("organization control = ", JSON.stringify(useCompanyStore().organization))
 </script>

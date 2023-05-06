@@ -10,5 +10,7 @@
 </template>
 <script setup>
 import { usePropertiesStore } from '~/stores/properties';
+import { useThemeStore } from '~/stores/theme';
+
 console.log("--------------------------------------->>>>>pages/index")
 </script>

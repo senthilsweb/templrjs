@@ -12,7 +12,7 @@ export NODE_OPTIONS=--max-old-space-size=4096
 
 Either of the following is required to run the application in your local environment.
 
-* Node.js 16.x or higher
+* Node.js 16.x or higher (v16.19.1)
 * Docker 20.x or higher
 
 ### Run it as Node.JS server

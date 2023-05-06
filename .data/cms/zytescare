@@ -76,15 +76,31 @@ color:
   - from: orange
     to: teal
     via: red
-    title: bg-gradient-to-r from-amber-300 via-orange-500 to-amber-300
-    box: bg-gradient-to-r from-cyan-400 to-sky-500
+    title: bg-gradient-to-r from-[#fcd34d] via-[#f97316] to-[#fcd34d]
+    box: bg-gradient-to-r from-[#fcd34d]  to-[#f97316]
+    first: '#fcd34d'
 ---
 ## Executive Summary
 
-Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Tewst Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 Lorum ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
+
+orange
+
+bg-gradient-to-r from-[#fcd34d] via-[#a855f7] to-[#fcd34d]
+bg-gradient-to-r from-amber-300  to-orange-500
+
+Purple
+
+bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#6366f1]
+bg-gradient-to-r from-amber-300  to-orange-500
+bg-gradient-to-r from-cyan-400 to-sky-500
+
+Indigo
+
+bg-gradient-to-r from-[#6366f1] to-[#d8b4fe]
 <!--more-->
 
 ## Challenges

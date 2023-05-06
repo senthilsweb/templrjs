@@ -76,7 +76,7 @@ function save() {
           <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
             <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
               <div class="relative">
-                <p class="inline  bg-clip-text font-display text-5xl tracking-tight text-transparent bg-gradient-to-r from-amber-300 via-orange-500 to-amber-300">{{ page.parsed.title }}</p>
+                <p class="inline  bg-clip-text font-display text-5xl tracking-tight text-transparent " :class="[page.parsed.color[0].title]">{{ page.parsed.title }}</p>
                 <p class="mt-3 text-2xl tracking-tight text-slate-400">{{ page.parsed.excerpt }}</p>
                 <!--<div class="mt-8 flex gap-4 md:justify-center lg:justify-start"><a class="rounded-full bg-sky-300 py-2 px-4 text-sm font-semibold text-slate-900 hover:bg-sky-200 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300/50 active:bg-sky-500" href="/">Get started</a><a class="rounded-full bg-slate-800 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 active:text-slate-400" href="/">View on GitHub</a></div>-->
               </div>
@@ -85,7 +85,7 @@ function save() {
               <!--<div class="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                 <img src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80" alt="" class="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover" />
               </div>-->
-              <div class="z-10 relative mb-12 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-amber-300  to-orange-500">
+              <div class="z-10 relative mb-12 flex flex-col items-center justify-center overflow-hidden rounded-xl " :class="page.parsed.color[0].box">
                 <div class="w-full h-[392px]">
                   <div class="absolute inset-0">
                     <div class="divide-y divide-gray-300/50">

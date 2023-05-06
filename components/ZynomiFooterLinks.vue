@@ -7,7 +7,7 @@
         </h4>
         <ul class="mt-4">
           <li class="mt-4" v-for="sm in useSortBy(item.children, ['sort_order'])" :key="sm.name">
-            <a :href="sm.href" @click="useNuxtApp().$bus.$emit(`${sm.click_event}`)" class="text-base leading-6 text-white hover:text-primary-500">
+            <a :href="sm.href" @click="useNuxtApp().$bus.$emit(`${sm.click_event}`)" class="text-base leading-6 text-white" :class="[`hover:text-[${useThemeStore().palette('600')}]`]">
               {{ sm.name }}
             </a>
           </li>
@@ -18,6 +18,7 @@
 </template>
 <script setup>
 import { useNavigationsStore } from '~/stores/navigations';
+import { useThemeStore } from '~/stores/theme';
 console.log("--------------------------------------->>>>>ZynomiFooterLinks")
 const props = defineProps(['module_name']);
 
