@@ -459,6 +459,9 @@ export const useThemeStore = defineStore('theme', {
     loaded: (stat) => {
       return state.upserted;
     },
+    getPrimaryColor: (state) => {
+      return state.primary;
+    },
     logo_url: (state) => {
       return ['bg-primary-50', 'bg-primary-100', 'bg-primary-200', 'bg-primary-500', 'bg-primary-600'];
     },
