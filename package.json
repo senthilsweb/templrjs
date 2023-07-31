@@ -65,7 +65,7 @@
     "formidable": "^3.2.5",
     "gotenberg-js-client": "^0.7.3",
     "gridjs": "^5.1.0",
-    "h3": "^0.7.15",
+    "h3": "^1.7.1",
     "image-to-base64": "^2.2.0",
     "jspdf": "^2.5.1",
     "mitt": "^3.0.0",
