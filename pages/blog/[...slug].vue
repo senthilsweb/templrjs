@@ -8,8 +8,7 @@
               <div>
                 <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">{{ article.title }}</h3>
               </div>
-
-              <ContentDoc />
+             <ContentRendererMarkdown :value="article" />
               <div v-if="article.technologies" class="pt-10 pb-10 text-base max-w-prose mx-auto lg:max-w-none">
                 <h2 class="text-base font-semibold tracking-wide uppercase">Technology Stack</h2>
               </div>
