@@ -1,3 +1,10 @@
+<script setup>
+import { useThemeStore } from '~/stores/theme';
+const { path } = useRoute();
+const { data: books } = await useAsyncData(`content-${path}`, () => {
+  return queryContent('/_navigation/books').only('body').find();
+});
+</script>
 <template>
   <NuxtLayout name="landing">
     <div class="mx-auto max-w-2xl py-10 px-4 sm:py-10 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -20,23 +27,22 @@
               </a>
             </div>
             <div class="mt-3 flex items-center">
-               <p class="text-sm leading-5 font-medium text-gray-900 absolute left-0">
+              <p class="text-sm leading-5 font-medium text-gray-900 absolute left-0">
                 {{ $s(article.authors[0]).prune(15)._wrapped }}
               </p>
               <div class="flex text-xs leading-5 text-gray-500 absolute right-0">
-              <time :datetime="$dayjs(article.publishedDate).format('DD-MMM-YYYY')" class="text-gray-500">{{ $dayjs(article.publishedDate).format('DD-MMM-YYYY') }}</time>
+                <time :datetime="$dayjs(article.publishedDate).format('DD-MMM-YYYY')" class="text-gray-500">{{ $dayjs(article.publishedDate).format('DD-MMM-YYYY') }}</time>
               </div>
             </div>
           </div>
         </div>
       </div>
+     <div class="mt-10 flex items-center justify-center gap-x-6">
+        <button type="submit" class="inline-flex items-center rounded-md px-3 py-2 text-lg font-semibold" :class="[`bg-[${useThemeStore().palette('500')}]`,`hover:bg-[${useThemeStore().palette('700')}]`]">Load More</button>
+      </div>
     </div>
   </NuxtLayout>
 </template>
 
-<script setup>
-const { path } = useRoute();
-const { data: books } = await useAsyncData(`content-${path}`, () => {
-  return queryContent('/_navigation/books').only('body').find();
-});
-</script>
+
+
