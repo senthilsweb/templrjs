@@ -4,8 +4,8 @@ export const useThemeStore = defineStore('theme', {
   state: () => ({
     theme: {},
     upserted: false,
-    primary: 'yellow',
-    secondary: 'indigo',
+    primary: 'indigo',
+    secondary: 'blue',
     colors: [
       {
         paletteName: 'gray',

@@ -12,8 +12,8 @@
 
         <div class="mt-10 sm:flex sm:justify-center lg:justify-start">
           <div class="hidden md:flex md:items-center md:space-x-6">
-            <NuxtLink to="#" @click="useNuxtApp().$bus.$emit(`${primary_button.click_event}`)" class="px-5 py-2 text-md bg-primary-500 ring-2 hover:bg-primary-700 hover:ring-2 ring-primary-500 text-white rounded-full transition-all duration-300"> {{ primary_button.name }}</NuxtLink>
-            <NuxtLink to="#" @click="useNuxtApp().$bus.$emit(`${secondary_button.click_event}`)" class="px-5 py-2 text-md border border-transparent bg-white ring-2 ring-primary-500 text-primary-600 hover:text-white hover:bg-primary-700 rounded-full transition-all duration-300"> {{ secondary_button.name }}</NuxtLink>
+            <NuxtLink to="#" @click="useNuxtApp().$bus.$emit(`${primary_button.click_event}`)" class="px-5 py-2 text-md ring-2 hover:ring-2 text-white rounded-full transition-all duration-300" :class="[`bg-[${useThemeStore().palette('500')}]`, `hover:bg-[${useThemeStore().palette('700')}]`, `ring-[${useThemeStore().palette('500')}]`]"> {{ primary_button.name }}</NuxtLink>
+            <NuxtLink to="#" @click="useNuxtApp().$bus.$emit(`${secondary_button.click_event}`)" class="px-5 py-2 text-md border border-transparent bg-white hover:text-white ring-2 rounded-full transition-all duration-300" :class="[`text-[${useThemeStore().palette('500')}]`, `hover:bg-[${useThemeStore().palette('700')}]`, `ring-[${useThemeStore().palette('500')}]`]"> {{ secondary_button.name }}</NuxtLink>
           </div>
         </div>
       </div>
@@ -43,8 +43,10 @@
   </main>
 </template>
 <script setup>
-import { usePropertiesStore } from '~/stores/properties';
 import { useNavigationsStore } from '~/stores/navigations';
+import { usePropertiesStore } from '~/stores/properties';
+import { useThemeStore } from '~/stores/theme';
+
 console.log('--------------------------------------->>>>>ZynomiHero.vue');
 const data = usePropertiesStore().properties_by_parent_code('component-app-hero');
 //console.log("data=",useFilter(data, { code: 'primary-title' })[0].name);
