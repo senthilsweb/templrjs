@@ -2,7 +2,11 @@ import { defineNuxtConfig } from 'nuxt/config';
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 
 export default defineNuxtConfig({
-  nitro: {},
+  nitro: {
+    prerender: {
+      ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json'],
+    },
+  },
   sourcemap: false,
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
