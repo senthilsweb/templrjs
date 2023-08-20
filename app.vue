@@ -119,6 +119,6 @@ const page_meta = [];
   @apply ring-2 ring-primary-500 bg-primary-500 hover:bg-primary-700 text-white;
 }
 .zyn-nav-action-button-bordered {
-  @apply ring-2 ring-primary-500 hover:bg-primary-700 text-primary-500 hover:text-white;
+  @apply ring-2 ring-gray-500 hover:bg-gray-700 text-gray-500 hover:text-white;
 }
 </style>
