@@ -98,7 +98,7 @@
                           </form>
                       </div>
                       <button type="submit"
-                          class="hidden sm:block mt-3 inline-flex w-full items-center justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm sm:ml-3 sm:mt-0 sm:w-auto  zyn-nav-action-button">Search</button>
+                          class="hidden sm:block rounded-md  px-3 zyn-search-button">Search</button>
 
                       <div class="flex items-center">
                           <button type="button"
@@ -149,7 +149,7 @@
                   </div>
 
                   <section aria-labelledby="products-heading" class="pb-24 pt-6">
-                      <h2 id="products-heading" class="sr-only">Products</h2>
+                      <h2 id="products-heading" class="sr-only">Books</h2>
 
                       <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                           <!-- Filters -->
@@ -223,7 +223,7 @@
                               </div>
                               <div class="mt-10 flex items-center justify-center gap-x-6">
                                   <button type="submit"
-                                      class="mt-3 inline-flex w-full items-center justify-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm sm:ml-3 sm:mt-0 sm:w-auto  zyn-nav-action-button"
+                                      class="rounded-md zyn-search-button"
                                       :class="[`bg-[${useThemeStore().palette('500')}]`, `hover:bg-[${useThemeStore().palette('700')}]`]">Load
                                       More</button>
                               </div>

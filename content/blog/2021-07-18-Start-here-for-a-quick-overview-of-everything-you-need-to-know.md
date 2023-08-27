@@ -9,7 +9,7 @@ background:
 introduction: 
 industries: []
 rightStripColor: 'bg-gray-50'
-coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1626572080/senthilsweb.com/blog/zypress.png
+coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/logo-zypress.svg
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog
