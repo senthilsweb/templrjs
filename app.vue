@@ -98,7 +98,10 @@ const page_meta = [];
 </script>
 <style>
 .zyn-button {
-  @apply relative inline-flex items-center rounded-md border border-transparent bg-primary-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition duration-150 ease-in-out;
+  @apply relative inline-flex items-center border border-transparent bg-primary-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition duration-150 ease-in-out;
+}
+.zyn-secondary-button {
+  @apply relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium text-white bg-secondary-600 hover:bg-secondary-700 focus:outline-none focus:border-secondary-700 active:bg-secondary-700 transition duration-150 ease-in-out;
 }
 .zyn-button-contrast {
   @apply bg-lime-600 hover:bg-lime-700 focus:ring-2 focus:ring-lime-500 focus:border-lime-700  active:bg-lime-700;

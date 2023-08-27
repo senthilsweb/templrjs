@@ -25,7 +25,8 @@ export default async (req, res) => {
         initialCache: false,
     });
 
-    //console.log(result)
+    console.log(result)
+    //result = JSON.parse(result)
 
     response.first = result.data.user.edge_owner_to_timeline_media.edges.length
     response.total = result.data.user.edge_owner_to_timeline_media.count

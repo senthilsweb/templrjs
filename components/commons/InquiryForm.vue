@@ -23,7 +23,7 @@
               <DialogPanel class="pointer-events-auto w-screen max-w-md">
                 <form class="flex h-full flex-col divide-y divide-gray-200 bg-white shadow-xl" @submit.prevent="saveInquiryForm">
                   <div class="h-0 flex-1 overflow-y-auto">
-                    <div class="bg-gradient-to-r from-primary-900 via-sy-700 to-primary-900 py-6 px-4 sm:px-6">
+                    <div class="bg-gradient-to-r from-primary-900 via-secondary-700 to-primary-900 py-6 px-4 sm:px-6">
                       <div class="flex items-center justify-between">
                         <DialogTitle class="text-lg font-medium text-white">{{ form_title ? form_title : 'Contact us' }} </DialogTitle>
                         <div class="ml-3 flex h-7 items-center">
@@ -74,7 +74,7 @@
                           </div>
 
                           <div class="sm:col-span-6">
-                            <Dropdownlist :data="{ data: usePropertiesStore().properties_by_parent_code('pick-list-inquiry-reason') }" v-on:change="handleSelectedInInquiry_Reason" show_label="true" v-model="data.inquiry_reason" name="inquiry_reason" label="Reason for enquiry" :selected_value="data.inquiry_reason" />
+                            <Dropdownlist :data="{ data: usePropertiesStore().properties_by_code('pick-list-inquiry-reason') }" v-on:change="handleSelectedInInquiry_Reason" show_label="true" v-model="data.inquiry_reason" name="inquiry_reason" label="Reason for enquiry" :selected_value="data.inquiry_reason" />
                           </div>
                           <div class="sm:col-span-6">
                             <label for="description" class="block text-sm font-medium text-gray-700"> How we can help you? </label>
@@ -89,8 +89,8 @@
                     <!--Form Body (end)-->
                   </div>
                   <div class="flex flex-shrink-0 justify-end px-4 py-4">
-                    <button type="button" class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" @click="isInquiryFormOpen = false">Cancel</button>
-                    <button type="submit" class="ml-4 inline-flex justify-center rounded-md border border-transparent bg-primary-500 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">Submit</button>
+                    <button type="button" class="border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" @click="isInquiryFormOpen = false">Cancel</button>
+                    <button type="submit" class="ml-4 zyn-button">Submit</button>
                   </div>
                 </form>
               </DialogPanel>
@@ -135,7 +135,16 @@ const data = ref({});
 //-----------------------------------------------------------------------------------------------------
 //3. Data initialization and server side rendering
 //-----------------------------------------------------------------------------------------------------
-
+const { data: inquiry_form_reasons } = await useAsyncData('inquiry_form_reasons-' + Math.random, () =>
+  $fetch('/api/generic', {
+    initialCache: false,
+    method: 'post',
+    body: { collection: 'configurations', projection: {}, filter: { property_type: { $eq: 'inquiry-form-reasons' } }, limit: 10000 },
+    onResponse({ request, response, options }) {
+      //console.log(response._data.documents);
+    },
+  })
+);
 
 //-----------------------------------------------------------------------------------------------------
 //4. Event Subscriptions
@@ -180,18 +189,23 @@ async function saveInquiryForm(args) {
       body: data.value,
       initialCache: false,
       onResponse({ request, response, options }) {
+        console.log(JSON.stringify(response));
         if (response._data) {
-          if (!response._data.code) {
+          if (response._data.code==200) {
             useNuxtApp().$toast.show({ type: 'success', message: `Thank you for your inquiry, one of our associate will contact you soon`, timeout: 6 });
-            data.value = {};
+            //data.value = {};
             isInquiryFormOpen.value = !isInquiryFormOpen.value;
           } else {
-            useNuxtApp().$toast.show({ type: 'danger', message: `Failure during inquiry save`, timeout: 6 });
+            useNuxtApp().$toast.show({ type: 'error', message: `Failure during inquiry save`, timeout: 6 });
           }
           progress.value = false;
         }
       },
     });
+
+  
+ 
+
   } catch (error) {
     //Show user friendly error message
     useNuxtApp().$toast.show({
@@ -203,6 +217,8 @@ async function saveInquiryForm(args) {
     progress.value = false;
   } finally {
   }
+  
+
 }
 
 
@@ -212,7 +228,7 @@ function modelValidate(args) {
   let phone_number = data.value.phone_number != undefined && data.value.phone_number != '';
   let email = data.value.email != undefined && data.value.email != '';
   let description = data.value.description != undefined && data.value.description != '';
-  //console.log('name && phone_number && email && description', name && phone_number && email && description);
+  console.log('name && phone_number && email && description', name && phone_number && email && description);
   return name && phone_number && email && description;
 }
 </script>

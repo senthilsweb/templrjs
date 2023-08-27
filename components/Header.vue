@@ -16,11 +16,11 @@ const buttons = useSortBy(useNavigationsStore().navigatioins_by_module('landing-
 const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
 </script>
 <template>
-  <header class="sticky top-0 z-50 flex flex-wrap items-center justify-between px-4 py-5 transition duration-500 sm:px-6 lg:px-8 h-20" :class="[propertiesStore.megamenu_bg_color ? propertiesStore.megamenu_bg_color : 'bg-white', propertiesStore.layout_width ? propertiesStore.layout_width : 'lg:max-w-8xl']">
+  <header class="sticky top-0 z-50 flex flex-wrap items-center justify-between px-4 sm:px-0 py-5 transition duration-500 h-20" :class="[propertiesStore.megamenu_bg_color ? propertiesStore.megamenu_bg_color : 'bg-white', propertiesStore.layout_width ? propertiesStore.layout_width : 'lg:max-w-8xl']">
     <!-- Logo (Start)-->
     <div class="relative flex flex-grow basis-0 items-center">
       <NuxtLink to="/">
-        <IconLogo/>
+        <IconLogo logo_url="/logo.svg"/>
       </NuxtLink>
     </div>
     <!-- Logo (End) -->
@@ -100,7 +100,10 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
         <div class="px-5 pt-4 flex items-center justify-between">
           <div>
             <NuxtLink to="/">
-              <IconLogo class="w-14 h-14 text-center" :logo_url="propertiesStore.logo_url_dark" />
+              <!--Example logo to get it from remote server.-->
+              <!--<IconLogo class="w-14 h-14 text-center" :logo_url="propertiesStore.logo_url_dark" />-->
+              <!--End Example logo -->
+              <IconLogo class="w-14 h-14 text-center" logo_url="/logo.svg" />
             </NuxtLink>
           </div>
           <div class="-mr-2">

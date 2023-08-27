@@ -70,6 +70,7 @@
     "jspdf": "^2.5.1",
     "mitt": "^3.0.0",
     "moment-timezone": "^0.5.34",
+    "nodemailer": "^6.9.4",
     "nuxi": "^3.3.1",
     "stream-to-array": "^2.3.0",
     "tailwind-colors": "^1.1.0",

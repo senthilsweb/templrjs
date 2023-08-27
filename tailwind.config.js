@@ -80,7 +80,7 @@ module.exports = {
         orange: colors.orange,
         magenta: colors.magenta,
         primary: colors.indigo,
-        secondary: colors.blue,
+        secondary: colors.gray,
         footer: colors.slate,
         sy: colors.yellow,
       },
