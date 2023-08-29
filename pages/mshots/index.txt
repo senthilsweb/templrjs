@@ -1,0 +1,113 @@
+<template>
+  <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+    <!-- Sidebar component, swap this element with another sidebar if you like -->
+    <div class="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
+      <div class="flex h-16 shrink-0 items-center">
+        <img class="h-8 w-auto" src="/logo.svg" alt="Your Company" />
+      </div>
+      <nav class="flex flex-1 flex-col">
+        <ul role="list" class="flex flex-1 flex-col gap-y-7">
+          <li>
+            <ul role="list" id="ul_nav" class="-mx-2 space-y-1">
+              <li v-for="(item, idx) in JSON.parse(navigation.data.value)" :key="item.name">
+                <a v-if="!item.children" @click="goto(`${item.href}`, idx)" href="#" :id="item.href" :class="['hover:bg-gray-50', 'block rounded-md py-2 pr-2 pl-10 text-sm leading-6 font-semibold text-gray-700']">{{ item.name }}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <main class="lg:pl-72">
+    <div class="xl:pr-96">
+      <div class="pl-6 pr-6 pt-2">
+        <dl class="flex dark:border-gray-800">
+          <div>
+            <dt class="font-display text-sm font-medium text-gray-900 dark:text-white">Previous</dt>
+            <dd class="mt-1">
+              <a @click="paginate(`${useState('prev_shot_name').value}`)" class="text-base font-semibold text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300" href="#"><span aria-hidden="true">←</span> {{ useState('prev_shot_name').value }}</a>
+            </dd>
+          </div>
+          <div class="ml-auto text-right">
+            <dt class="font-display text-sm font-medium text-gray-900 dark:text-white">Next</dt>
+            <dd class="mt-1">
+              <a @click="paginate(`${useState('next_shot_name').value}`)" class="text-base font-semibold text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300" href="#">{{ useState('next_shot_name').value }} <span aria-hidden="true">→</span></a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6 lg:px-8">
+          <!-- 
+            The credit for this design goes to Tailwindlabs.
+            https://www.youtube.com/watch?v=eSzNNYk7nVU
+            https://play.tailwindcss.com/kY4LYXwsNZ
+           -->
+          <!-- iOS 15 Notification Summary -->
+          <div class="grid min-h-screen place-items-center">
+            <!-- The iPhone shell -->
+            <div class="mx-auto h-[712px] w-[350px] bg-black rounded-[60px] border-[14px] border-black relative overflow-hidden ring ring-blue-400 shadow-xl">
+              <img class="absolute inset-0 h-full w-full object-cover" :src="useState('active_shot').value" />
+              <div class="absolute top-0 inset-x-0">
+                <div class="mx-auto bg-black h-6 w-40 rounded-b-3xl"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside class="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
+    <!-- Secondary column (hidden on smaller screens) -->
+  </aside>
+</template>
+
+<script setup>
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import { ChevronRightIcon } from '@heroicons/vue/20/solid';
+import _ from 'lodash';
+
+
+
+const navigation = await useFetch('https://raw.githubusercontent.com/senthilsweb/datasets/main/data/mshots.json', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+const parsedNavigation = JSON.parse(navigation.data.value);
+
+
+//Set default value
+useState('active_shot').value='https://wallpapers.hector.me/wavey/Rainbow%20iPhone%20P3.jpg'
+useState('next_shot_name').value = parsedNavigation[0]?.name || '';
+
+const setActiveAndNeighbors = (idx) => {
+  
+  parsedNavigation.forEach((item, i) => {
+    item.current = i === idx;
+  });
+
+  useState('active_shot').value = parsedNavigation[idx].href;
+  useState('next_shot_name').value = parsedNavigation[idx + 1]?.name || '';
+  useState('prev_shot_name').value = parsedNavigation[idx - 1]?.name || '';
+
+  const allLinks = document.querySelectorAll('ul#ul_nav li a');
+  allLinks.forEach((element) => {
+    element.classList.remove('bg-gray-100');
+  });
+  document.getElementById(parsedNavigation[idx].href).classList.add('bg-gray-100');
+};
+
+const goto = (url, idx) => {
+  setActiveAndNeighbors(idx);
+};
+
+const paginate = (name) => {
+  const idx = _.findIndex(JSON.parse(navigation.data.value), { name });
+  setActiveAndNeighbors(idx);
+};
+</script>
+
