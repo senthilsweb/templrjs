@@ -47,6 +47,10 @@
     "vue-underscore": "^0.1.4"
   },
   "dependencies": {
+    "@codemirror/lang-html": "^6.4.6",
+    "@codemirror/lang-javascript": "^6.2.1",
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/theme-one-dark": "^6.1.2",
     "@formkit/nuxt": "^1.0.0-beta.12",
     "@formkit/themes": "^1.0.0-beta.12",
     "@headlessui/vue": "^1.7.3",
@@ -58,6 +62,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@vue-hero-icons/solid": "^1.7.2",
     "base64-arraybuffer": "^1.0.2",
+    "codemirror": "^6.0.1",
     "convert-multiple-files": "^1.1.4",
     "destr": "^1.1.1",
     "docx-templates": "^4.9.2",
@@ -74,6 +79,7 @@
     "nuxi": "^3.3.1",
     "stream-to-array": "^2.3.0",
     "tailwind-colors": "^1.1.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vue-codemirror": "^6.1.1"
   }
 }

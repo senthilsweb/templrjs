@@ -69,7 +69,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { ChevronRightIcon } from '@heroicons/vue/20/solid';
 import _ from 'lodash';
 const { path } = useRoute();
-console.log('mshots path=', path.split('/').pop);
+console.log('mshots path=', path);
 
 const navigation = await useFetch(`https://raw.githubusercontent.com/senthilsweb/datasets/main/data/${path.split('/').pop()}.json`, {
   method: 'GET',

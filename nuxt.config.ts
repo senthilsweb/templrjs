@@ -25,7 +25,9 @@ export default defineNuxtConfig({
    */
 
   router: {},
-
+  proxy: {
+    '/rest': 'http://localhost:8080'
+  },
   build: {
     transpile: ['@heroicons/vue', 'primevue'],
     postcss: {

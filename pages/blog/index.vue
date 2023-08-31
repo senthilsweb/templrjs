@@ -242,6 +242,7 @@ const filters = [
 const mobileFiltersOpen = ref(false);
 import { useThemeStore } from '~/stores/theme';
 const { path } = useRoute();
+console.log("path=", path);
 const { data: articles } = await useAsyncData(`content-${path}`, () => {
   return queryContent(path)
     .where({
