@@ -3,7 +3,7 @@
     <div class="bg-white">
       <div class="flex">
         <client-only placeholder="Codemirror Loading...">
-          <codemirror :value="code" @ready="handleReady" @change="handleCodeChange" @focus="handleCodeFocus" @blur="handleCodeBlur" placeholder="Code goes here..." :style="{ height: '200px', width: '100%' }" :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" />
+          <codemirror :value="code" @ready="handleReady" @change="handleCodeChange" @focus="handleCodeFocus" @blur="handleCodeBlur" placeholder="Select * from users limit 25" :style="{ height: '200px', width: '100%' }" :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" />
         </client-only>
       </div>
       <footer class="border-t flex justify-end px-5 py-4">
@@ -20,7 +20,7 @@
           <div class="bg-gray-900">
             <div class="flow-root">
               <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                <div class="inline-block min-w-full align-middle sm:px-6 lg:px-8">
                   <table class="min-w-full divide-y divide-gray-700">
                     <thead>
                       <tr>
@@ -32,7 +32,7 @@
                     </thead>
                     <tbody class="divide-y divide-gray-800">
                       <tr v-for="item in currentPageData" :key="item.id">
-                        <td v-for="column in tableColumns" :key="column.field" class="whitespace-nowrap text-sm text-gray-300">{{ item[column.field] }}</td>
+                        <td v-for="column in tableColumns" :key="column.field" class="whitespace-nowrap text-left text-sm text-gray-300">{{ item[column.field] }}</td>
                         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                           <!--<a href="#" class="text-indigo-400 hover:text-indigo-300"
                             >Edit<span class="sr-only">, {{ item.name }}</span></a
@@ -52,29 +52,35 @@
         <div>
           <p class="text-sm text-gray-700">
             Showing
-            <span class="font-medium">{{ $s.numberFormat(tableData.start, 0, '.', ',') || 1 }}</span>
+            <span class="font-medium">{{ $s.numberFormat((currentPage - 1) * itemsPerPage + 1, 0, '.', ',') }}</span>
             to
-            <span class="font-medium">{{ $s.numberFormat(tableData.end, 0, '.', ',') }}</span>
+            <span class="font-medium">{{ $s.numberFormat(Math.min(currentPage * itemsPerPage, tableData.total_rows), 0, '.', ',') }}</span>
             of
             <span class="font-medium">{{ $s.numberFormat(tableData.total_rows, 0, '.', ',') }}</span>
           </p>
         </div>
+
         <div>
+          <!-- Pagination Links -->
           <nav class="inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination" id="nav_pagination">
             <a href="#" @click.prevent="goToPage(currentPage - 1)" id="prev_page" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
               <span class="sr-only">Previous</span>
               <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <!-- ... Previous icon ... -->
+                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
               </svg>
             </a>
+
             <!-- ... Loop through paginationLinks ... -->
-            <a v-for="pageLink in paginationLinks" :key="pageLink" href="#" :class="pageLinkClasses(pageLink)" :id="`pg_${pageLink}`" @click.prevent="goToPage(pageLink)">
-              {{ pageLink }}
-            </a>
-            <a href="#" @click.prevent="goToPage(currentPage + 1)" id="next_page" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+            <template v-for="pageLink in paginationLinks">
+              <a v-if="pageLink <= totalPages" :key="pageLink" href="#" :class="pageLinkClasses(pageLink)" :id="`pg_${pageLink}`" @click.prevent="goToPage(pageLink)">
+                {{ pageLink }}
+              </a>
+            </template>
+
+            <a v-if="currentPage < totalPages" href="#" @click.prevent="goToPage(currentPage + 1)" id="next_page" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
               <span class="sr-only">Next</span>
               <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <!-- ... Next icon ... -->
+                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
               </svg>
             </a>
           </nav>
@@ -155,9 +161,8 @@ const code = ref(''); // Initialize with your default code
 //--------------------------------------------------------------------------Data Table
 
 // Initialize current page data with the first page
-const itemsPerPage = 10; // Set the number of items per page
-const currentPageData = ref([]);
 
+const currentPageData = ref([]);
 
 let currentPage = 1; // Initialize currentPage to 1
 const totalPages = ref(0);
@@ -169,18 +174,31 @@ const fetchDataForPage = async (page) => {
   // Make sure the code is not empty before fetching data
   if (!isCodeEmpty.value) {
     // Construct the dynamic API endpoint based on the code entered
-    const dynamicEndpoint = `http://localhost:8080/${code.value}?limit=${itemsPerPage}&offset=${(page - 1) * itemsPerPage}`;
+    //const dynamicEndpoint = `http://localhost:8080/${code.value}?limit=${itemsPerPage}&offset=${(page - 1) * itemsPerPage}`;
 
     try {
       isDataTableVisible.value = true;
-      const response = await $fetch(dynamicEndpoint);
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: { query: code.value },
+      };
+
+      //const response = await $fetch(dynamicEndpoint);
+
+      const response = await $fetch('http://localhost:8080/execute-query', requestOptions);
+      //const responseData = await response.json();
 
       if (response && response.data && Array.isArray(response.data)) {
-        currentPageData.value = response.data;
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        currentPageData.value = response.data.slice(startIndex, endIndex);
         tableData.value = response;
         console.log('tableData=', tableData.value);
         currentPage = page; // Update currentPage when a page is clicked
-        const totalRows = response.data.total_rows;
+        const totalRows = response.total_rows;
         totalPages.value = Math.ceil(totalRows / itemsPerPage); // Corrected calculation
 
         // Build dynamic column definitions from JSON response attributes
@@ -194,6 +212,8 @@ const fetchDataForPage = async (page) => {
         // Calculate pagination links
         paginationLinks.value = Array.from({ length: totalPages.value }, (_, index) => index + 1);
 
+        console.log('paginationLinks=', JSON.stringify(paginationLinks.value));
+
         updatePaginationLinks(currentPage, totalRows); // Pass totalRows instead of response.data.total_rows
       } else {
         console.error('Invalid response format or data.');
@@ -204,27 +224,41 @@ const fetchDataForPage = async (page) => {
   }
 };
 
+const itemsPerPage = 25; // Set the number of items per page
+const maxPaginationLinks = 10; // Set the maximum number of pagination links
+
 const updatePaginationLinks = (currentPage, totalRows) => {
+  console.log('updatePaginationLinks - currentPage:', currentPage);
+  console.log('updatePaginationLinks - totalRows:', totalRows);
+
   const totalPageCount = Math.ceil(totalRows / itemsPerPage);
-  const pageLinksToShow = 5; // You can adjust this value as needed
+  console.log('updatePaginationLinks - totalPageCount:', totalPageCount);
+
+  // Calculate middlePage and adjust it if it exceeds totalPageCount
+  const pageLinksToShow = Math.min(totalPageCount, maxPaginationLinks);
   const middlePage = Math.floor(pageLinksToShow / 2);
+  console.log('updatePaginationLinks - middlePage:', middlePage);
 
-  let startPage = currentPage - middlePage;
-  let endPage = currentPage + middlePage;
+  // Calculate startPage and endPage considering middlePage and totalPageCount
+  let startPage = Math.max(1, currentPage - middlePage);
+  let endPage = Math.min(totalPageCount, currentPage + middlePage);
 
-  if (startPage <= 0) {
-    endPage += Math.abs(startPage) + 1;
-    startPage = 1;
-  }
-
-  if (endPage > totalPageCount) {
-    startPage -= endPage - totalPageCount;
-    endPage = totalPageCount;
+  // Adjust startPage and endPage to ensure they stay within bounds
+  if (endPage - startPage + 1 > pageLinksToShow) {
+    if (currentPage <= middlePage) {
+      endPage = startPage + pageLinksToShow - 1;
+    } else if (totalPageCount - currentPage < middlePage) {
+      startPage = totalPageCount - pageLinksToShow + 1;
+    } else {
+      startPage = currentPage - Math.floor(pageLinksToShow / 2);
+      endPage = startPage + pageLinksToShow - 1;
+    }
   }
 
   paginationLinks.value = Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index);
-};
 
+  console.log('updatePaginationLinks - paginationLinks:', paginationLinks.value);
+};
 
 // Function to determine pagination link classes
 const pageLinkClasses = (pageLink) => {
