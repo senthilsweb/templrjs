@@ -1,14 +1,10 @@
 ---
 title: Zypress, Open-source Jamstack framework created using NuxtJS (Vue.js) + Tailwindcss
-path: 
-date: 2021-07-04
+date: 2021-07-04T12:00:00.000Z
 status: published
-client: 
-website: 
-background: 
-introduction: 
 industries: []
-coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/logo-zypress.svg
+coverimage: https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3474&q=80
+ogimage: https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3474&q=80
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png
 type: Blog
@@ -20,77 +16,6 @@ tags:
   - SPA
   - Single Page Webapplication
   - JAM Stack
-platforms: [Mobile, Web]
-os: 
-  -
-    name: 
-    version: 
-    icon: 
-    store: http://www.store.link.goes.here.com/
-  -
-    name: 
-    version: 
-    icon: 
-    store: http://www.store.link.goes.here.com/
-reference: 
-  -
-    name: Vue.js
-    link: 
-    icon: 
-  -
-    name: Nuxt.js
-    link: 
-    icon: 
-  -
-    name: Tailwind css
-    link: 
-    icon: 
-screenshots:
-  -
-    title: Splash screen
-    path: /image/path/goes/here
-  -
-    title: Dashboard
-    path: /image/path/goes/here
-technologies:
-  -
-    name: NuxtJS
-    version: 3.x.x
-    icon: https://cdn.svgporn.com/logos/nuxt-icon.svg
-  -
-    name: Vue.js
-    version: 3.x.x
-    icon: https://cdn.svgporn.com/logos/vue.svg
-  -
-    name: Tailwindcss
-    version: 2.7.3
-    icon: https://cdn.svgporn.com/logos/tailwindcss-icon.svg
-  -
-    name: Jamstack
-    version: 2.7.3
-    icon: https://cdn.svgporn.com/logos/jamstack-icon.svg
-  -
-    name: Node.JS
-    version: 2.7.3
-    icon: https://cdn.svgporn.com/logos/nodejs-icon.svg
-  -
-    name: Go
-    version: 2.7.3
-    icon: https://cdn.svgporn.com/logos/go.svg
-design-goals:
-  - Should power my personal blog @ blog.senthilsweb.com
-  - Web application and documentation (like Gitbook) in a single codebase 
-  - Modern framework fit for cloud first model
-  - Static & dynamic website development
-  - Full SEO Support
-  - Easy to build, deploy and maintain 
-  - No or Low cost maintenance
-  - Rapid development time / No or low code development
-  - Minimalistic design
-  - UX standardization
-  - Mobile optimized
-  - Built in CI/CD for build automation and deployment thru Github action
-  - Deploy anywhere i.e. AWS S3, Any other serverless static website hosting, docker, embedded and filesystem based golang binary for Mac, Windows and Linux
 ---
 Zypress is a Vue.js based Jamstack framework created using NuxtJS + Tailwindcss + @nuxt/content to rapidly build modern websites anything you can imagine. It comes preloaded with a personal website and documentaion stater-kit to power blog and documentation websites.
 

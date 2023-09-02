@@ -1,15 +1,11 @@
 ---
-title: Start here for a quick overview of everything you need to know about Zypress
-path: 
-date: 2021-07-15
-status: published
-client: 
-website: 
-background: 
-introduction: 
+title: All about Zypress, a blog engine in a single binary
+date: 2021-07-15T12:00:00.000Z
+published: true
 industries: []
 rightStripColor: 'bg-gray-50'
-coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1624156571/logos/logo-zypress.svg
+coverimage: /blogs-img/blog2.webp
+ogImage: /blogs-img/blog2.webp
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog
@@ -17,7 +13,6 @@ tags:
   - Blog
   - Zypress
   - Website
-platforms: [Web, Mobile, Tablet]
 ---
 
 Unlike wordpress or other blog / websites, this one is all yours. Publish your work on a custom domain and host it in popular serverless JAMSTACK sites like netlify, surge.sh, heroku etc. 

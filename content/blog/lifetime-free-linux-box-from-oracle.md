@@ -1,16 +1,10 @@
 ---
 title: Host Zypress in Life-time free linux box from Oracle Cloud Infrastructure (OCI)
-path: 
-date: 2021-07-05
-status: published
-client: 
-website: 
-background: 
-introduction: 
+date: 2021-07-05T12:00:00.000Z
+published: true
 industries: []
-rightStripColor: 'bg-gray-50'
 coverimage: 'https://res.cloudinary.com/nathansweb/image/upload/v1626571705/senthilsweb.com/blog/Oracle-Cloud-Infrastructure_ezediy.png'
-#bgeffect: 'bg-gradient-to-t from-green-300 via-red-100 opacity-90'
+ogimage: 'https://res.cloudinary.com/nathansweb/image/upload/v1626571705/senthilsweb.com/blog/Oracle-Cloud-Infrastructure_ezediy.png'
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1623612257/profile/sk_profile_sq.png
 type: Blog
@@ -22,12 +16,6 @@ tags:
   - Free
   - Open Source
   - Linux OS
-platforms: [Web, Mobile, Linux]
-oci-linux-configuration:
-  - 1 vCPU
-  - 1 GB RAM
-  - 50GB Storage
-  - Oracle Linux Operating System
 ---
 
 Oracle Cloud Infrastructue (OCI) is giving life-time free linux server which is ideal to run Zypress directly in the host machine in Nginx or in a Docker container or run as systemd services using Zypress Go binary.

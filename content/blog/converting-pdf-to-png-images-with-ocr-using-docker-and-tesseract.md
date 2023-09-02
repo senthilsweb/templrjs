@@ -1,15 +1,10 @@
 ---
 title: Converting PDF to PNG Images with OCR using Docker and Tesseract
-description: Learn how to automate the conversion of PDF files into PNG images, perform OCR, and generate Markdown files using Docker and Tesseract.
-date: 2023-08-14
-status: published
-client: 
-website: 
-background: 
-introduction: 
+date: 2023-08-14T12:00:00.000Z
+published: true
 industries: []
-rightStripColor: 'bg-gray-50'
 coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1691978800/senthilsweb.com/blog/DALL_E_2023-08-13_22.05.20_hh75ji.png
+ogImage: https://res.cloudinary.com/nathansweb/image/upload/v1691978800/senthilsweb.com/blog/DALL_E_2023-08-13_22.05.20_hh75ji.png
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog
@@ -17,7 +12,6 @@ tags:
   - Blog
   - Zypress
   - Website
-platforms: [Web, Mobile, Tablet]
 ---
 
 In this tutorial, we'll explore how to automate the conversion of a Tamil PDF file into individual PNG images, perform Optical Character Recognition (OCR) on the images, and generate Markdown files for each image. We'll achieve this using Docker, Tesseract, and a Bash script.

@@ -1,17 +1,13 @@
 ---
 title: Open sourced new Go API Server which can be deployed 100% free in Netlify
-path: 
-date: 2021-10-31
-status: published
-client: 
-website: 
-background: 
-introduction: 
+date: 2021-10-31T12:00:00.000Z
+published: true
 industries: []
 rightStripColor: 'bg-gray-50'
 coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1635729312/senthilsweb.com/blog/9_e1zan5.svg
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
+ogimage: https://res.cloudinary.com/nathansweb/image/upload/v1635729312/senthilsweb.com/blog/9_e1zan5.svg
 type: Blog
 tags:
   - Blog
@@ -22,41 +18,6 @@ tags:
   - Cloud
   - Netlify
   - Maizzle
-design-goals:
-  - Should be Simple and Easy to build
-  - Should be light weight
-  - Deployment should be `xcopy` and cross platform
-  - Can be deployed as AWS Lambda
-  - Should be normal golang code i.e. No AWS specific (Apex gateway)
-  - Zero coding for CI/CD (Thanks to Netlify)
-  - $0 for deployment (Thanks to Netlify)
-  - Log analysis and debug capabilities
-platforms: [Web, Mobile, Tablet]
-technologies:
- -
-    name: Go
-    version: 1.16
-    icon: https://cdn.svgporn.com/logos/go.svg
- -
-    name: gogin
-    version:
-    icon: https://res.cloudinary.com/nathansweb/image/upload/v1635734402/senthilsweb.com/blog/goging_gv1mnj.png
- -
-    name: Netlify
-    version: 
-    icon: https://cdn.svgporn.com/logos/netlify.svg
- -
-    name: Bash
-    version: 
-    icon: https://cdn.svgporn.com/logos/bash.svg
- -
-    name: Lambda
-    version: 
-    icon: https://cdn.svgporn.com/logos/aws-lambda.svg
- -
-    name: Mailgun
-    version:
-    icon: https://cdn.svgporn.com/logos/mailgun-icon.svg
 ---
 
 I started [notifier](https://github.com/senthilsweb/notifier) golang api project as multipurpose notification library to send mail, text, slack, push, telegram etc. but it is expanding as enterprise grade frictionless api server with low memory footprint. It is designed in such a manner that, it can be hosted as aws lambda function or any cloud provider or on-prem in bare metal. As of this writing, the size of the golang binary is just ~20 MB. 

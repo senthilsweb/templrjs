@@ -1,15 +1,10 @@
 ---
 title: How to expose apps running in your home lab server securely to public internet thru cloudflare tunnel?
-path: 
-date: 2021-11-07
-status: published
-client: 
-website: 
-background: 
-introduction: 
-industries: []
-rightStripColor: 'bg-gray-50'
+date: 2021-11-07T12:00:00.000Z
+published: true
+
 coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1636292289/senthilsweb.com/blog/Multiple-proxy-services-in-one-cloudflared-1_royp2j.png
+ogImage: https://res.cloudinary.com/nathansweb/image/upload/v1636292289/senthilsweb.com/blog/Multiple-proxy-services-in-one-cloudflared-1_royp2j.png
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog
@@ -20,21 +15,6 @@ tags:
   - Free tunnel
   - Cloud
   - cookbook
-usecases:
-  - Showcase your development progress to your client
-  - Test and debug your webhooks
-  - Exposing your home lab to cloud
-  - Secure Expose edge devices to clopud
-  - Invoke http apps running your local server from cloud (webhook)
-features:
-  - Many services, one cloudflared
-  - No need to open any ports in your firewall
-  - Data inflight are encrypted
-  - Safe from DDoS attacks
-  - Tunneling client is light weight golang binary
-  - Unlimited instances of http apps can be exposed
-  - Available for all Operating systems
-platforms: [Web, Mobile, Tablet]
 ---
 
 This post will guide you to expose your local development websites and webhooks or any http applications running in your home servers to public internet in a safe and secure manner using free Cloudflare (cloudflared) tunnel client also known as Argo Tunnel. It is 100% free and doesn't requre any registrations or Credit card details.

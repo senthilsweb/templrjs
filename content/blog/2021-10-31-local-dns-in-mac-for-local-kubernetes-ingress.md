@@ -1,15 +1,11 @@
 ---
 title: How to create local DNS in Mac OS for Kubernetes Ingress testing?
-path: 
-date: 2021-10-28
-status: published
-client: 
-website: 
-background: 
-introduction: 
+date: 2021-10-28T12:00:00.000Z
+published: true
 industries: []
 rightStripColor: 'bg-gray-50'
-coverimage: 
+coverimage: /blogs-img/blog1.webp
+ogImage: /blogs-img/blog1.webp
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog
@@ -18,7 +14,6 @@ tags:
   - Blog
   - CI/CD
   - Gitops
-platforms: [Web, Mobile, Tablet]
 ---
 
 Often times we need a way to simulate local domain name pointing to your `api` or `web` development running in your localhost and it is critical if you use kubernetes ingress controller i.e. `nginx` `traefik` controllers to test your configuration in the local Mac laptop.

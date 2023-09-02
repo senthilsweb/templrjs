@@ -1,4 +1,68 @@
-<template>
+---
+title: Free Lightweight Online DuckDB SQL Query Editor in NuxtJS and Tailwind CSS
+date: 2023-08-30T12:00:00.000Z
+published: true
+industries: []
+coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1693619846/senthilsweb.com/blog/sql-editor-duckdb.png
+ogImage: https://res.cloudinary.com/nathansweb/image/upload/v1693619846/senthilsweb.com/blog/sql-editor-duckdb.png
+author: Senthilnathan Karuppaiah
+avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
+type: Blog
+tags:
+  - IDE
+  - Utility
+  - TemplrJS
+  - SQL
+  - DuckDB
+  - Data Engineering
+---
+
+In the world of data management, having the right tools can make all the difference. As a developer, you often find yourself working with databases and writing SQL queries to retrieve, manipulate, and analyze data. 
+<!--more-->
+
+Enter Goduck - a powerful open-source project that simplifies your interaction with DuckDB, an efficient analytical database. In this blog post, we'll take you on a journey through the creation of a web-based DuckDB SQL query editor, inspired by popular tools like PostgREST, to help you boost your SQL workflow.
+
+## The Need for a DuckDB SQL Query Editor
+
+As a developer, you might have encountered scenarios where you needed a quick and efficient way to interact with your DuckDB database. Traditional database management tools can be cumbersome, and you may not always want to write SQL queries in a text editor. That's where Goduck comes to the rescue. It offers a user-friendly web interface that simplifies SQL query execution, providing a seamless experience similar to PostgREST.
+
+![background](https://res.cloudinary.com/nathansweb/image/upload/v1693619846/senthilsweb.com/blog/sql-editor-duckdb.png)
+
+## Technology Stack
+Goduck leverages a robust technology stack to provide its powerful capabilities:
+
+### Server
+  - :icon{name="logos:go"} Golang 
+
+### Front End
+  - :icon{name="logos:nuxt-icon"} NuxtJS
+  - :icon{name="logos:tailwindcss-icon"} Tailwind CSS
+
+## Key Features of Goduck
+
+- **No-Code MicroORM**: Goduck employs a no-code approach, making it easy for developers of all skill levels to work with DuckDB. You can interact with database tables and models effortlessly, thanks to the active record pattern.
+- **RESTful API**: Goduck exposes a RESTful API that dynamically handles CRUD (Create, Read, Update, Delete) operations on your database tables. This means you can perform operations like fetching data, updating records, and more with simple HTTP requests.
+- **Inspired by PostgREST**: Taking inspiration from the popular PostgREST tool, Goduck ensures a familiar and user-friendly experience when interacting with your DuckDB database.
+
+## Exploring the Goduck Interface
+The Goduck web-based SQL query editor offers an intuitive interface designed to enhance your productivity. Here's a quick overview of what you'll find:
+
+1. **Code Editor**: A powerful code editor based on Codemirror, with syntax highlighting and code completion features. It allows you to write and execute SQL queries effortlessly.
+
+2. **Dynamic Data Table**: When you execute a query, Goduck presents the results in a dynamic data table. You can easily browse, filter, and analyze the retrieved data.
+
+3. **Pagination**: Goduck supports pagination, ensuring that you can navigate through large datasets with ease.
+
+## Getting Started with Goduck
+To get started with Goduck, you can access the project on [GitHub](https://github.com/senthilsweb/goduck). The documentation provides step-by-step instructions on setting up and using the web-based DuckDB SQL query editor.
+
+## Full Source code
+
+[GitHub](https://github.com/senthilsweb/templrjs/blob/main/pages/query-editor/index.vue)
+
+::code-group
+  ```HTML [NuxtJS + Tailwind CSS]
+  <template>
   <NuxtLayout name="landing">
     <div class="bg-white">
       <div class="flex">
@@ -90,13 +154,14 @@
     </div>
   </NuxtLayout>
 </template>
-
+  ```
+  ```JavaScript [JavaScript]
+  
 <script setup>
 import { Codemirror } from 'vue-codemirror';
 import { javascript } from '@codemirror/lang-javascript';
 import { oneDark } from '@codemirror/theme-one-dark';
 import { EditorState } from '@codemirror/state';
-
 import _ from 'lodash';
 const extensions = [javascript(), oneDark];
 // Codemirror EditorView instance ref
@@ -292,3 +357,7 @@ const goToPage = async (page) => {
 
 onMounted(() => {});
 </script>
+  ```
+::
+
+.
