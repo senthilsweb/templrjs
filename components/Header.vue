@@ -16,7 +16,7 @@ const buttons = useSortBy(useNavigationsStore().navigatioins_by_module('landing-
 const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
 </script>
 <template>
-  <header class="sticky top-0 z-50 flex flex-wrap items-center justify-between px-4 sm:px-0 py-5 transition duration-500 h-20" :class="[propertiesStore.megamenu_bg_color ? propertiesStore.megamenu_bg_color : 'bg-white', propertiesStore.layout_width ? propertiesStore.layout_width : 'lg:max-w-8xl']">
+  <header class="fixed sticky top-0 z-10 flex flex-wrap items-center justify-between px-4 sm:px-0 py-5 transition duration-500 h-20" :class="[propertiesStore.megamenu_bg_color ? propertiesStore.megamenu_bg_color : 'bg-white', propertiesStore.layout_width ? propertiesStore.layout_width : 'lg:max-w-8xl']">
     <!-- Logo (Start)-->
     <div class="relative flex flex-grow basis-0 items-center">
       <NuxtLink to="/">
@@ -103,11 +103,11 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
               <!--Example logo to get it from remote server.-->
               <!--<IconLogo class="w-14 h-14 text-center" :logo_url="propertiesStore.logo_url_dark" />-->
               <!--End Example logo -->
-              <IconLogo class="w-14 h-14 text-center" logo_url="/logo.svg" />
+              <IconLogo class="w-14 h-10 text-center" logo_url="/logo.svg" />
             </NuxtLink>
           </div>
           <div class="-mr-2">
-            <button type="button" @click="useState('isMobileNavVisible').value = !useState('isMobileNavVisible').value" class="bg-primary-200 rounded-full p-2 inline-flex items-center justify-center text-primary-400 hover:bg-primary-100 hover:rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-600">
+            <button type="button" @click="useState('isMobileNavVisible').value = !useState('isMobileNavVisible').value" class="bg-gray-200 rounded-full p-2 inline-flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-600">
               <span class="sr-only">Close menu</span>
               <!-- Heroicon name: outline/x -->
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -117,7 +117,7 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
           </div>
         </div>
         <!--Mobile Nav(Start)-->
-        <nav id="nav" class="px-1 pt-6 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
+        <nav id="nav" class="px-1 pt-6 z-40 overflow-y-auto font-medium text-base sm:px-3 xl:px-5 lg:text-sm pb-10 lg:pt-10 lg:pb-14 sticky?lg:h-(screen-18)">
           <div class="mt-5 flex-grow flex flex-col">
             <nav class="flex-1 px-2 space-y-1 bg-white" aria-label="Sidebar">
               <ul v-for="(menu, idx) in useSortBy(navs, ['sort_order'])" :key="`mob_mnu_${idx}`">
@@ -145,10 +145,10 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
     </div>  
     <!--Mobile menu activator button (start)-->
     <div @click="useState('isMobileNavVisible').value = !useState('isMobileNavVisible').value" class="-mr-2 items-center sm:hidden">
-      <button type="button" class="fixed z-50 top-4 right-4 rounded-md p-2 inline-flex items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-primary-500" aria-expanded="false">
+      <button type="button" class="fixed z-50 top-4 right-4 rounded-md p-2 inline-flex items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-gray-500" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
         <!-- Heroicon name: outline/menu -->
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#fde047] hover:text-[#eab308]" fill="fill-white" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700 hover:text-gray-900" fill="fill-white" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>

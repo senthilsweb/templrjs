@@ -62,7 +62,7 @@
 
 						<div class="mt-6">
 							<button id="btnSignIn" name="btnSignIn" type="submit"
-								class="zyn-secondary-button">
+								class="zyn-secondary-button w-full">
 								<span class="absolute left-0 inset-y-0 flex items-center pl-3">
 									<svg class="h-5 w-5 text-white group-hover:text-white transition ease-in-out duration-150"
 										fill="currentColor" viewBox="0 0 20 20">

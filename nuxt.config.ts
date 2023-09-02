@@ -7,6 +7,10 @@ export default defineNuxtConfig({
       ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json'],
     },
   },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
+  },
   sourcemap: false,
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
@@ -20,10 +24,13 @@ export default defineNuxtConfig({
     // Static page generated on-demand once
     //'/': { static: true },
   },
-  /*
-   ** Plugins to load before mounting the App
-   */
-
+  supabase: {
+    client: {
+        auth: {
+            persistSession: false //or true
+        }
+    }
+  },
   router: {},
   proxy: {
     '/rest': 'http://localhost:8080'
@@ -55,9 +62,13 @@ export default defineNuxtConfig({
       SUPABASE_STORAGE_URL: process.env.SUPABASE_URL + '/storage/v1/object/public',
     },
   },
-  modules: ['@nuxt/content', '@nuxtjs/supabase', '@tailvue/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon', '@nuxtlabs/github-module', '@nuxthq/studio', 'nuxt-lodash', '@sidebase/nuxt-pdf', '@nuxt/devtools'],
+  modules: ['@nuxt/content', '@nuxtjs/supabase', '@tailvue/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon', '@nuxtlabs/github-module', 'nuxt-lodash', '@sidebase/nuxt-pdf', '@nuxt/devtools',  '@nuxt/image-edge',
+  '@nuxtjs/robots','@nuxtjs/fontaine'],
   content: {
     documentDriven: true,
+     highlight: {
+      theme: 'dracula',
+    },
   },
   //extends: process.env.DOCUS_THEME_PATH || "@nuxt-themes/docus",
   extends: '@nuxt-themes/docus',

@@ -4,7 +4,7 @@ date: 2023-08-27T12:00:00.000Z
 published: true
 industries: []
 coverimage: https://res.cloudinary.com/nathansweb/image/upload/v1693595703/senthilsweb.com/blog/senthilsweb-image-card_4_thm4gh.png
-ogImage: https://res.cloudinary.com/nathansweb/image/upload/v1693595703/senthilsweb.com/blog/senthilsweb-image-card_4_thm4gh.png
+ogImage: https://res.cloudinary.com/nathansweb/image/upload/v1693592651/senthilsweb.com/blog/goduck.png
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog

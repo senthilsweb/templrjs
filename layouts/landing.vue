@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup>
 const print = ref(useRoute().query.print || false);
 console.log("--------------------------------------->>>>>layout/landing")
 </script>
 <template>
-   <div class="max-w-8xl mx-auto">
+   <div class="mx-auto">
     <Header v-if="!print"/>
   </div>
   <div class="max-w-7xl mx-auto bg-white">

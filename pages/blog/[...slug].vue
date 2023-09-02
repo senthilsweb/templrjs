@@ -4,8 +4,9 @@
       <div class="col-span-12 lg:col-span-9">
         <div class="mx-auto text-base max-w-prose lg:max-w-none">
           <BlogHeader :title="article.title" :image="article.coverimage" :alt="article.title" :date="article.date" :description="article.title" :tags="article.tags" />
-          <ContentRendererMarkdown :value="article" />
-
+          <div class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-md prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg">
+            <ContentRendererMarkdown :value="article" />
+          </div>
           <div v-if="article.technologies" class="pt-10 pb-10 text-base max-w-prose mx-auto lg:max-w-none">
             <h2 class="text-base font-semibold tracking-wide uppercase">Technology Stack</h2>
           </div>
