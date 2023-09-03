@@ -1,6 +1,5 @@
 import { defineNuxtConfig } from 'nuxt/config';
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
-
 export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -56,6 +55,4 @@ export default defineNuxtConfig({
       theme: 'dracula',
     },
   },
-  //extends: process.env.DOCUS_THEME_PATH || "@nuxt-themes/docus",
-  // Define storage used in API routes with useStorage()
 });
