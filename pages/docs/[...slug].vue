@@ -6,9 +6,9 @@
       <div class="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-gray-800 dark:block"></div>
       <div class="absolute top-28 bottom-0 right-0 hidden w-px bg-gray-800 dark:block"></div>
       <div class="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden  py-16 pl-0.5">
-        <nav class="text-base lg:text-sm w-64 pr-8 xl:w-72 xl:pr-16">
+        <!--<nav class="text-base lg:text-sm w-64 pr-8 xl:w-72 xl:pr-16">
           <docnav :data="navigation[1].children" :title="page.title" />
-        </nav>
+        </nav>-->
       </div>
     </div>
     <div class="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
@@ -25,16 +25,14 @@
         <div>
           <dt class="font-display text-sm font-medium text-gray-900 dark:text-white">Previous</dt>
           <dd class="mt-1">
-            <a class="text-base font-semibold text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300" :href="prev._path"><span aria-hidden="true">←</span> {{prev.title}}</a>
+            <a class="text-base font-semibold text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300" :href="(prev) ? prev._path : '#'"><span aria-hidden="true">←</span> {{(prev)? prev.title : ""}}</a>
           </dd>
         </div>
         <div class="ml-auto text-right">
           <dt class="font-display text-sm font-medium text-gray-900 dark:text-white">Next</dt>
           <dd class="mt-1">
-            <a class="text-base font-semibold text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300" :href="next._path"
-              >{{next.title}}
-              <span aria-hidden="true">→</span></a
-            >
+            <a class="text-base font-semibold text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300" :href="(next) ? next._path : '#'">{{(next) ? next.title : ""}} <span aria-hidden="true">→</span></a>
+          
           </dd>
         </div>
       </dl>
@@ -54,9 +52,9 @@ definePageMeta({
 });
 const { path } = useRoute();
 console.log('docs path=', path);
-console.log('useRoute().query.print', useRoute().query.print);
+//console.log('useRoute().query.print', useRoute().query.print);
 const { data } = await useAsyncData(`content`, () => {
-  return queryContent().where({ _path: path }).findOne();
+  return queryContent(path).findOne();
 });
 
 const { data: nav2 } = await useAsyncData('navigation', () => {

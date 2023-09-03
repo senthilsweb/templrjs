@@ -18,16 +18,10 @@
         </div>
       </div>
 
-      <div class="relative mt-12 sm:mx-auto sm:max-w-lg lg:col-span-6 lg:mx-0 lg:mt-0 lg:flex lg:max-w-none lg:items-center">
-        <div class="relative mx-auto w-full rounded-lg lg:max-w-md">
-          <template v-if="cover_image_video.href">
-            <VideoPlayer :src="cover_image_video.href" />
-          </template>
-          <template v-else-if="cover_image_photo.href">
-            <span class="sr-only">{{ cover_image_photo.name }}</span>
-            <img class="w-full aspect-[4/3]" :src="cover_image_photo.href" :alt="cover_image_photo.name" />
-          </template>
-          <template v-else> no image </template>
+      <div class="relative bg-gray-50 rounded-2xl mt-12 sm:mx-auto sm:max-w-lg lg:col-span-6 lg:mx-0 lg:mt-0 lg:flex lg:max-w-none lg:items-center">
+        <div class="relative mx-auto w-full  lg:max-w-md">
+            <span class="sr-only">TemplrJS</span>
+            <img class="w-full aspect-[4/3] rounded-lg" src="https://res.cloudinary.com/nathansweb/image/upload/v1664107243/zense.zynomi.com/zense-cover-image_ff3pml.png" alt="TemplrJS" />
         </div>
       </div>
     </div>

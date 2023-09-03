@@ -2,11 +2,6 @@ import { defineNuxtConfig } from 'nuxt/config';
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 
 export default defineNuxtConfig({
-  nitro: {
-    prerender: {
-      ignore: ['/__pinceau_tokens_config.json', '/__pinceau_tokens_schema.json'],
-    },
-  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
@@ -24,17 +19,7 @@ export default defineNuxtConfig({
     // Static page generated on-demand once
     //'/': { static: true },
   },
-  supabase: {
-    client: {
-        auth: {
-            persistSession: false //or true
-        }
-    }
-  },
   router: {},
-  proxy: {
-    '/rest': 'http://localhost:8080'
-  },
   build: {
     transpile: ['@heroicons/vue', 'primevue'],
     postcss: {
@@ -52,6 +37,7 @@ export default defineNuxtConfig({
     //Un-comment this for vercel deployment
     //pinia: process.env.NODE_ENV === 'production' ? '/node_modules/pinia/dist/pinia.mjs' : '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',
     pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',
+    
   },
   runtimeConfig: {
     GOOGLE_MAP_TOKEN: process.env.GOOGLE_MAP_TOKEN,
@@ -62,7 +48,7 @@ export default defineNuxtConfig({
       SUPABASE_STORAGE_URL: process.env.SUPABASE_URL + '/storage/v1/object/public',
     },
   },
-  modules: ['@nuxt/content', '@nuxtjs/supabase', '@tailvue/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon', '@nuxtlabs/github-module', 'nuxt-lodash', '@sidebase/nuxt-pdf', '@nuxt/devtools',  '@nuxt/image-edge',
+  modules: [ '@nuxt/content','@nuxtjs/supabase', '@tailvue/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon',  'nuxt-lodash',  
   '@nuxtjs/robots','@nuxtjs/fontaine'],
   content: {
     documentDriven: true,
@@ -71,6 +57,5 @@ export default defineNuxtConfig({
     },
   },
   //extends: process.env.DOCUS_THEME_PATH || "@nuxt-themes/docus",
-  extends: '@nuxt-themes/docus',
   // Define storage used in API routes with useStorage()
 });
