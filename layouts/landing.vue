@@ -1,19 +1,14 @@
-<script setup>
-const print = ref(useRoute().query.print || false);
-console.log("--------------------------------------->>>>>layout/landing")
-</script>
+<script setup></script>
 <template>
-   <div class="mx-auto">
-    <Header v-if="!print"/>
-  </div>
   <div class="max-w-7xl mx-auto bg-white">
-  <div class="mx-auto">
-    <div class="min-h-screen relative">
-      <div class="h-full relative">
-        <slot />
+    <Header />
+    <div class="mx-auto">
+      <div class="min-h-screen relative">
+        <div class="h-full relative">
+          <slot />
+        </div>
       </div>
     </div>
   </div>
-  </div>
-   <Footer v-if="!print"/>
+  <Footer v-if="!print" />
 </template>

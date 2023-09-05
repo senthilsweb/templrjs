@@ -1,0 +1,33 @@
+[
+    {
+        "id": 13,
+        "code": "e56ac1b5-d7a3-4049-893c-238bd2fdb10b",
+        "company_name": "Tripma Travels Pvt. Ltd.",
+        "company_website": "www.zynomi.com",
+        "company_email": "contact@zynomi.com",
+        "logo_url": null,
+        "phone_number": "+91 878-989-7676",
+        "address": {
+            "city": "Bengaluru",
+            "state": "Karnataka",
+            "street": "Hosur main road",
+            "country": "IN",
+            "apartment": "#202, Sifana Plaza",
+            "postal_code": "560076",
+            "country_name": "India"
+        },
+        "description": null,
+        "is_active": true,
+        "is_archived": false,
+        "tenant": "www.xycc-company.com",
+        "created_by": null,
+        "updated_by": null,
+        "created_at": "2023-02-27T01:28:31.613+00:00",
+        "updated_at": "2023-03-18T22:35:40.476+00:00",
+        "update_count": null,
+        "additional_attributes": null,
+        "tin_ein_number": "KHR789GHT23333",
+        "date_of_incorporation": "2021-11-21T00:00:00+00:00",
+        "country_of_incorporation": "India"
+    }
+]

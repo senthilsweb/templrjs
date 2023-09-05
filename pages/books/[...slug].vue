@@ -50,7 +50,7 @@ definePageMeta({
 });
 const { path } = useRoute();
 console.log('docs path=', path);
-console.log('useRoute().query.print', useRoute().query.print);
+//console.log('useRoute().query.print', useRoute().query.print);
 const { data } = await useAsyncData(`content`, () => {
   return queryContent().where({ _path: path }).findOne();
 });

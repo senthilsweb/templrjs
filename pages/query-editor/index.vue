@@ -1,38 +1,47 @@
 <template>
   <NuxtLayout name="landing">
-    <div class="bg-white">
-      <div class="flex">
+    <div class="bg-white mt-8">
+      <div class="flex box-border border-2">
         <client-only placeholder="Codemirror Loading...">
           <codemirror :value="code" @ready="handleReady" @change="handleCodeChange" @focus="handleCodeFocus" @blur="handleCodeBlur" placeholder="Select * from users limit 25" :style="{ height: '200px', width: '100%' }" :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" />
         </client-only>
       </div>
-      <footer class="border-t flex justify-end px-5 py-4">
-        <button @click="clear" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Clear</button>
+      <footer class="flex justify-end py-4">
+        <button @click="clear" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4">Clear</button>
         &nbsp;
-        <button @click="execute" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Execute</button>
+        <button @click="execute" class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4">Run</button>
       </footer>
     </div>
 
     <!-- Dynamic Data Table -->
     <div class="gap-y-3" v-if="isDataTableVisible">
-      <div class="bg-gray-900 rounded-lg">
+      <div class="box-border border-2 rounded-lg">
         <div class="mx-auto max-w-7xl p-8">
-          <div class="bg-gray-900">
-            <div class="flow-root">
+          <div>
+            <div class="sm:flex sm:items-center">
+              <div class="sm:flex-auto">
+                <h1 class="text-base font-semibold leading-6 text-gray-900">Query Results</h1>
+                <p class="mt-2 text-sm text-gray-700">DuckDB SQL query execution results</p>
+              </div>
+              <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+                <button type="button" class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Export</button>
+              </div>
+            </div>
+            <div class="mt-8 flow-root">
               <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="inline-block min-w-full align-middle sm:px-6 lg:px-8">
-                  <table class="min-w-full divide-y divide-gray-700">
-                    <thead>
+                <div class="inline-block min-w-full align-middle sm:px-6 lg:px-8 max-h-96">
+                  <table class="min-w-full divide-y divide-gray-300">
+                    <thead class="bg-white border-b sticky top-0">
                       <tr>
-                        <th v-for="column in tableColumns" :key="column.field" class="whitespace-nowrap py-3.5 px-4 text-left text-sm font-semibold text-white sm:pl-0">{{ column.label }}</th>
-                        <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+                        <th scope="col" v-for="column in tableColumns" :key="column.field" class="sticky top-0 z-10 border-b border-gray-300 py-3.5 whitespace-nowrap px-4 text-left text-sm font-semibold text-gray-900 sm:pl-0">{{ column.label }}</th>
+                        <!--<th scope="col" class="sticky top-0 z-10  py-3.5 pl-3 pr-4 sm:pr-0">
                           <span class="sr-only">Edit</span>
-                        </th>
+                        </th>-->
                       </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-800">
+                    <tbody class="divide-y divide-gray-200 bg-white h-96 overflow-y-auto">
                       <tr v-for="item in currentPageData" :key="item.id">
-                        <td v-for="column in tableColumns" :key="column.field" class="whitespace-nowrap text-left text-sm text-gray-300">{{ item[column.field] }}</td>
+                        <td v-for="column in tableColumns" :key="column.field" class="whitespace-nowrap text-left text-sm text-gray-900">{{ item[column.field] }}</td>
                         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                           <!--<a href="#" class="text-indigo-400 hover:text-indigo-300"
                             >Edit<span class="sr-only">, {{ item.name }}</span></a
@@ -93,13 +102,12 @@
 
 <script setup>
 import { Codemirror } from 'vue-codemirror';
-import { javascript } from '@codemirror/lang-javascript';
+import { sql } from '@codemirror/lang-sql';
 import { oneDark } from '@codemirror/theme-one-dark';
-import { EditorState } from '@codemirror/state';
-
 import _ from 'lodash';
-const extensions = [javascript(), oneDark];
+
 // Codemirror EditorView instance ref
+const extensions = [sql(), oneDark];
 const view = shallowRef();
 const isExecuting = ref(false); // Reactive variable to track execution state
 const isDataTableVisible = ref(false); // Default to false
@@ -191,45 +199,56 @@ const fetchDataForPage = async (page) => {
 
       const response = await $fetch('http://localhost:8080/execute-query', requestOptions);
       //const responseData = await response.json();
+      //console.log('response=', JSON.stringify(response));
+      if (response) {
+        if (response.data && Array.isArray(response.data)) {
+          const startIndex = (page - 1) * itemsPerPage;
+          const endIndex = startIndex + itemsPerPage;
+          currentPageData.value = response.data.slice(startIndex, endIndex);
+          tableData.value = response;
+          console.log('tableData=', tableData.value);
+          currentPage = page; // Update currentPage when a page is clicked
+          const totalRows = response.total_rows;
+          totalPages.value = Math.ceil(totalRows / itemsPerPage); // Corrected calculation
 
-      if (response && response.data && Array.isArray(response.data)) {
-        const startIndex = (page - 1) * itemsPerPage;
-        const endIndex = startIndex + itemsPerPage;
-        currentPageData.value = response.data.slice(startIndex, endIndex);
-        tableData.value = response;
-        console.log('tableData=', tableData.value);
-        currentPage = page; // Update currentPage when a page is clicked
-        const totalRows = response.total_rows;
-        totalPages.value = Math.ceil(totalRows / itemsPerPage); // Corrected calculation
+          // Build dynamic column definitions from JSON response attributes
+          tableColumns.value = Object.keys(response.data[0]).map((attribute) => {
+            return {
+              label: _.startCase(attribute),
+              field: attribute,
+            };
+          });
 
-        // Build dynamic column definitions from JSON response attributes
-        tableColumns.value = Object.keys(response.data[0]).map((attribute) => {
-          return {
-            label: _.startCase(attribute),
-            field: attribute,
-          };
-        });
+          // Calculate pagination links
+          paginationLinks.value = Array.from({ length: totalPages.value }, (_, index) => index + 1);
 
-        // Calculate pagination links
-        paginationLinks.value = Array.from({ length: totalPages.value }, (_, index) => index + 1);
+          console.log('paginationLinks=', JSON.stringify(paginationLinks.value));
 
-        console.log('paginationLinks=', JSON.stringify(paginationLinks.value));
-
-        updatePaginationLinks(currentPage, totalRows); // Pass totalRows instead of response.data.total_rows
-      } else {
+          updatePaginationLinks(currentPage, totalRows); // Pass totalRows instead of response.data.total_rows
+        }
+      } else if (response && response.error) {
+        console.error('Inside error');
         useNuxtApp().$toast.show({
           type: 'danger',
-          message: 'Invalid response format or data.',
+          message: 'Error happened while executing the query.',
           position: 'top-left',
           timeout: 2000,
         });
         console.error('Invalid response format or data.');
+      } else {
+        useNuxtApp().$toast.show({
+          type: 'success',
+          message: 'Query executed successfully.',
+          position: 'top-left',
+          timeout: 2000,
+        });
       }
     } catch (error) {
       console.error(error);
       useNuxtApp().$toast.show({
         type: 'danger',
-        message: error,
+        error: error,
+        message: JSON.stringify(response),
         position: 'top-left',
         timeout: 2000,
       });

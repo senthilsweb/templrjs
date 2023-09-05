@@ -1,0 +1,260 @@
+[
+    {
+        "code": "navigation-by-modules",
+        "name": "Navigation modules",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "landing-page",
+        "name": "Landing page",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "setups-page",
+        "name": "Setups Page",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "contacts",
+        "name": "Contacts",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "logo",
+        "name": "Logo",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "mega-menu",
+        "name": "Mega Menu",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "site-layout-style",
+        "name": "Site layout style",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "primary-left-nav",
+        "name": "Primary left navigation",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "pick-list-inquiry-reason",
+        "name": "Inquiry reason pick list",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "general-inquiry",
+        "name": "General Inquiry",
+        "parent_code": "pick-list-inquiry-reason",
+        "is_active": true
+    },
+    {
+        "code": "footer-links",
+        "name": "Footer links",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "social-media-links",
+        "name": "Social media links",
+        "parent_code": "navigation-by-modules",
+        "is_active": true
+    },
+    {
+        "code": "social-media-head-metadata",
+        "name": "social-media-head-metadata",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "description",
+        "name": "Zytes is a low code development framework built on zynomiX",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "og:description",
+        "name": "Zytes is a low code development framework built on zynomiX",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "og:title",
+        "name": "Zynomi - RPA and Low code platform",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "og:image",
+        "name": "https://res.cloudinary.com/nathansweb/image/upload/v1672531795/zytes.zynomi.com/cover_eitq6j.png",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "og:type",
+        "name": "website",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "og:site_name",
+        "name": "Zynomi",
+        "parent_code": "social-media-head-metadata",
+        "is_active": true
+    },
+    {
+        "code": "logo-css",
+        "name": "h-10 mx-auto w-auto",
+        "parent_code": "logo",
+        "is_active": true
+    },
+    {
+        "code": "bg-color",
+        "name": "bg-white",
+        "parent_code": "mega-menu",
+        "is_active": true
+    },
+    {
+        "code": "text-style",
+        "name": "text-gray-800 hover:bg-gray-200",
+        "parent_code": "mega-menu",
+        "is_active": true
+    },
+    {
+        "code": "copy-right",
+        "name": "© 2021 tripma Pvt. Ltd. All rights reserved.",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "things-gateway-frequency-plan",
+        "name": "Gateway Frequency Plan",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "EU_863_870",
+        "name": "Europe 863-870 MHz (SF12 for RX2)",
+        "parent_code": "things-gateway-frequency-plan",
+        "is_active": true
+    },
+    {
+        "code": "product-demo",
+        "name": "Product Demo",
+        "parent_code": "pick-list-inquiry-reason",
+        "is_active": true
+    },
+    {
+        "code": "rpa-consulting",
+        "name": "RPA/RaaS Consulting",
+        "parent_code": "pick-list-inquiry-reason",
+        "is_active": true
+    },
+    {
+        "code": "US_902_928_FSB_6",
+        "name": "United States 902-928 MHz, FSB 6",
+        "parent_code": "things-gateway-frequency-plan",
+        "is_active": true
+    },
+    {
+        "code": "logo-url",
+        "name": "https://lztihcjfpbpkrcdtwsxg.supabase.co/storage/v1/object/public/assets/fbmodel-templr.svg",
+        "parent_code": "logo",
+        "is_active": true
+    },
+    {
+        "code": "carousel-component",
+        "name": "Carousel component",
+        "parent_code": "navigation-by-modules",
+        "is_active": false
+    },
+    {
+        "code": "application-hero",
+        "name": "Application Hero",
+        "parent_code": "navigation-by-modules",
+        "is_active": false
+    },
+    {
+        "code": "app-hero-description",
+        "name": "Build high-performant web and mobile optimized sites and apps, data-driven dashboards, and modern front end for legacy systems on-prem and cloud with zero to low development and operating cost!!!",
+        "parent_code": "component-app-hero",
+        "is_active": true
+    },
+    {
+        "code": "hero-image",
+        "name": "https://lztihcjfpbpkrcdtwsxg.supabase.co/storage/v1/object/public/assets/bots-in-chute.png",
+        "parent_code": "component-app-hero",
+        "is_active": true
+    },
+    {
+        "code": "logo-url-dark",
+        "name": "https://lztihcjfpbpkrcdtwsxg.supabase.co/storage/v1/object/public/assets/fbmodel-templr.svg",
+        "parent_code": "logo",
+        "is_active": true
+    },
+    {
+        "code": "primary-title",
+        "name": "Rollout your internal tool ",
+        "parent_code": "component-app-hero",
+        "is_active": true
+    },
+    {
+        "code": "secondary-title",
+        "name": "with extraordinary velocity",
+        "parent_code": "component-app-hero",
+        "is_active": true
+    },
+    {
+        "code": "app-page-head-title",
+        "name": "Templr Cloud Demo",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "component-instagram-post",
+        "name": "component-instagram-post",
+        "parent_code": null,
+        "is_active": false
+    },
+    {
+        "code": "layout-width",
+        "name": "lg:max-w-7xl mx-auto",
+        "parent_code": "site-layout-style",
+        "is_active": true
+    },
+    {
+        "code": "popover-style",
+        "name": "wide",
+        "parent_code": "mega-menu",
+        "is_active": true
+    },
+    {
+        "code": "component-app-hero",
+        "name": "component-app-hero",
+        "parent_code": null,
+        "is_active": true
+    },
+    {
+        "code": "component-carousel",
+        "name": "component-carousel",
+        "parent_code": null,
+        "is_active": false
+    },
+     {
+        "code": "component-blog-post",
+        "name": "component-blog-post",
+        "parent_code": null,
+        "is_active": false
+    }
+]

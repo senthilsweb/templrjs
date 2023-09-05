@@ -1,12 +1,11 @@
 import { defineNuxtConfig } from 'nuxt/config';
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
-
 export default defineNuxtConfig({
-
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
+  ssr: true,
   sourcemap: false,
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
@@ -21,9 +20,6 @@ export default defineNuxtConfig({
     //'/': { static: true },
   },
   router: {},
-  proxy: {
-    '/rest': 'http://localhost:8080'
-  },
   build: {
     transpile: ['@heroicons/vue', 'primevue'],
     postcss: {
@@ -47,12 +43,13 @@ export default defineNuxtConfig({
     GOOGLE_MAP_TOKEN: process.env.GOOGLE_MAP_TOKEN,
     // Config within public will be also exposed to the client
     public: {
-      //BASE_URL: process.env.MONGODB_ATLAS_REST_URL,
-      SUPABASE_URL: process.env.SUPABASE_URL || 'http://your-supabase-url',
-      SUPABASE_STORAGE_URL: process.env.SUPABASE_URL + '/storage/v1/object/public',
+      API_BASE_URL: process.env.API_BASE_URL || 'http://localhost:8080',
+      CONFIG_BASE_URL: process.env.CONFIG_BASE_URL || 'ANY PUBLIC HTTP URL',
+      //SUPABASE_URL: process.env.SUPABASE_URL || 'http://your-supabase-url',
+      //SUPABASE_STORAGE_URL: process.env.SUPABASE_URL + '/storage/v1/object/public',
     },
   },
-  modules: ['@nuxt/content', '@nuxtjs/supabase', '@tailvue/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon', 'nuxt-lodash', 
+  modules: ['@nuxt/content', '@tailvue/nuxt', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'nuxt-icon', 'nuxt-lodash', 
   '@nuxtjs/robots','@nuxtjs/fontaine',],
   content: {
     documentDriven: true,

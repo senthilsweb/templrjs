@@ -8,11 +8,8 @@
 export const useParentNav = async () => {
   let query = '';
   //query = '/api/postgres/navigation_parent';
-  query = `/api/json/parent_nav.json`;
-  if (process.env.TEMPLRJS_CMS_DATA == 'remote') {
-    query = '/api/postgres/navigation_parent';
-  }
-  console.log('query=', query);
+  query = `http://localhost:8080/parent_nav?limit=500`;
+  
   const data = await useFetch(query, {
     method: 'get',
   });

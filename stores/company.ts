@@ -111,5 +111,15 @@ export const useCompanyStore = defineStore('company', {
     updateLogoUrl(url) {
       this.company.logo_url = url;
     },
+    async loadCompnyIfNeeded() {
+        let query = `/api/_content/query?_params={%22where%22:{%22_path%22:%22/configs/company%22},%22only%22:[%22body%22]}`;
+        const data = await useFetch(query, {
+          method: 'get',
+        });
+       
+        this.company = data.data._rawValue[0].body[0];
+        this.upserted = true;
+        //console.log('company=', JSON.stringify(this.company));
+    },
   },
 });

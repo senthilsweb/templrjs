@@ -38,5 +38,15 @@ export const useCountryStore = defineStore('country', {
       this.upserted = true;
       console.log('reloaded country');
     },
+    async loadCountriesIfNeeded() {
+      let query = `/api/_content/query?_params={%22where%22:{%22_path%22:%22/configs/countries%22},%22only%22:[%22body%22]}`;
+        const data = await useFetch(query, {
+          method: 'get',
+        });
+        //console.log('compnay=', JSON.stringify(data.data._rawValue.data[0]));
+      this.country = data.data._rawValue[0].body;
+      this.upserted = true; // Corrected to this.loaded
+      //console.log('country=', JSON.stringify(this.country));
+  },
   },
 });
