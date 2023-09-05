@@ -18,5 +18,8 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     companyStore.loadCompnyIfNeeded();
     //3) Navigation
     navigationsStore.loadNavigationsIfNeeded();
+
+
+
   //}
 });

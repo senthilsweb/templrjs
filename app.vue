@@ -9,10 +9,50 @@
 </template>
 
 <script setup>
-
-//#############################################################################################
-
 const page_meta = [];
+
+import { usePropertiesStore } from '~/stores/properties';
+import { useNavigationsStore } from '~/stores/navigations';
+import { useCountryStore } from '~/stores/country';
+import { useCompanyStore } from '~/stores/company';
+
+const propertiesStore = usePropertiesStore();
+const navigationsStore = useNavigationsStore();
+const countryStore = useCountryStore();
+const companyStore = useCompanyStore();
+
+
+let properties_query = `/api/_content/query?_params={%22where%22:{%22_path%22:%22/configs/properties%22},%22only%22:[%22body%22]}`;
+const properties = await useFetch(properties_query, {
+  method: 'get',
+});
+propertiesStore.reloadProperties(properties.data._rawValue[0].body);
+
+let countries_query = `/api/_content/query?_params={%22where%22:{%22_path%22:%22/configs/countries%22},%22only%22:[%22body%22]}`;
+const countries = await useFetch(countries_query, {
+  method: 'get',
+});
+countryStore.reloadCountry(countries.data._rawValue[0].body);
+
+let company_query = `/api/_content/query?_params={%22where%22:{%22_path%22:%22/configs/company%22},%22only%22:[%22body%22]}`;
+const company = await useFetch(company_query, {
+  method: 'get',
+});
+companyStore.reloadCompany(company.data._rawValue[0].body[0]);
+
+
+let query_child = '/api/_content/query?_params={%22where%22:{%22_path%22:%22/configs/child_nav%22},%22only%22:[%22body%22]}';
+const child = await useFetch(query_child, {
+  method: 'get',
+});
+
+let query_parent = '/api/_content/query?_params={%22where%22:{%22_path%22:%22/configs/parent_nav%22},%22only%22:[%22body%22]}';
+const parent = await useFetch(query_parent, {
+  method: 'get',
+});
+navigationsStore.reloadNavigations(useUnion(child.data._rawValue[0].body, parent.data._rawValue[0].body));
+
+
 </script>
 <style>
 .zyn-button {
