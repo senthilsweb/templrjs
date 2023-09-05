@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="landing">
-    <div class="bg-white mt-8">
+    <div class="bg-white mt-8 p-4 lg:p-0">
       <div class="flex box-border border-2">
         <client-only placeholder="Codemirror Loading...">
           <codemirror :value="code" @ready="handleReady" @change="handleCodeChange" @focus="handleCodeFocus" @blur="handleCodeBlur" placeholder="Select * from users limit 25" :style="{ height: '200px', width: '100%' }" :autofocus="true" :indent-with-tab="true" :tab-size="2" :extensions="extensions" />
@@ -14,7 +14,7 @@
     </div>
 
     <!-- Dynamic Data Table -->
-    <div class="gap-y-3" v-if="isDataTableVisible">
+    <div class="gap-y-3 p-4 lg:p-0" v-if="isDataTableVisible">
       <div class="box-border border-2 rounded-lg">
         <div class="mx-auto max-w-7xl p-8">
           <div>
