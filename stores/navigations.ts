@@ -26,7 +26,7 @@ export const useNavigationsStore = defineStore('navigations', {
       console.log('reloaded navigations');
     },
     async loadNavigationsIfNeeded() {
-      console.log('useRuntimeConfig().API_BASE_URL=', useRuntimeConfig().public.API_BASE_URL);
+      //console.log('useRuntimeConfig().API_BASE_URL=', useRuntimeConfig().public.API_BASE_URL);
       
       let query_child = "/api/_content/query?_params={%22where%22:{%22_path%22:%22/configs/child_nav%22},%22only%22:[%22body%22]}"
       const child = await useFetch(query_child, {
