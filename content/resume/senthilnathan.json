@@ -1,15 +1,17 @@
 {
     "basics": {
-        "name": "SENTHILNATHAN KARUPPAIAH",
+        "name": "Senthilnathan Karuppaiah",
         "email": "nathansweb@icloud.com",
-        "website": "www.senthilsweb.com",
+        "website": "https://www.senthilsweb.com",
         "phone": "+1 732-955-1143",
-        "summary": "A technical hands-on solution architect with extensive experience in product engineering, innovation, business analysis, and solution design in Data Engineering, Web, Mobility, and IoT technologies.",
+        "summary": "I am a hands-on technical solution architect with a wealth of expertise in product engineering, innovation, business analysis, and solution design. My experience spans a wide spectrum of technologies, including Data Engineering, Web Development, Mobility Solutions, and IoT. I am passionate about crafting innovative solutions that drive success in these domains.",
         "location": {
-            "address": "",
-            "postalCode": "",
-            "city": "",
-            "countryCode": ""
+            "address": "87 Castle Pointe Blvd",
+            "postalCode": "08854",
+            "city": "Piscataway",
+            "state": "NJ",
+            "countryCode": "+1",
+            "full_address": "87 Castle Pointe Blvd, Piscataway, NJ 08854, USA"
         },
         "profiles": [
             {
@@ -19,6 +21,131 @@
             }
         ]
     },
+      "professionalSynopsis": [
+        "I am a hands-on technical solution architect skilled in conceptualizing and developing innovative software solutions across a wide range of technologies, tools, and frameworks. I have a knack for quickly adapting to new technologies.",
+        "My extensive experience spans product engineering, innovation, business analysis, solution design, and architecture in areas such as Data Engineering, Web, Mobility, and IoT. I'm well-versed in both legacy and modern technologies, tools, and frameworks, and I'm passionate about training and academia.",
+        "I thrive in startup culture, where I've played a key role in developing cutting-edge software products from initial concept to full product lifecycle. My expertise includes pre-sales, customer acquisition, client site implementation, customization, and ongoing solutions and support.",
+        "I have a strong domain background in Data Governance, Data Discovery, Data Lineage, Enterprise Metadata Management, as well as experience in industries like Healthcare IT, Transportation & Logistics, and Agriculture.",
+        "I am technically proficient in Golang, Python, NodeJS, C#, JAVA/J2EE, and various Front-End frameworks.",
+        "My hands-on experience extends to IaaS & PaaS with the AWS stack (including Elastic Beanstalk, SES, S3, Lambda, EventBridge, Step, and Route53) and containerization technologies like Docker and Kubernetes. I'm well-versed in Continuous Integration and Delivery, ranging from legacy systems to modern GitOps practices.",
+        "I follow a delivery-focused approach, combining architectural, development, and deployment strategies tailored to specific project needs, all guided by agile practices and process implementation.",
+        "I've been actively involved in Program Management for multiple key accounts across various technologies and platforms, successfully managing large global teams of over 50 members worldwide.",
+        "My commitment extends to maintaining open source projects on GitHub (https://github.com/senthilsweb), and I possess excellent communication, interpersonal, research/analysis, organizational, and leadership skills. I'm a quick learner, adaptable, and process-oriented, with a strong customer-centric approach."
+      ],
+      "coreCompetencies": [
+        "Architecture & Solutioning",
+        "Customer Relationship",
+        "Product Engineering",
+        "Technical Consultancy",
+        "Service Delivery Management",
+        "Presales & Proposals",
+        "Programming",
+        "Stakeholder Management",
+        "Software Estimation"
+      ],
+      "technicalCompetencies": [
+        {
+          "name": "Python",
+          "icon": "logos:python"
+        },
+        {
+          "name": "Node.JS",
+          "icon": "logos:nodejs-icon"
+        },
+        {
+          "name": "Go",
+          "icon": "logos:go"
+        },
+        {
+          "name": "JAVA",
+          "icon": "logos:java"
+        },
+        {
+          "name": "AWS Cloud Services",
+          "icon": "logos:aws"
+        },
+        {
+          "name": "JIRA",
+          "icon": "logos:jira"
+        },
+        {
+          "name": "Redmine",
+          "icon": "simple-icons:redmine"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "logos:postgresql"
+        },
+        {
+            "name": "DuckDB",
+            "icon": "simple-icons:duckdb"
+          },
+        {
+          "name": "SQL Server",
+          "icon": "devicon-plain:microsoftsqlserver"
+        },
+        {
+          "name": "Oracle",
+          "icon": "cib:oracle"
+        },
+        {
+          "name": "Github Actions",
+          "icon": "logos:github-actions"
+        },
+        {
+          "name": "Redis",
+          "icon": "logos:redis"
+        },
+        {
+          "name": "DynamoDB",
+          "icon": "skill-icons:dynamodb-light"
+        },
+        {
+          "name": "Elasticstack",
+          "icon": "logos:elasticsearch"
+        },
+        {
+          "name": "Spring",
+          "icon": "logos:spring"
+        },
+        {
+          "name": "Sails.Js",
+          "icon": "logos:sails"
+        },
+        {
+          "name": "Vue.JS",
+          "icon": "logos:vue"
+        },
+        {
+          "name": "TailwindCss",
+          "icon": "logos:tailwindcss-icon"
+        },
+        {
+          "name": "DataLake - S3",
+          "icon": "logos:aws"
+        },
+        {
+          "name": "Snowflake",
+          "icon": "logos:snowflake-icon"
+        }
+      ],
+      "notableAccomplishments": [
+        "One of the founding developers at Io-Tahoe (formerly Rokittech), a thriving data discovery & governance company based in New York City, known for pioneering the use of AI & ML techniques. Acquired twice, most recently by Hitachi Vantara in May 2021.",
+        "Expertise in Product Engineering, specializing in Data Quality, Data Governance, Data Catalog, Data Lineage, Sensitive Data Discovery, and Metadata Management for large enterprises.",
+        "Recognized for in-depth knowledge of product development.",
+        "Prepared numerous winning proposals, encompassing solutioning, effort estimation, cost analysis, resource allocation, and execution strategies.",
+        "Led multiple technology teams in areas such as Client-Server, Web, Mobile, IoT, Cloud, AI/ML, and Data Engineering.",
+        "Executed a wide range of development, maintenance, and support projects, catering to clients across the Americas, Europe, Middle East, and Asia Pacific regions.",
+        "Architected Radiology Information Systems and associated modules across web, mobile, and cloud platforms.",
+        "Established a 24x7 offshore BPO center in Bangalore, India, managing a team of 15 for tasks including scheduling, report faxing, and revenue cycle management.",
+        "Boasts a global work experience with roles in the USA, Japan, Ukraine, and Singapore, including three years spent in Japan with conversational Japanese skills.",
+        "A blogger since 2007 at www.senthilsweb.com, powered by Docker, EC2, Route53, and Traefik proxy. Actively maintains and contributes to open-source projects on GitHub at https://github.com/senthilsweb. The original blogging platform was on WordPress at https://senthilsweb.wordpress.com/."
+      ],
+      "certifications": [
+        "Microsoft Certified Professional in Developing Web Applications with MS VB .Net and VS .Net",
+        "Microsoft Certified Professional in Designing Database with Microsoft SQL Server 2000",
+        "Microsoft Certified Professional in Developing Windows-Based Applications with MS VB .Net and VS .Net"
+      ],
     "work": [
         {
             "company": "Hitachi Vantara / Io-Tahoe LLC",

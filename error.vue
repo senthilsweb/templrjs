@@ -1,4 +1,9 @@
 <template>
+   <div class="py-5">
+    <div class="container max-w-xl   mx-auto">
+      <img src="/404-error-01.jpg" alt="404 error" />
+    </div>
+  </div>
   <!-- typeof error.statusCode: -->
   <!-- string from server-side -->
   <!-- number on client-side -->
