@@ -6,7 +6,6 @@ import * as heroIcons from '@heroicons/vue/20/solid';
 import { Popover, PopoverPanel } from '@headlessui/vue';
 const propertiesStore = usePropertiesStore();
 console.log("--------------------------------------->>>>>Header")
-//console.log("Access properties store", properties.app_copyright)
 const navs = useNavigationsStore().navigatioins_by_module('landing-page');
 const isVisible = useState('isVisible', () => ref({})); //This is used to maintain the active hover state of the pophover menu.
 navs.forEach((item) => {
@@ -86,7 +85,7 @@ const isMobileNavVisible = useState('isMobileNavVisible', () => ref(false));
     <!--Nav Action button start-->
     <div class="hidden relative lg:flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
       <div v-for="(cta, idx) in buttons.filter((o) => {return (o.is_action_button && o.is_active)})" :key="`cta_${idx}`" class="relative z-10">
-        <a :href="cta.href" @click="useNuxtApp().$bus.$emit(`${cta.click_event}`)" class="px-4 py-2 relative inline-flex items-center rounded-full border border-transparent text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2  transition duration-150 ease-in-out" :class="[`bg-[${useThemeStore().palette('500')}]`,`hover:bg-[${useThemeStore().palette('700')}]`]">
+        <a :href="cta.href" @click="useNuxtApp().$bus.$emit(`${cta.click_event}`)" class="px-4 py-2 relative inline-flex items-center rounded-full border border-transparent text-sm font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2  transition duration-150 ease-in-out" :class="[`${cta.css_class}`]">
           {{ cta.name}}
         </a>
       </div>

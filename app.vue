@@ -83,6 +83,6 @@ navigationsStore.reloadNavigations(useUnion(child.data._rawValue[0].body, parent
   @apply bg-secondary-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-secondary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-600;
 }
 .zyn-nav-action-button-bordered {
-  @apply ring-2 ring-gray-500 hover:bg-gray-700 text-gray-500 hover:text-white;
+  @apply ring-2 ring-primary-500 hover:bg-primary-700 text-primary-500 hover:text-white;
 }
 </style>

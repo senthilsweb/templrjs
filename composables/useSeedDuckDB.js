@@ -1,12 +1,3 @@
-/**
- * This function retrieves child navigation data either from a local JSON file or from a PostgreSQL
- * database.
- * @returns The `useChildNav` function returns a Promise that resolves to the result of calling the
- * `useFetch` function with a query and options object as arguments. The result is the child navigation
- * data fetched from either a local JSON file or a PostgreSQL database, depending on the value of the
- * `TEMPLRJS_CMS_DATA` environment variable.
- */
-
 export const useSeedDuckDB = async () => {
   const tables = ['parent_nav', 'child_nav', 'company', 'countries', 'properties'];
   const errors = [];

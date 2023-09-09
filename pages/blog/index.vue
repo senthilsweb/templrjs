@@ -111,8 +111,8 @@
                 </div>
               </ClientOnly>
 
-              <div class="mt-10 flex items-center justify-center gap-x-6">
-                <!-- <button type="submit" class="rounded-md zyn-search-button" :class="[`bg-[${useThemeStore().palette('500')}]`, `hover:bg-[${useThemeStore().palette('700')}]`]">Load More...</button>-->
+              <!--<div class="mt-10 flex items-center justify-center gap-x-6">
+             
                 <div class="flex justify-center items-center space-x-6">
                   <button :disabled="pageNumber <= 1" @click="onPreviousPageClick">
                     <Icon name="mdi:code-less-than" size="30" :class="{ 'text-sky-700': pageNumber > 1 }" />
@@ -122,7 +122,30 @@
                     <Icon name="mdi:code-greater-than" size="30" :class="{ 'text-sky-700': pageNumber < totalPage }" />
                   </button>
                 </div>
-              </div>
+              </div>-->
+
+              <header class="space-y-1 mt-4">
+                <dl class="flex dark:border-gray-800">
+                  <div>
+                    <dt @click="onPreviousPageClick" class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-100 py-1 px-3 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-300 cursor-pointer"><span aria-hidden="true">←</span> Previous</dt>
+                    <dd class="mt-1">
+                      <a @click="onPreviousPageClick" class="text-base font-semibold text-zinc-900 transition hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300" href="#"> {{ useState('prev_shot_name').value }}</a>
+                    </dd>
+                  </div>
+
+                  <div class="ml-auto text-center">
+                    <!-- Added text-center class -->
+                    <div class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium text-zinc-900">Page {{ pageNumber }}/{{ totalPage }}</div>
+                    <!-- Added this line for "page n/n" -->
+                  </div>
+                  <div class="ml-auto text-right">
+                    <dt @click="onNextPageClick" class="inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full bg-zinc-100 py-1 px-3 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-300 cursor-pointer">Next <span aria-hidden="true">→</span></dt>
+                    <dd class="mt-1">
+                      <a @click="onNextPageClick" class="text-base font-semibold text-zinc-900 transition hover:text-zinc-600 dark:text-white dark:hover:text-zinc-300" href="#">{{ useState('next_shot_name').value }} </a>
+                    </dd>
+                  </div>
+                </dl>
+              </header>
             </div>
 
             <!-- blog grid (end)-->

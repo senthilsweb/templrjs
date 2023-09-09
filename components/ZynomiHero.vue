@@ -1,5 +1,5 @@
 <template>
-  <main class="mx-auto mt-16 max-w-7xl px-4 sm:mt-24 sm:px-6" :class="[usePropertiesStore().layout_width ? usePropertiesStore().layout_width : 'lg:max-w-7xl mx-auto']">
+  <main class="mx-auto mt-16 max-w-7xl px-6 sm:mt-24 sm:px-0" :class="[usePropertiesStore().layout_width ? usePropertiesStore().layout_width : 'lg:max-w-7xl mx-auto']">
     <div class="lg:grid lg:grid-cols-12 lg:gap-8">
       <div class="sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:text-left">
         <h1>
@@ -17,7 +17,6 @@
           </div>
         </div>
       </div>
-
       <div class="relative mt-12 sm:mx-auto sm:max-w-lg lg:col-span-6 lg:mx-0 lg:mt-0 lg:flex lg:max-w-none lg:items-center">
         <div class="relative mx-auto w-full rounded-lg lg:max-w-md">
           <template v-if="cover_image_video.href">

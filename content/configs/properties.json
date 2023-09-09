@@ -187,7 +187,7 @@
     },
     {
         "code": "app-hero-description",
-        "name": "Build high-performant web and mobile optimized sites and apps, data-driven dashboards, and modern front end for legacy systems on-prem and cloud with zero to low development and operating cost!!!",
+        "name": "Craft stunning web and mobile applications effortlessly with TemplrJS, an open-source rapid development platform. Say goodbye to coding from scratch and embrace seamless building and deployment.",
         "parent_code": "component-app-hero",
         "is_active": true
     },
@@ -205,13 +205,13 @@
     },
     {
         "code": "primary-title",
-        "name": "Rollout your internal tool ",
+        "name": "Efficiency Unleashed",
         "parent_code": "component-app-hero",
         "is_active": true
     },
     {
         "code": "secondary-title",
-        "name": "with extraordinary velocity",
+        "name": "Innovate, Iterate, Inspire",
         "parent_code": "component-app-hero",
         "is_active": true
     },
@@ -235,7 +235,7 @@
     },
     {
         "code": "popover-style",
-        "name": "wide",
+        "name": "narrow",
         "parent_code": "mega-menu",
         "is_active": true
     },

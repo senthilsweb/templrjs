@@ -14,7 +14,7 @@
         v-for="(item, index) in navigation.data"
         :key="index"
         type="button"
-        @click="c_idx = index"
+        @click="currentSlide(index)"
         data-te-target="#carouselExampleCaptions"
         :data-te-slide-to="index"
         :data-te-carousel-active="index === 0"
@@ -96,6 +96,7 @@
   </div>
 </template>
 <script setup>
+
 /* 
 * This carousel is based on Tailwind Elements Carousel
 * https://tailwind-elements.com/docs/standard/components/carousel/
@@ -136,7 +137,7 @@ next();
 }
 
 // Auto-play interval in milliseconds
-const autoPlayInterval = 5000; // Adjust the interval as needed
+const autoPlayInterval = 10000; // Adjust the interval as needed
 
 // Auto-play function
 function autoPlay() {

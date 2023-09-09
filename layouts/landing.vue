@@ -10,5 +10,5 @@
       </div>
     </div>
   </div>
-  <Footer v-if="!print" />
+  <Footer/>
 </template>
