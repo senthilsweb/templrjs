@@ -14,9 +14,22 @@
     </div>
 
     <!-- Dynamic Data Table -->
-    <div class="gap-y-3 p-4 lg:p-0" v-if="isDataTableVisible">
+
+    <div class="gap-y-3 p-4 lg:p-0">
       <div class="box-border border-2 rounded-lg">
-        <div class="mx-auto max-w-7xl p-8">
+        <div class="mx-auto max-w-7xl p-8 relative">
+          <!-- Progress bar (start)-->
+          <div class="absolute top-0 left-0 z-30 w-full h-full bg-gray-100 bg-opacity-75 transition-opacity" v-if="isLoading">
+            <div class="h-full bg-gray-100 bg-opacity-75 transition-opacity"></div>
+          </div>
+          <div class="animate-spin absolute top-1/2 left-1/2 z-40" v-if="isLoading">
+            <!-- SVG loader here -->
+            <svg class="h-8 w-8 text-zinc-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <!-- Progress bar (end)-->
           <div>
             <div class="sm:flex sm:items-center">
               <div class="sm:flex-auto">
@@ -111,6 +124,7 @@ const extensions = [sql(), oneDark];
 const view = shallowRef();
 const isExecuting = ref(false); // Reactive variable to track execution state
 const isDataTableVisible = ref(false); // Default to false
+const isLoading = ref(false);
 
 // Status is available at all times via Codemirror EditorView
 const getCodemirrorStates = () => {
@@ -144,6 +158,7 @@ const handleCodeBlur = (event) => {
 
 const clear = () => {
   // Clear the code in the codemirror editor
+  reInitializeDataTable(); // Reset the data table
   if (view.value) {
     view.value.dispatch({ changes: { from: 0, to: view.value.state.doc.length, insert: '' } });
   }
@@ -156,8 +171,18 @@ const execute = () => {
   // Update the 'code' ref with the code to execute
   code.value = codeToExecute;
 
+  reInitializeDataTable(); // Reset the data table
   // Call fetchDataForPage(1) to trigger data fetching based on the code
   fetchDataForPage(1);
+};
+
+const reInitializeDataTable = () => {
+  currentPageData.value = [];
+  currentPage = 1; // Initialize currentPage to 1
+  totalPages.value = 0;
+  tableData.value = {};
+  tableColumns.value = [];
+  paginationLinks.value = [];
 };
 
 const isCodeEmpty = computed(() => {
@@ -180,6 +205,9 @@ const tableColumns = ref([]);
 const paginationLinks = ref([]);
 
 const fetchDataForPage = async (page) => {
+  isLoading.value = true;
+  // Introduce an artificial delay for debugging (2 seconds)
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   // Make sure the code is not empty before fetching data
   if (!isCodeEmpty.value) {
     // Construct the dynamic API endpoint based on the code entered
@@ -201,6 +229,7 @@ const fetchDataForPage = async (page) => {
       //const responseData = await response.json();
       //console.log('response=', JSON.stringify(response));
       if (response) {
+        console.log('response=', JSON.stringify(response));
         if (response.data && Array.isArray(response.data)) {
           const startIndex = (page - 1) * itemsPerPage;
           const endIndex = startIndex + itemsPerPage;
@@ -222,36 +251,42 @@ const fetchDataForPage = async (page) => {
           // Calculate pagination links
           paginationLinks.value = Array.from({ length: totalPages.value }, (_, index) => index + 1);
 
-          console.log('paginationLinks=', JSON.stringify(paginationLinks.value));
+          //console.log('paginationLinks=', JSON.stringify(paginationLinks.value));
 
           updatePaginationLinks(currentPage, totalRows); // Pass totalRows instead of response.data.total_rows
+          isLoading.value = false;
+        } else {
+          console.error('Inside error');
+          useNuxtApp().$toast.show({
+            type: 'danger',
+            message: `${response.error}`,
+            position: 'top-left',
+            timeout: 2000,
+          });
+          isLoading.value = false;
+          reInitializeDataTable(); // Reset the data table
         }
-      } else if (response && response.error) {
-        console.error('Inside error');
-        useNuxtApp().$toast.show({
-          type: 'danger',
-          message: 'Error happened while executing the query.',
-          position: 'top-left',
-          timeout: 2000,
-        });
-        console.error('Invalid response format or data.');
       } else {
         useNuxtApp().$toast.show({
-          type: 'success',
-          message: 'Query executed successfully.',
+          type: 'danger',
+          message: "No response from server",
           position: 'top-left',
           timeout: 2000,
         });
+        isLoading.value = false;
+        reInitializeDataTable(); // Reset the data table
       }
     } catch (error) {
       console.error(error);
       useNuxtApp().$toast.show({
         type: 'danger',
         error: error,
-        message: JSON.stringify(response),
+        message: `${error}`,
         position: 'top-left',
         timeout: 2000,
       });
+      isLoading.value = false;
+      reInitializeDataTable(); // Reset the data table
     }
   }
 };
@@ -260,16 +295,16 @@ const itemsPerPage = 25; // Set the number of items per page
 const maxPaginationLinks = 10; // Set the maximum number of pagination links
 
 const updatePaginationLinks = (currentPage, totalRows) => {
-  console.log('updatePaginationLinks - currentPage:', currentPage);
-  console.log('updatePaginationLinks - totalRows:', totalRows);
+  //console.log('updatePaginationLinks - currentPage:', currentPage);
+  //console.log('updatePaginationLinks - totalRows:', totalRows);
 
   const totalPageCount = Math.ceil(totalRows / itemsPerPage);
-  console.log('updatePaginationLinks - totalPageCount:', totalPageCount);
+  //console.log('updatePaginationLinks - totalPageCount:', totalPageCount);
 
   // Calculate middlePage and adjust it if it exceeds totalPageCount
   const pageLinksToShow = Math.min(totalPageCount, maxPaginationLinks);
   const middlePage = Math.floor(pageLinksToShow / 2);
-  console.log('updatePaginationLinks - middlePage:', middlePage);
+  //console.log('updatePaginationLinks - middlePage:', middlePage);
 
   // Calculate startPage and endPage considering middlePage and totalPageCount
   let startPage = Math.max(1, currentPage - middlePage);
@@ -289,7 +324,7 @@ const updatePaginationLinks = (currentPage, totalRows) => {
 
   paginationLinks.value = Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index);
 
-  console.log('updatePaginationLinks - paginationLinks:', paginationLinks.value);
+  //console.log('updatePaginationLinks - paginationLinks:', paginationLinks.value);
 };
 
 // Function to determine pagination link classes
@@ -311,3 +346,17 @@ const goToPage = async (page) => {
 
 onMounted(() => {});
 </script>
+<style>
+.animate-spin {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
