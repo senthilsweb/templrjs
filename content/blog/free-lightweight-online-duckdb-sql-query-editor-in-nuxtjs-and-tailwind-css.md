@@ -61,7 +61,7 @@ To get started with Goduck, you can access the project on [GitHub](https://githu
 [GitHub](https://github.com/senthilsweb/templrjs/blob/main/pages/query-editor/index.vue)
 
 ::code-group
-  ```HTML [NuxtJS + Tailwind CSS]
+  ```html [NuxtJS + Tailwind CSS]
   <template>
   <NuxtLayout name="landing">
     <div class="bg-white">
@@ -155,7 +155,7 @@ To get started with Goduck, you can access the project on [GitHub](https://githu
   </NuxtLayout>
 </template>
   ```
-  ```JavaScript [JavaScript]
+  ```js [JavaScript]
   
 <script setup>
 import { Codemirror } from 'vue-codemirror';

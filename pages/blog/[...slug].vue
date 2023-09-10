@@ -4,7 +4,7 @@
       <div class="col-span-12 lg:col-span-9">
         <div class="mx-auto text-base max-w-prose lg:max-w-none">
           <BlogHeader :title="article.title" :image="article.coverimage" :alt="article.title" :date="article.date" :description="article.title" :tags="article.tags" />
-          <div class="prose prose-pre:max-w-xs sm:prose-pre:max-w-full prose-sm sm:prose-base md:prose-md prose-h1:no-underline max-w-5xl mx-auto prose-zinc prose-img:rounded-lg">
+          <div class="mt-8 text-sm text-zinc-600 prose prose-zinc max-w-none dark:prose-invert dark:text-zinc-400 prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-lead:text-zinc-500 dark:prose-lead:text-zinc-400 prose-a:font-semibold dark:prose-a:text-sky-400 prose-a:no-underline dark:prose-pre:ring-1 dark:prose-pre:ring-zinc-300/10 dark:prose-hr:border-zinc-800">
             <ContentRendererMarkdown :value="article" />
           </div>
           <div v-if="article.technologies" class="pt-10 pb-10 text-base max-w-prose mx-auto lg:max-w-none">

@@ -2,6 +2,7 @@
 const plugin = require('tailwindcss/plugin')
 const colors = require('tailwindcss/colors')
 const formKitTailwind = require('@formkit/themes/tailwindcss')
+
 module.exports = {
   mode: 'jit',
   content: [
@@ -16,6 +17,7 @@ module.exports = {
     //orange
     'bg-[#fefce8]',
     'bg-primary-100',
+    'bg-primary-200',
     'bg-primary-200',
     'bg-[#f97316]',
     'bg-[#ca8a04]',
@@ -110,5 +112,5 @@ module.exports = {
   corePlugins: {
     aspectRatio: false,
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), formKitTailwind, require('@tailwindcss/aspect-ratio')],
+  plugins: [plugin,require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('./typography'), formKitTailwind, require('@tailwindcss/aspect-ratio')],
 };

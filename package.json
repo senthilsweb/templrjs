@@ -30,7 +30,7 @@
     "@nuxtlabs/github-module": "^1.5.4",
     "@sidebase/nuxt-pdf": "^0.1.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.8",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^18.13.0",
     "autoprefixer": "^10.4.13",
     "monaco-editor-core": "^0.34.1",
