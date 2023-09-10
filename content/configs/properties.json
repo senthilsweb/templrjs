@@ -133,7 +133,7 @@
     },
     {
         "code": "copy-right",
-        "name": "© 2021 tripma Pvt. Ltd. All rights reserved.",
+        "name": "© 2023 TemplrJS. All rights reserved.",
         "parent_code": null,
         "is_active": true
     },
@@ -235,7 +235,7 @@
     },
     {
         "code": "popover-style",
-        "name": "narrow",
+        "name": "wide",
         "parent_code": "mega-menu",
         "is_active": true
     },

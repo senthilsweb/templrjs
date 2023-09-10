@@ -5,13 +5,11 @@
     <ZynomiHero/>
     <ZynomiCardList/>
     <InstagramPosts v-if="usePropertiesStore().properties_by_code('component-instagram-post').is_active"/>
-    <Marquee api_end_point="/_navigation/notification-channels" />
+    <Marquee api_end_point="/technology" />
   </div>
   </NuxtLayout>
 </template>
 <script setup>
 import { usePropertiesStore } from '~/stores/properties';
 import { useThemeStore } from '~/stores/theme';
-
-console.log("--------------------------------------->>>>>pages/index")
 </script>

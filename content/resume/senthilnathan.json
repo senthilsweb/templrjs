@@ -3,21 +3,34 @@
         "name": "Senthilnathan Karuppaiah",
         "email": "nathansweb@icloud.com",
         "website": "https://www.senthilsweb.com",
-        "phone": "+1 732-955-1143",
+        "phone": "+1 551-227-8050",
         "summary": "I am a hands-on technical solution architect with a wealth of expertise in product engineering, innovation, business analysis, and solution design. My experience spans a wide spectrum of technologies, including Data Engineering, Web Development, Mobility Solutions, and IoT. I am passionate about crafting innovative solutions that drive success in these domains.",
         "location": {
-            "address": "87 Castle Pointe Blvd",
-            "postalCode": "08854",
-            "city": "Piscataway",
+            "address": "",
+            "postalCode": "",
+            "city": "",
             "state": "NJ",
             "countryCode": "+1",
-            "full_address": "87 Castle Pointe Blvd, Piscataway, NJ 08854, USA"
+            "full_address": ""
         },
         "profiles": [
             {
                 "network": "GitHub",
+                "icon": "fa:github",
                 "username": "senthilsweb",
                 "url": "https://github.com/senthilsweb"
+            },
+            {
+                "network": "Linkedin",
+                "icon": "fa:linkedin-square",
+                "username": "cdmsenthil",
+                "url": "https://twitter.com/senthilsweb"
+            },
+            {
+                "network": "Stackoverflow",
+                "icon": "fa:stack-overflow",
+                "username": "senthilsweb",
+                "url": "https://youtube.com/senthilsweb"
             }
         ]
     },
@@ -45,88 +58,92 @@
       ],
       "technicalCompetencies": [
         {
-          "name": "Python",
-          "icon": "logos:python"
+            "name": "Bash",
+            "icon": "logos:bash-icon"
         },
         {
-          "name": "Node.JS",
-          "icon": "logos:nodejs-icon"
+            "name": "Python",
+            "icon": "logos:python"
         },
         {
-          "name": "Go",
-          "icon": "logos:go"
+            "name": "JavaScript",
+            "icon": "logos:javascript"
         },
         {
-          "name": "JAVA",
-          "icon": "logos:java"
+            "name": "Golang",
+            "icon": "logos:go"
         },
         {
-          "name": "AWS Cloud Services",
-          "icon": "logos:aws"
+            "name": "JAVA",
+            "icon": "logos:java"
         },
         {
-          "name": "JIRA",
-          "icon": "logos:jira"
-        },
-        {
-          "name": "Redmine",
-          "icon": "simple-icons:redmine"
-        },
-        {
-          "name": "PostgreSQL",
-          "icon": "logos:postgresql"
+            "name": "PostgreSQL",
+            "icon": "logos:postgresql"
         },
         {
             "name": "DuckDB",
             "icon": "simple-icons:duckdb"
-          },
-        {
-          "name": "SQL Server",
-          "icon": "devicon-plain:microsoftsqlserver"
         },
         {
-          "name": "Oracle",
-          "icon": "cib:oracle"
+            "name": "Snowflake",
+            "icon": "logos:snowflake-icon"
         },
         {
-          "name": "Github Actions",
-          "icon": "logos:github-actions"
+            "name": "Supabase",
+            "icon": "devicon:supabase"
         },
         {
-          "name": "Redis",
-          "icon": "logos:redis"
+            "name": "MongoDB",
+            "icon": "devicon:mongodb"
         },
         {
-          "name": "DynamoDB",
-          "icon": "skill-icons:dynamodb-light"
+            "name": "DBT",
+            "icon": "logos:dbt-icon"
         },
         {
-          "name": "Elasticstack",
-          "icon": "logos:elasticsearch"
+            "name": "Grafana",
+            "icon": "logos:grafana"
         },
         {
-          "name": "Spring",
-          "icon": "logos:spring"
+            "name": "MinIO",
+            "icon": "simple-icons:minio"
         },
         {
-          "name": "Sails.Js",
-          "icon": "logos:sails"
+            "name": "Vue.JS",
+            "icon": "logos:vue"
         },
         {
-          "name": "Vue.JS",
-          "icon": "logos:vue"
+            "name": "NuxtJS",
+            "icon": "logos:nuxt-icon"
         },
         {
-          "name": "TailwindCss",
-          "icon": "logos:tailwindcss-icon"
+            "name": "TailwindCss",
+            "icon": "logos:tailwindcss-icon"
         },
         {
-          "name": "DataLake - S3",
-          "icon": "logos:aws"
+            "name": "AWS",
+            "icon": "logos:aws"
         },
         {
-          "name": "Snowflake",
-          "icon": "logos:snowflake-icon"
+            "name": "Docker",
+            "icon": "logos:docker-icon"
+        },
+        {
+            "name": "Traefik",
+            "icon": "devicon:traefikproxy"
+        },
+        {
+            "name": "Vercel",
+            "icon": "devicon:vercel"
+        },
+        {
+            "name": "Netlify",
+            "icon": "skill-icons:netlify-light"
+        },
+        {
+            "name": "Redis",
+            "icon": "logos:redis"
         }
       ],
       "notableAccomplishments": [
@@ -149,10 +166,10 @@
     "work": [
         {
             "company": "Hitachi Vantara / Io-Tahoe LLC",
-            "position": "Enterprise Data Solutions Architect",
+            "position": "Senior Engineering Manager & Enterprise Data Solutions Architect",
             "location": "New York City, NY",
             "startDate": "2021-06-01",
-            "endDate": "Present",
+            "endDate": "",
             "summary": "Joined Lumada Data Catalog Product Development heading the Software Engineers in Test group."
         },
         {
@@ -165,7 +182,7 @@
         },
         {
             "company": "Io-Tahoe, Enterprise Data discovery product",
-            "position": "Hands-on Solution Architect",
+            "position": "Solution Architect",
             "location": "New York City, NY",
             "startDate": "2015-01-01",
             "endDate": "2017-07-01",

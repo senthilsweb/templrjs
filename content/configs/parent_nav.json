@@ -18,7 +18,7 @@
     },
     {
         "code": "blogs-header-nav",
-        "href": "/About",
+        "href": "/aboutme/senthilnathan.karuppaiah",
         "icon": "icon-park-twotone:user",
         "name": "About",
         "css_class": null,
@@ -55,7 +55,7 @@
         "icon": "icon-park-twotone:picture-album",
         "name": "Gallery",
         "css_class": null,
-        "is_active": true,
+        "is_active": false,
         "sort_order": 3,
         "click_event": "noops",
         "description": "Immerse yourself in captivating visuals, from snapshots to artful imagery.",

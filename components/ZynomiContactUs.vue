@@ -5,12 +5,12 @@
       <div class="">
         <dl class="mt-2 text-base text-white">
           <div>
-            <h4 class="text-md leading-5 font-bold tracking-wider text-white uppercase pt-4 lg:pt-0">Contact Us</h4>
+            <h4 class="text-md leading-5 font-bold tracking-wider text-white uppercase pt-4 lg:pt-0">Contact Me</h4>
             <dt class="sr-only">Postal address</dt>
-            <dd class="pt-3">
+            <dd class="pt-2">
               <p>{{ props.organization.company_name }}</p>
               <p>{{ props.organization.address.apartment }} {{ props.organization.address.street }}</p>
-              <p>{{ props.organization.address.city }} - {{ props.organization.address.postal_code }}</p>
+              <p>{{ props.organization.address.city }}  {{ props.organization.address.postal_code }}</p>
               <p>{{ props.organization.address.state }} {{ props.organization.address.country_name }}</p>
             </dd>
 
