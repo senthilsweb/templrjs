@@ -4,8 +4,8 @@ date: 2021-10-28T12:00:00.000Z
 published: true
 industries: []
 rightStripColor: 'bg-gray-50'
-coverimage: /blogs-img/blog1.webp
-ogImage: /blogs-img/blog1.webp
+coverimage: https://images.unsplash.com/photo-1485394735640-56c0356b62cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80
+ogImage: https://images.unsplash.com/photo-1485394735640-56c0356b62cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog
