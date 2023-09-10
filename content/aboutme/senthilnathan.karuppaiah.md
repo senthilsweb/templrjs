@@ -30,7 +30,6 @@ My proficiency extends to numerous Relational Database Management Systems (RDBMS
 
 I am actively involved in open-source software development and have a strong presence in the community. My contributions can be found on my GitHub profile (https://github.com/senthilsweb), where I maintain open-source projects and contribute to various codes and initiatives. My commitment to the open-source community reflects my dedication to collaborative and transparent software development.
 
-Certainly, I've included India in the "Global Experience" section to reflect your career journey accurately:
 
 ## Global Experience
 
