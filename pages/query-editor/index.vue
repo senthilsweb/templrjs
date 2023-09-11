@@ -30,7 +30,7 @@
             </svg>
           </div>
           <!-- Progress bar (end)-->
-          <div>
+          <div v-if="paginationLinks.length > 0">
             <div class="sm:flex sm:items-center">
               <div class="sm:flex-auto">
                 <h1 class="text-base font-semibold leading-6 text-gray-900">Query Results</h1>
@@ -46,7 +46,7 @@
                   <table class="min-w-full divide-y divide-gray-300">
                     <thead class="bg-white border-b sticky top-0">
                       <tr>
-                        <th scope="col" v-for="column in tableColumns" :key="column.field" class="sticky top-0 z-10 border-b border-gray-300 py-3.5 whitespace-nowrap px-4 text-left text-sm font-semibold text-gray-900 sm:pl-0">{{ column.label }}</th>
+                        <th scope="col" v-for="column in tableColumns" :key="column.field" class="sticky top-0 z-10 border-b border-gray-300 py-3.5 whitespace-nowrap px-4 text-left text-sm font-semibold text-zinc-600 sm:pl-0">{{ column.label }}</th>
                         <!--<th scope="col" class="sticky top-0 z-10  py-3.5 pl-3 pr-4 sm:pr-0">
                           <span class="sr-only">Edit</span>
                         </th>-->
@@ -54,7 +54,7 @@
                     </thead>
                     <tbody class="divide-y divide-gray-200 bg-white h-96 overflow-y-auto">
                       <tr v-for="item in currentPageData" :key="item.id">
-                        <td v-for="column in tableColumns" :key="column.field" class="whitespace-nowrap text-left text-sm text-gray-900">{{ item[column.field] }}</td>
+                        <td v-for="column in tableColumns" :key="column.field" class="whitespace-nowrap text-left text-sm text-zinc-600">{{ item[column.field] }}</td>
                         <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                           <!--<a href="#" class="text-indigo-400 hover:text-indigo-300"
                             >Edit<span class="sr-only">, {{ item.name }}</span></a
@@ -70,7 +70,7 @@
         </div>
       </div>
       <!-- Pagination -->
-      <div class="mt-4 hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+      <div v-if="paginationLinks.length > 0" class="mt-4 hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
           <p class="text-sm text-gray-700">
             Showing
@@ -120,7 +120,7 @@ import { oneDark } from '@codemirror/theme-one-dark';
 import _ from 'lodash';
 
 // Codemirror EditorView instance ref
-const extensions = [sql(), oneDark];
+const extensions = [sql()];
 const view = shallowRef();
 const isExecuting = ref(false); // Reactive variable to track execution state
 const isDataTableVisible = ref(false); // Default to false
@@ -207,7 +207,8 @@ const paginationLinks = ref([]);
 const fetchDataForPage = async (page) => {
   isLoading.value = true;
   // Introduce an artificial delay for debugging (2 seconds)
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  //await new Promise((resolve) => setTimeout(resolve, 2000));
+
   // Make sure the code is not empty before fetching data
   if (!isCodeEmpty.value) {
     // Construct the dynamic API endpoint based on the code entered
@@ -229,21 +230,20 @@ const fetchDataForPage = async (page) => {
       //const responseData = await response.json();
       //console.log('response=', JSON.stringify(response));
       if (response) {
-        console.log('response=', JSON.stringify(response));
+      
         if (response.data && Array.isArray(response.data)) {
           const startIndex = (page - 1) * itemsPerPage;
           const endIndex = startIndex + itemsPerPage;
           currentPageData.value = response.data.slice(startIndex, endIndex);
           tableData.value = response;
-          console.log('tableData=', tableData.value);
           currentPage = page; // Update currentPage when a page is clicked
           const totalRows = response.total_rows;
           totalPages.value = Math.ceil(totalRows / itemsPerPage); // Corrected calculation
-
+         
           // Build dynamic column definitions from JSON response attributes
           tableColumns.value = Object.keys(response.data[0]).map((attribute) => {
             return {
-              label: _.startCase(attribute),
+              label: useNuxtApp().$s.humanize(attribute),
               field: attribute,
             };
           });
@@ -269,7 +269,7 @@ const fetchDataForPage = async (page) => {
       } else {
         useNuxtApp().$toast.show({
           type: 'danger',
-          message: "No response from server",
+          message: 'No response from server',
           position: 'top-left',
           timeout: 2000,
         });

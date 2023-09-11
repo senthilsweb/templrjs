@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 //import { exportToPDF } from '#imports';
+import { parseMarkdown } from '@nuxtjs/mdc/runtime';
 definePageMeta({
 
 });
@@ -52,9 +53,9 @@ function autogrow() {
 function save() {
   if (!editing.value || saving.value) return;
   saving.value = true;
-  $fetch(`/api/cms/${storage_key}`, {
-    method: 'PUT',
-    body: page.value.body,
+  $fetch(`http://localhost:8080/entities/blog`, {
+    method: 'POST',
+    body: {"post" : page.value.body, id:2},
   })
     .then(async () => {
       page.value.parsed = await parseMarkdown(page.value.body);
