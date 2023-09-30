@@ -1,139 +1,75 @@
-# Templr 
-A full stack rapid web application development framework built using Vue.js, Nuxt.js, Tailwind CSS, Supabase and PostgreSQL targetting the edge computing paradigm.
+# TemplrJS
+
+## Introduction:
+TemplrJS is a comprehensive web application development framework designed for swift deployment. Ideally suited for edge computing scenarios, it harnesses the power of Vue.js, Nuxt.js, Tailwind CSS, and DuckDB to provide developers with an efficient and streamlined experience.
 
 
-```
-export NODE_OPTIONS=--max-old-space-size=4096
-```
+## Key Features:  
 
-## How to run the Application?
+- **Unified Binary**: The entire application is packaged inside a singular Go-based binary, ensuring seamless execution.
+  
+- **Embedded Database Support**: Comes integrated with DuckDB. It defaults to an in-memory database, offering flexibility in using an existing database file or creating a new one based on configurations.
+  
+- **Client-Only NuxtJS Design**: The default web application follows a client-only NuxtJS architecture, eliminating the need for server-side rendering (SSR).
+  
+- **Optimized for All Devices**: Tailored for both mobile and web platforms, every page is designed with a mobile-first approach, guaranteeing optimal mobile responsiveness.
 
-### Pre-requisites
+## Development Setup
 
-Either of the following is required to run the application in your local environment.
+### Prerequisites
 
-* Node.js 16.x or higher (v16.19.1)
-* Docker 20.x or higher
+- Go: https://golang.org/doc/install
+- Node.js: https://nodejs.org/en/download/
+- Npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
-### Run it as Node.JS server
+### Installation
 
-* Download the release bundle from the releases page [https://github.com/senthilsweb/templrjs/blob/beta/templrJS-0.0.1-beta-05-03-2023 (templrJS-0.0.1-beta-05-03-2023)
-* Unzip the bundle
-* Create a .env file in the root directory by renaming the `release.env` file as `.env`
-* cd into the unzipped directory
-* run `sh ./run.sh` to start the server as this will setup the environment variables and start the server
+1. Clone the repository: `git clone https://github.com/username/project.git`
+2. Navigate to the project directory: `cd project`
+3. Install Go dependencies: `go mod download`
+4. Install Node.js dependencies: `yarn install`
+6. Create a copy of `.env.sample` and name it `.env`: `cp .env.sample .env`
+7. Open the `.env` file in a text editor and set the `API_BASE_URL` variable to `http://localhost:<port>` where `<port>` is the port number that the Go server will run on.
 
-### Run from Docker
+### Development
 
-* Review and setup environment variables in the `docker-compose.yml` file
-* run `docker-compose up` to start the server
+1. Open a terminal and navigate to the root directory of the project.
+2. Run `go run .` to start the Go server.
+3. Once the Go server is running, open another terminal and navigate to the `/web` directory of the project.
+4. Run `npm run dev` to start the development server for the web project.
+5. Open a web browser and navigate to `http://localhost:3000` to view the web application.
 
-## Configurring the application for your use case
+## Production Setup
 
-You can completely change the application to suit your use case by modifying the following JSON files inside `public` directory.
+### Prerequisites
 
-1. company.json
-2. properties.json
-3. countries.json
-4. parent_nav.json
-5. child_nav.json
+- Go: https://golang.org/doc/install
+- Node.js: https://nodejs.org/en/download/
+- Npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
-## Environment Variables
-Refer below for the list of environment variables that can be configured for the application.
+### Building & Installation
 
-```bash
-# TEMPLRJS_CMS_STORAGE_MOUNT value can be fs_cms or cf_cms. If fs_cms, the markdown files will be fetched from the local filesystem. If cf_cms, the markdown files will be fetched from Cloudflare KV.
-TEMPLRJS_CMS_STORAGE_MOUNT=fs_cms
-# TEMPLRJS_WEBSITE_CONFIG_STORE value can be http or dbms. If dbms, the website config will be fetched from Supabase. If http, the website config will be fetched from the http endpoint.
-TEMPLRJS_WEBSITE_CONFIG_STORE=http
-TEMPLRJS_BASE_URL=http://localhost:3000
+1. Clone the repository: `git clone https://github.com/username/project.git`
+2. Navigate to the project directory: `cd project`
+3. Install Go dependencies: `go mod download`
+4. Navigate to the web directory: `cd web` and Install Node.js dependencies: `npm i`
+5. Create a copy of `.env.sample` and name it `.env`: `cp .env.sample .env`
+6. Open the `.env` file in a text editor and set the `API_BASE_URL` variable to empty.
+7. Run `npm run generate` to build the web project.
+8. Navigate to the root directory of the project and run `sh move_dist.sh` to move the generated static files to the appropriate location.
+9. Run `go build -o templrjs -v .` to build the Go binary.
 
-# Mandatory Supabase Configs if TEMPLRJS_CMS_DATA is remote
-SUPABASE_URL=http://your-supabase-url
-SUPABASE_KEY=your-supabase-key
-SUPABASE_KEY_SERVICE_KEY=your-supabase-key
+### Deployment
 
-# Optional Supabase Configs 
-SUPABASE_DB_HOST=your-supabase-host
-SUPABASE_DB_PORT=5432
-SUPABASE_PG_DB=postgres
-SUPABASE_PG_USER=postgres
-SUPABASE_PG_PASSWORD=
-
-# Mandatory Storage configs. The default is 'fs' for local development.
-STORAGE_DRIVER=cloudflare-kv-http
-
-# Optional Cloudflare KV configs for dynamic markdown content used for the blog or any CMS
-CLOUDFLARE_ACCOUNT_ID=
-CLOUDFLARE_NAMESPACE_ID=
-CLOUDFLARE_API_KEY=
-CLOUDFLARE_EMAIL=
-
-# node configs
-NODE_TLS_REJECT_UNAUTHORIZED=0
-```
-
-## Production Deployment
-
-### Vercel
-
-### Cloudflare Worker
-
-
-
-## Miscellaneous Development Notes
-
-### Optional prisma installs
-
-Required only for development of the prisma schema and generating db model ERD diagrams.
-
-```
-npm install prisma --save-dev
-npm install prisma-dbml-generator --save-dev
-npm install @softwaretechnik/dbml-renderer --save-dev
-```
-
-## Frequently used CLI commands
-
-
-### Nuxt
-
-```
-npm run dev
-npm run dev --port 3000
-npm run build
-```
-
-### Loading environment variables
-
-This is required only in production mode as the environment variables are loaded automatically in development mode. If you deploy it in 
-vercel, you can set the environment variables in the vercel dashboard.
-
-```
-while IFS== read -r key value; do
-  printf -v "$key" %s "$value" && export "$key"
-done <.env
-```
-Alternatively, you can use the following command to load the environment variables and run the application.
-
-> Note: cd into the root directory of the application before running the following command.
-
-```
-sh ./run.sh
-```
-
-### Docker
-
-```
-docker-compose up --env-file .env --f docker-compose.yml -d
-docker logs -f templr
-docker ps -a
-```
-
-### Prisma
-```
-npx prisma studio
-npx prisma db pull --schema=schema.prisma
-npx prisma generate --schema=schema.prisma
-npx prisma db push --schema=schema.prisma
-```
+1. Copy the following files to the production linux server:
+    - Go binary `templrjs`
+    - `templrjs.duckdb` (if you are using duckdb)   
+    - `templrjs.duckdb.wal` (if you are using duckdb)
+    - `config.yml`
+    - `docker-compose.yml` (if you are using Traefik for reverse proxy)
+    - `rules.yml` (if you are using Traefik for reverse proxy)
+2. Run the Go binary to start the production server. `./templrjs -p 8080`
+3. If you are using Traefik for reverse proxy, 
+    - Create `letsencrypt` folder in the root where the binary is kept
+    - Make sure the go server `templrjs` is running on port `8080`
+    - Run `docker-compose up -d` to start the Traefik container.

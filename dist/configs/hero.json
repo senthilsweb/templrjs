@@ -1,0 +1,54 @@
+{
+    "layout": {
+        "css_class": "lg:max-w-7xl mx-auto"
+    },
+    "title": {
+        "primary": "Efficiency Unleashed",
+        "secondary": "Innovate, Iterate, Inspire"
+    },
+    "description": "Craft stunning web and mobile applications effortlessly with TemplrJS, an open-source rapid development platform. Say goodbye to coding from scratch and embrace seamless building and deployment.",
+    "image": {
+        "url": "https://lztihcjfpbpkrcdtwsxg.supabase.co/storage/v1/object/public/assets/zytes.v8.isolates.png",
+        "alt": "",
+        "css_class": "zyn-nav-action-button",
+        "click_event": null,
+        "iconBackground": null,
+        "iconForeground": null,
+        "weight": 1
+    },
+    "video": {
+        "url": "https://www.youtube.com/watch?v=cZc4Jn5nK3k",
+        "alt": "",
+        "css_class": "zyn-nav-action-button",
+        "click_event": null,
+        "iconBackground": null,
+        "iconForeground": null,
+        "weight": 0
+    },
+    "button": {
+        "primary": {
+            "icon": "",
+            "css": "",
+            "event": "",
+            "href": "#",
+            "text": "Explore TemplrJS",
+            "css_class": "zyn-nav-action-button",
+            "is_active": true,
+            "click_event": "noops",
+            "iconBackground": null,
+            "iconForeground": null
+        },
+        "secondary": {
+            "icon": "",
+            "css": "",
+            "event": "",
+            "href": "#",
+            "text": "Get Started",
+            "css_class": "zyn-nav-action-button",
+            "is_active": true,
+            "click_event": null,
+            "iconBackground": null,
+            "iconForeground": null
+        }
+    }
+}

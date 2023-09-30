@@ -1,31 +1,21 @@
-FROM node:17-alpine as build-stage
+# Use a valid Go version
+FROM golang:1.17 AS builder
 
-WORKDIR /app
+# Install dependencies if any
+RUN apt-get update && apt-get install -y gcc
 
-RUN apk update && apk upgrade
-RUN apk add git
+# Set your working directory inside the container
+WORKDIR /go/src/github.com/org/repo
 
-COPY ./package*.json /app/
-
-RUN npm ci && npm cache clean --force
-
+# Copy your code into the container
 COPY . .
 
-RUN cp ./release.env .env
+# List the contents (for debugging)
+RUN ls -al
 
+# Build the Go application
+# If you're building for a different architecture, you'd set GOARCH accordingly.
+RUN CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -o templrgo .
 
-RUN npm run build
-
-
-# production stage
-FROM node:17-alpine as production-stage
-
-WORKDIR /app
-
-RUN apk update && apk upgrade
-RUN apk add git
-
-COPY --from=build-stage /app/.output /app/.output
-COPY --from=build-stage /app/.data /app/.data
-
-EXPOSE 3000
+# The command to run when the container starts
+CMD ["/go/src/github.com/org/repo/templrgo", "-p", "8182"]

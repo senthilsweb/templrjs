@@ -10,6 +10,14 @@ README.md
 LICENSE
 .vscode
 npm-debug*
+templrjs
+templrjs-server
 *.log
 *.tar
-.env
+templrjs
+ai
+templrjs-server
+.temp
+*.log
+hist.txt
+history.txt
