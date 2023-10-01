@@ -54,7 +54,12 @@
         </Dialog>
       </TransitionRoot>
 
-      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0">
+      <main class="mx-auto max-w-7xl px-4 mt-16 sm:px-6 lg:px-0">
+        <div class="border-b border-gray-200 pb-5">
+          <h3 class="text-3xl font-semibold leading-6 text-gray-900">Charting the Course of Data, Web, Mobile and Digital Innovations.</h3>
+          <p class="mt-8 max-w-4xl text-sm text-gray-500">Exploring the vast terrains of data, web, mobile, and digital frontiers, join me as I share insights from my foundational work in data engineering to recent adventures with Nuxtjs, Golang, Tailwind, and TemplrJS — my personal open-source brainchild. Dive into the transformative journey of technology and the invaluable lessons it unveiled.</p>
+        </div>
+
         <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-8 space-x-3">
           <svg data-v-c3ad5561="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="icon text-black" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="m12 9.5l1.2 4l2.8 3l-4-.9l-4.1.9l2.8-3l1.3-4m0-6.9l-3 9.8l-7 7.5l10-2.3L22 20l-7-7.5l-3-9.9Z"></path></svg>
           <h2 class="text-4xl font-semibold text-black">Blog Posts</h2>

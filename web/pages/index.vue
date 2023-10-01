@@ -4,11 +4,11 @@ import InstagramPosts from 'components/InstagramPosts.vue';
 <template>
   <NuxtLayout name="landing">
     <div>
-    <!--<Carousel/>-->
-    <BlogRecent />
+    <Carousel/>
     <TemplrJSHero api_end_point="/configs/hero"/>
-    <InstagramPosts/>
+    <BlogRecent />
     <Marquee api_end_point="/configs/tech-stack" />
+    <InstagramPosts/>
     </div>
   </NuxtLayout>
 </template>

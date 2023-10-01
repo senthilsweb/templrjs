@@ -101,9 +101,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
-        display: ["Hey August","Lobster"],
-        mono: ['Hey August' ]
+        sans: ['Poppins', 'sans-serif'],
+        spotlight: ['Hey August'],
       },
     },
   },

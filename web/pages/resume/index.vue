@@ -33,12 +33,12 @@
 
       <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-2">{{ data.basics.summary }}</p>
       <!-- Professional Synopsis -->
-      <h2 class="text-3xl font-mono text-gray-600 mt-4">Professional Synopsis</h2>
+      <h2 class="text-3xl font-spotlight text-gray-600 mt-4">Professional Synopsis</h2>
       <ul class="list-disc text-sm text-zinc-600 dark:text-zinc-400 pl-6 mt-2">
         <li v-for="item in data.professionalSynopsis" :key="item" v-html="item"></li>
       </ul>
       <!-- Core Competencies -->
-      <h2 class="text-3xl font-mono text-gray-600 mt-4">Core Competencies</h2>
+      <h2 class="text-3xl font-spotlight text-gray-600 mt-4">Core Competencies</h2>
       <div class="mt-2 grid grid-cols-2 gap-x-2 md:grid-cols-4 md:gap-y-0">
         <div v-for="item in data.coreCompetencies" :key="item" class="group relative">
           <h3 class="mt-1 text-md font-semibold text-zinc-400 dark:text-zinc-400">
@@ -51,7 +51,7 @@
       </div>
 
       <!-- Technical Competencies -->
-      <h2 class="text-3xl font-mono text-gray-600 mt-4">Technical Competencies</h2>
+      <h2 class="text-3xl font-spotlight text-gray-600 mt-4">Technical Competencies</h2>
       <div class="mt-2 grid grid-cols-2 gap-x-2 md:grid-cols-4 md:gap-y-0">
         <div v-for="item in data.technicalCompetencies" :key="item" class="group relative">
           <h3 class="mt-1 text-sm font-semibold text-zinc-400 dark:text-zinc-400">
@@ -64,20 +64,20 @@
       </div>
 
       <!-- Certifications Section -->
-      <h2 class="text-3xl font-mono text-gray-600 mt-4">Certifications</h2>
+      <h2 class="text-3xl font-spotlight text-gray-600 mt-4">Certifications</h2>
       <ul class="list-disc text-sm text-zinc-600 dark:text-zinc-400 pl-6 mt-2">
         <li v-for="item in data.certifications" :key="item">{{ item.name }}</li>
       </ul>
       <!-- Notable Accomplishments -->
       <div v-if="data.notableAccomplishments" class="mt-4">
-        <h2 class="text-3xl font-mono text-gray-600 mt-4">Notable Accomplishments</h2>
+        <h2 class="text-3xl font-spotlight text-gray-600 mt-4">Notable Accomplishments</h2>
         <ul class="list-disc text-sm text-zinc-600 dark:text-zinc-400 pl-6 mt-2">
           <li v-for="item in data.notableAccomplishments" :key="item">{{ item }}</li>
         </ul>
       </div>
       <!-- Work Experience -->
       <div class="mt-4">
-        <h2 class="text-3xl font-mono text-gray-600 mt-4">Work Experience</h2>
+        <h2 class="text-3xl font-spotlight text-gray-600 mt-4">Work Experience</h2>
         <div v-for="job in data.work" :key="job.company" class="mt-4 pb-2">
           <h3 class="text-xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">{{ job.company }} - {{ job.position }}</h3>
           <p class="font-semibold tracking-tight text-zinc-400 dark:text-zinc-100">{{ job.location }}</p>
@@ -87,7 +87,7 @@
       </div>
       <!-- Volunteering Experience -->
       <div v-if="data.volunteer" class="mt-4">
-        <h2 class="text-3xl font-mono text-gray-600 mt-4">Volunteering</h2>
+        <h2 class="text-3xl font-spotlight text-gray-600 mt-4">Volunteering</h2>
         <div v-for="job in data.volunteer" :key="job.organization" class="mt-4 pb-2">
           <h3 class="text-xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">{{ job.organization }} - {{ job.position }}</h3>
           <p class="font-semibold tracking-tight text-zinc-400 dark:text-zinc-100">{{ job.location }}</p>
