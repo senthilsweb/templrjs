@@ -50,7 +50,7 @@
         <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
           <li v-for="(item, idx) in useSortBy(navs, ['sort_order'])" :key="`mob_mnu_${idx}`">
             <template v-if="!item.is_action_button">
-              <NuxtLink :to="item.href" class="block py-2">{{ item.name }}</NuxtLink>
+              <a :href="item.href" class="block py-2">{{ item.name }}</a>
             </template>
           </li>
         </ul>

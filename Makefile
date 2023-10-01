@@ -23,9 +23,11 @@ generate:
 
 copy:
 	@echo "Copying to root $(DIST_DIR) for embedding..."
-	@rm -rf $(DIST_DIR)
-	@cp -r $(WEB_DIR)/dist $(DIST_DIR)
+	@find $(DIST_DIR) -mindepth 1 -delete
+	@cp -r $(WEB_DIR)/dist/* $(DIST_DIR)/
 	@echo "Copied..."
+
+
 
 build:
 	@echo "Building Go binary for $(OS)..."
