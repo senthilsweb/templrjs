@@ -25,13 +25,13 @@
                 "network": "Linkedin",
                 "icon": "fa:linkedin-square",
                 "username": "cdmsenthil",
-                "url": "https://twitter.com/senthilsweb"
+                "url": "https://linkedin.com/senthilsweb"
             },
             {
-                "network": "Stackoverflow",
-                "icon": "fa:stack-overflow",
+                "network": "Personal Website",
+                "icon": "mdi:web",
                 "username": "senthilsweb",
-                "url": "https://youtube.com/senthilsweb"
+                "url": "https://www.senthilsweb.com"
             }
         ]
     },

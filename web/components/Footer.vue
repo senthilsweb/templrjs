@@ -1,5 +1,5 @@
 <template>
-  <div class="" :class="[`bg-[${useThemeStore().palette('800')}]`, `lg:max-w-8xl`]">
+  <div class="" :class="[`bg-[${useThemeStore().palette('400')}]`, `lg:max-w-8xl`]">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <div class="xl:grid xl:grid-cols-3 xl:gap-3">
         <!--Footer Links (Start)-->

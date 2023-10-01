@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-flow-row auto-rows-max" v-if="props.organization">
-    <div class="mt-8 xl:mt-0 pl-6 pr-4 pb-2 rounded-xl" :class="[`bg-[${useThemeStore().palette('600')}]`]">
+    <div class="mt-8 xl:mt-0 pl-6 pr-4 pb-2 rounded-xl" :class="[`bg-[${useThemeStore().palette('300')}]`]">
       <div class="md:grid md:grid-cols-1">
         <div class="">
           <dl class="mt-2 text-base text-white">
