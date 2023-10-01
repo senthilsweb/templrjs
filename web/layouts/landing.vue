@@ -1,6 +1,4 @@
 <script setup>
-
-
 const route = useRoute()
 const showHeader = ref(true)
 
@@ -12,7 +10,8 @@ onMounted(() => {
 </script>
 <template>
   <div class="max-w-7xl mx-auto bg-white">
-    <Header v-if="showHeader"/>
+    <!--<Header v-if="showHeader"/>-->
+    <HeaderSpotLight v-if="showHeader" class="pt-6 pl-2 pr-2 sm:pl-0 sm:pr-0"/>
     <div class="mx-auto">
       <div class="min-h-screen relative">
         <div class="h-full relative">
