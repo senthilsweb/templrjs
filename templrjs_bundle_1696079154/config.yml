@@ -1,0 +1,60 @@
+database:
+  driver: "postgres"
+  dbname: ""
+  username: ""
+  password: ""
+  host: "ruby.db.elephantsql.com"
+  port: "5432"
+
+
+duckdb:
+  conn: "templrjs.duckdb" # Leave it to empty for "in-memory" or specificy the path to the db, it will be created if it doen't exists.
+  seed_data_base_url: "https://raw.githubusercontent.com/senthilsweb/datasets/main/configs_templrjs"
+  #seed_data_base_url: "https://raw.githubusercontent.com/senthilsweb/datasets/main/tickit"
+  seed_tables_from_file: "parent_nav.json,child_nav.json,company.json,countries.json,properties.json,categories.csv,dates.csv,events.csv,listings.csv,sales.csv,users.csv,venues.csv"
+  #seed_tables_from_file: "categories.csv,dates.csv,events.csv,listings.csv,sales.csv,users.csv,venues.csv"
+  ddl_queries:  ["CREATE TABLE IF NOT EXISTS id_sequence (entity_name VARCHAR, next_id INTEGER);","CREATE TABLE IF NOT EXISTS blogs (id INT PRIMARY KEY,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, update_count INT DEFAULT 0, title VARCHAR,content TEXT );"]
+
+# These will be used when the web server is started. e.g. 
+# `./templarjs -p 8080 -e prod -s embed` or `./templarjs -p 8080 -e prod -s fs -d ./dist -i index.html`
+server:
+  port: "8080"
+  env: "prod"
+  web_source: "embed" # or "fs"
+  web_dir: "" # if web_source is "fs" then specify the path to the web directory e.g. "./dist"
+  index_file: "" # if web_source is "fs" then specify the index file name e.g. "index.html"
+
+smtp:
+  host : "smtp.gmail.com"
+  port :  "587"
+  username : ""    
+  password : ""   
+  senderemail : ""
+  sendername  : ""
+  apiey      : ""
+  apitoken    : ""
+  apisecret   : ""
+
+queue:
+  broker : "redis"
+  host   :  "127.0.0.1"
+  uri   : "rediss://"
+  port   : "6379"
+  password   : ""
+  resultbackendhost : ""
+  resultbackendport : ""
+
+slack:
+  webhookurl : ""
+  channel    : ""
+  username   : ""
+  iconemoji  : ""
+  iconurl    : ""
+
+msteams:
+  webhookurl : ""
+  channel    : ""
+  username   : ""
+  iconemoji  : ""
+  iconurl    : ""
+

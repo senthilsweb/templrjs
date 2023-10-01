@@ -1,0 +1,16 @@
+http:
+  routers:
+    nathansweb.com:
+      service: www.nathansweb.com
+      entryPoints:
+        - "websecure"
+      rule: "Host(`nathansweb.com`,`www.nathansweb.com`)"
+      tls: "true"
+      tls:
+        certresolver: "myresolver"
+
+  services:
+    www.nathansweb.com:
+      loadBalancer:
+        servers:
+          - url: "http://129.213.122.25:5000"

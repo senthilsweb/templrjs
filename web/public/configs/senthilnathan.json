@@ -3,6 +3,7 @@
         "name": "Senthilnathan Karuppaiah",
         "email": "nathansweb@icloud.com",
         "website": "https://www.senthilsweb.com",
+        "picture": "https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg",
         "phone": "+1 551-227-8050",
         "summary": "I am a hands-on technical solution architect with a wealth of expertise in product engineering, innovation, business analysis, and solution design. My experience spans a wide spectrum of technologies, including Data Engineering, Web Development, Mobility Solutions, and IoT. I am passionate about crafting innovative solutions that drive success in these domains.",
         "location": {
@@ -159,10 +160,26 @@
         "A blogger since 2007 at www.senthilsweb.com, powered by Docker, EC2, Route53, and Traefik proxy. Actively maintains and contributes to open-source projects on GitHub at https://github.com/senthilsweb. The original blogging platform was on WordPress at https://senthilsweb.wordpress.com/."
       ],
       "certifications": [
-        "Microsoft Certified Professional in Developing Web Applications with MS VB .Net and VS .Net",
-        "Microsoft Certified Professional in Designing Database with Microsoft SQL Server 2000",
-        "Microsoft Certified Professional in Developing Windows-Based Applications with MS VB .Net and VS .Net"
-      ],
+        {
+          "name": "Microsoft Certified Professional in Developing Web Applications with MS VB .Net and VS .Net",
+          "date": "",
+          "issuer": "Microsoft",
+          "url": ""
+        },
+        {
+          "name": "Microsoft Certified Professional in Designing Database with Microsoft SQL Server 2000",
+          "date": "",
+          "issuer": "Microsoft",
+          "url": ""
+        },
+        {
+          "name": "Microsoft Certified Professional in Developing Windows-Based Applications with MS VB .Net and VS .Net",
+          "date": "",
+          "issuer": "Microsoft",
+          "url": ""
+        }
+      ]
+     ,
     "work": [
         {
             "company": "Hitachi Vantara / Io-Tahoe LLC",

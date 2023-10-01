@@ -1,0 +1,172 @@
+{
+  "basics": {
+    "name": "Ashwini Senthilnathan",
+    "picture": "https://res.cloudinary.com/nathansweb/image/upload/w_1000,ar_1:1,c_fill,g_auto/v1696126206/www.ashwiniksenthil.com/ashwiniksenthil-PhotoRoom_gh8khz.jpg",
+    "email": "ashwiniksenthil@gmail.com",
+    "phone": "732-986-6603",
+    "summary": "Pursuing a Graduate degree in Business Analytics at Montclair State University, bolstering analytical skills. Rooted in Business Administration, I'm a continuous learner with exceptional organizational prowess, adept communication, and a knack for multitasking.",
+    "location": {
+      "address": "",
+      "postalCode": "08854",
+      "city": "Piscataway",
+      "countryCode": "NJ",
+      "region": "New Jersey"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "icon": "fa:github",
+        "username": "ashwiniksenthil",
+        "url": "https://github.com/ashwiniksenthil"
+      },
+      {
+        "network": "Linkedin",
+        "icon": "fa:linkedin-square",
+        "username": "ashwini-senthilnathan-446b69238",
+        "url": "https://www.linkedin.com/in/ashwini-senthilnathan-446b69238/"
+      }
+    ]
+  },
+  "professionalSynopsis": [
+    "Motivated professional with a solid foundation in Business Administration and Business Analytics, currently advancing in analytical expertise at Montclair State University.",
+    "Skilled in financial management and meticulous record-keeping, demonstrated as the Treasurer for the Montclair State Marketing Club.",
+    "Effective mentor with a knack for guiding individuals, showcasing top-tier communication and organizational strengths.",
+    "Proficient in cloud-based productivity tools, SQL coding, Tableau, and crafting impactful social media content.",
+    "Recognized for academic excellence, having been listed on the <b>Dean's</b> List multiple times.",
+    "Collaborative team player, evident from roles that demanded budget management and addressing diverse needs.",
+    "Swift learner with a commitment to continuous improvement and the ability to manage multiple priorities.",
+    "Grounded in both technical and real-world applications, ensuring skills align with industry demands."
+  ],
+  "coreCompetencies": [
+    "Business Analytics",
+    "Budget Management",
+    "Financial Due Diligence",
+    "Mentorship & Guidance",
+    "Organizational Skills",
+    "Communication Skills",
+    "Creative Writing",
+    "Stakeholder Collaboration"
+  ],
+  "technicalCompetencies": [
+    {
+      "name": "Microsoft Office",
+      "icon": "simple-icons:microsoftoffice"
+    },
+    {
+      "name": "Google Docs",
+      "icon": "iconoir:google-docs"
+    },
+    {
+      "name": "Creative Writing",
+      "icon": "icon-park:creative"
+    },
+    {
+      "name": "Social Media Posting",
+      "icon": "streamline:computer-logo-google-media-google-social"
+    },
+    {
+      "name": "Canva",
+      "icon": "devicon:canva"
+    },
+    {
+      "name": "Google Ananlytics",
+      "icon": "logos:google-analytics"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "logos:postgresql"
+    },
+    {
+      "name": "Tableau",
+      "icon": "logos:tableau-icon"
+    }
+  ],
+  "work": [
+    {
+      "company": "Montclair State Marketing Club",
+      "position": "Treasurer",
+      "location": "Montclair, NJ",
+      "startDate": "07/2022",
+      "endDate": "05/2023",
+      "summary": "Oversaw Montclair State Marketing Club's annual budget, managed club finances daily, maintained records using Excel, and coordinated budget allocation for events and projects with club officers.",
+      "highlights": [
+        "Successfully planned and supervised an annual budget for the Montclair State Marketing Club.",
+        "Conducted daily financial due diligence tasks to ensure optimal management of club finances.",
+        "Maintained accurate records of all club-related income and expenses using Microsoft Excel.",
+        "Collaborated with club officers to allocate budgets appropriately for events, projects, and activities."
+      ]
+    },
+    {
+      "company": "Montclair State University",
+      "position": "Mentor Collective Program",
+      "location": "Montclair, NJ",
+      "startDate": "07/2022",
+      "endDate": "12/2022",
+      "summary": "Guided 20 prospective Montclair State University students through their college transition, addressing topics like academic success, work-life balance, career advice, and campus opportunities through weekly meetings.",
+      "highlights": [
+        "Guided 20 prospective students through their college transition at Montclair State University.",
+        "Held weekly meetings with mentees, addressing academic success, work-life balance, career insights, and campus opportunities."
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "George Street Co-op",
+      "position": "Volunteer",
+      "location": "New Brunswick, NJ 08901",
+      "startDate": "07/2021",
+      "endDate": "10/2022",
+      "summary": "Provided support for events and programs. Ensured the cleanliness, organization, and functionality of facility to meet program requirements. Utilized effective interpersonal communication skills to effectively convey information to others."
+    },
+    {
+      "organization": "Volunteer - Math and English Tutor",
+      "position": "Tutor",
+      "location": "Edison, NJ",
+      "startDate": "09/2020",
+      "endDate": "06/2021",
+      "summary": "Offered guidance to students in English and Math subjects at high school levels. Provided homework assistance to students using the curriculum and materials assigned by their school. Instructed students on effective study skills and various test preparation techniques."
+    },
+    {
+      "organization": "AZtech Radiology",
+      "position": "Volunteer",
+      "location": "Mesa, AZ",
+      "startDate": "06/2017",
+      "endDate": "08/2017",
+      "summary": "Efficiently organized and categorized patient insurance documents according to insurance company and policy, facilitating accurate and swift retrieval of information. Maintained up-to-date records by promptly updating insurance information in the company's system, ensuring smooth patient care and billing processes. Assisted healthcare providers and administrative staff by promptly and accurately retrieving insurance files upon request."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Montclair State University",
+      "area": "Business Analytics",
+      "studyType": "Master of Science",
+      "startDate": "",
+      "endDate": "05/2024"
+    },
+    {
+      "institution": "Feliciano School Of Business - Montclair State University",
+      "area": "Business Administration, Marketing",
+      "studyType": "Bachelor of Science",
+      "startDate": "",
+      "endDate": "05/2023",
+      "highlights": [
+        "Dean's List [Spring 2021, Fall 2022, Spring 2023]",
+        "Research Project: How the rise in Undergraduate Tuition Rates affect students' decisions in pursuing a college degree."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Bloomberg Market Certification",
+      "date": "",
+      "issuer": "Bloomberg",
+      "url": ""
+    },
+    {
+      "name": "Google Analytics Certification",
+      "date": "",
+      "issuer": "Google",
+      "url": ""
+    }
+  ]
+}

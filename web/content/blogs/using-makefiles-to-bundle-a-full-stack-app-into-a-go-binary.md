@@ -1,12 +1,12 @@
 ---
-title: Using Makefiles to Bundle a Full-Stack App into a Go Binary
-pageTitle: Using Makefiles to Bundle a Full-Stack App into a Go Binary
+title: Templrjs Demo
+pageTitle: Templrjs Demo
 date: 2023-09-30T12:00:00.000Z
 published: true
 industries: []
 description: Creating a seamless deployment process can be a challenge when building full-stack applications. This blog will walk you through packaging a web frontend and a Go backend into a single binary, making deployment easier and more efficient.
-coverimage: https://plus.unsplash.com/premium_photo-1681488229881-d733064c22cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3446&q=80
-ogImage: https://plus.unsplash.com/premium_photo-1681488229881-d733064c22cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3446&q=80
+coverimage: https://images.unsplash.com/photo-1643140751093-ce43a9170fe8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3436&q=80
+ogImage: https://images.unsplash.com/photo-1643140751093-ce43a9170fe8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3436&q=80
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog
