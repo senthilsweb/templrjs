@@ -3,14 +3,12 @@ module templrjs
 go 1.16
 
 require (
-	github.com/RichardKnop/logging v0.0.0-20190827224416-1a693bdd4fae // indirect
 	github.com/RichardKnop/machinery v1.10.6
 	github.com/atc0005/go-teams-notify/v2 v2.8.0 // indirect
 	github.com/aws/aws-sdk-go v1.45.19 // indirect
 	github.com/aymerick/raymond v2.0.2+incompatible
 	github.com/bradfitz/gomemcache v0.0.0-20230905024940-24af94b03874 // indirect
 	github.com/bytedance/sonic v1.10.1 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/cznic/b v0.0.0-20181122101859-a26611c4d92d // indirect
 	github.com/cznic/fileutil v0.0.0-20181122101858-4d67cfea8c87 // indirect
 	github.com/cznic/golex v0.0.0-20181122101858-9c343928389c // indirect
@@ -28,12 +26,9 @@ require (
 	github.com/go-playground/validator/v10 v10.15.4 // indirect
 	github.com/go-redis/redis/v8 v8.11.6-0.20220405070650-99c79f7041fc
 	github.com/go-redsync/redsync/v4 v4.8.1 // indirect
+	github.com/go-rod/rod v0.114.3 // indirect
 	github.com/go-sql-driver/mysql v1.7.1 // indirect
-	github.com/gobuffalo/genny v0.1.1 // indirect
-	github.com/gobuffalo/gogen v0.1.1 // indirect
 	github.com/jinzhu/gorm v1.9.16
-	github.com/karrick/godirwalk v1.10.3 // indirect
-	github.com/kelseyhightower/envconfig v1.4.0 // indirect
 	github.com/klauspost/compress v1.17.0 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.5 // indirect
 	github.com/marcboeker/go-duckdb v1.4.4
@@ -41,12 +36,9 @@ require (
 	github.com/montanaflynn/stats v0.7.1 // indirect
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	github.com/nikoksr/notify v0.41.0
-	github.com/opentracing/opentracing-go v1.2.0 // indirect
+	github.com/onsi/gomega v1.26.0 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.1.0 // indirect
-	github.com/robfig/cron/v3 v3.0.1 // indirect
-	github.com/rueian/rueidis v0.0.93 // indirect
-	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/shirou/gopsutil v3.21.11+incompatible
 	github.com/sinhashubham95/jsonic v1.1.0
 	github.com/sirupsen/logrus v1.9.3
@@ -59,13 +51,9 @@ require (
 	github.com/tidwall/gjson v1.17.0
 	github.com/tidwall/pretty v1.2.1 // indirect
 	github.com/tklauser/go-sysconf v0.3.12 // indirect
-	github.com/urfave/cli v1.22.5 // indirect
-	github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c // indirect
-	github.com/xdg/stringprep v1.0.0 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
 	github.com/yusufpapurcu/wmi v1.2.3 // indirect
 	go.mongodb.org/mongo-driver v1.12.1 // indirect
-	go.opentelemetry.io/otel/oteltest v0.17.0 // indirect
 	golang.org/x/arch v0.5.0 // indirect
 	google.golang.org/api v0.143.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
