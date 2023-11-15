@@ -45,3 +45,13 @@ services:
       - "traefik.http.routers.whoami.tls=true"
       - "traefik.http.routers.whoami.entrypoints=websecure"
       - "traefik.http.routers.whoami.tls.certresolver=myresolver"
+  
+  #hb:
+  #  image: "zynomi/hb-to-be-modified"
+  #  container_name: "healthbuddy"
+  #  labels:
+  #    - "traefik.enable=true"
+  #    - "traefik.http.routers.hb.rule=Host(`healthbuddy.zynomi.com`)"
+  #    - "traefik.http.routers.hb.tls=true"
+  #    - "traefik.http.routers.hb.entrypoints=websecure"
+  #    - "traefik.http.routers.hb.tls.certresolver=myresolver"

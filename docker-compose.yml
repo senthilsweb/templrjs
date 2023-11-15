@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  templrjs_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: templrjs
+    ports:
+      - "5000:8080"
+    volumes:
+      - ./:/app/
