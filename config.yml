@@ -58,3 +58,7 @@ msteams:
   iconemoji  : ""
   iconurl    : ""
 
+firebase:
+  project_id : ""
+  service_account_file : ""
+

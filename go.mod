@@ -55,6 +55,7 @@ require (
 	github.com/yusufpapurcu/wmi v1.2.3 // indirect
 	go.mongodb.org/mongo-driver v1.12.1 // indirect
 	golang.org/x/arch v0.5.0 // indirect
+	golang.org/x/oauth2 v0.12.0 // indirect
 	google.golang.org/api v0.143.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto v0.0.0-20230920204549-e6e6cdab5c13 // indirect

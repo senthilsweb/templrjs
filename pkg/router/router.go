@@ -39,6 +39,7 @@ func Setup() *gin.Engine {
 	r.PUT("/entities/:entity/:id", duckdb.UpdateEntity)
 	r.DELETE("/entities/:entity/:id", duckdb.DeleteEntity)
 	r.POST("/instagram/scrape", controller.Scrape)
+	r.POST("/firebase/notify", controller.Notify)
 	r.POST("/execute-query", duckdb.ExecuteCustomQuery)
 
 	log.Println("Finished router setup")

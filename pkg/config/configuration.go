@@ -17,6 +17,7 @@ type Configuration struct {
 	Duckdb   DuckdbConfiguration
 	MSTeams  MSTeamsConfiguration
 	Slack    SlackConfiguration
+	Firebase FirebaseConfiguration
 }
 
 // Setup initialize configuration

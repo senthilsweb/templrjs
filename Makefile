@@ -34,7 +34,8 @@ build:
 ifeq ($(OS),Linux)
 	@go build -o templrjs_server-linux-aarch64 -v .
 else ifeq ($(OS),Darwin)
-	@go build -o templrjs_server-macos -v .
+	#@go build -o templrjs_server-macos -v .
+	@go build -o templrjs_server-linux-aarch64 -v .
 else
 	@echo "Unsupported OS: $(OS). Exiting..."
 	@exit 1
