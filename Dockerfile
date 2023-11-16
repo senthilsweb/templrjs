@@ -9,6 +9,7 @@ WORKDIR /go/src/github.com/org/repo
 
 # Copy your code into the container
 COPY . .
+COPY ./dist .
 
 # List the contents (for debugging)
 RUN ls -al
