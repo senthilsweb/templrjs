@@ -48,14 +48,13 @@
           </h3>
         </div>
       </div>
-
       <!-- Technical Competencies -->
       <h2 class="text-2xl font-semibold text-gray-600 mt-4">Technical Competencies</h2>
       <div class="mt-2 grid grid-cols-2 gap-x-2 md:grid-cols-4 md:gap-y-0">
         <div v-for="item in data.technicalCompetencies" :key="item" class="group relative">
           <h3 class="mt-1 text-sm font-semibold text-zinc-400 dark:text-zinc-400">
             <a href="#" class="flex items-center">
-              <Icon :name="item.icon" :alt="item.name" class="h-8 w-8 pr-2" />
+              <Icon :name="item.icon" :alt="item.name" class="h-8 w-8 pr-2 text-red-500" />
               {{ item.name }}
             </a>
           </h3>

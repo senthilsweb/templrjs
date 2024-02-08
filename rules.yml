@@ -8,9 +8,20 @@ http:
       tls: "true"
       tls:
         certresolver: "myresolver"
-
+    api.senthilsweb.com:
+      service: api.senthilsweb.com
+      entryPoints:
+        - "websecure"
+      rule: "Host(`api.senthilsweb.com`)"
+      tls: "true"
+      tls:
+        certresolver: "myresolver"
   services:
     www.nathansweb.com:
       loadBalancer:
         servers:
           - url: "http://129.213.122.25:5000"
+    api.senthilsweb.com:
+      loadBalancer:
+        servers:
+          - url: "http://129.213.122.25:8888"

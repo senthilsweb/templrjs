@@ -31,7 +31,7 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/klauspost/compress v1.17.0 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.5 // indirect
-	github.com/marcboeker/go-duckdb v1.4.4
+	github.com/marcboeker/go-duckdb v1.5.6
 	github.com/mch1307/vaultlib v0.6.1
 	github.com/montanaflynn/stats v0.7.1 // indirect
 	github.com/natefinch/lumberjack v2.0.0+incompatible

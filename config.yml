@@ -8,7 +8,7 @@ database:
 
 
 duckdb:
-  conn: "templrjs.duckdb" # Leave it to empty for "in-memory" or specificy the path to the db, it will be created if it doen't exists.
+  conn: "" # Leave it to empty for "in-memory" or specificy the path to the db, it will be created if it doen't exists.
   seed_data_base_url: "https://raw.githubusercontent.com/senthilsweb/datasets/main/configs_templrjs"
   #seed_data_base_url: "https://raw.githubusercontent.com/senthilsweb/datasets/main/tickit"
   seed_tables_from_file: "parent_nav.json,child_nav.json,company.json,countries.json,properties.json,categories.csv,dates.csv,events.csv,listings.csv,sales.csv,users.csv,venues.csv"
@@ -59,6 +59,6 @@ msteams:
   iconurl    : ""
 
 firebase:
-  project_id : ""
-  service_account_file : ""
+  project_id : "521977492377"
+  service_account_file : "/opt/templrjs/healthbuddy-346b8-firebase-adminsdk-f5ctp-d0d01f93dc.json"
 

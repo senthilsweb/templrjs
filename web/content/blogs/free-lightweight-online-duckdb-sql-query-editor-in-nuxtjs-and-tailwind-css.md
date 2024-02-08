@@ -18,7 +18,7 @@ tags:
 ---
 
 In the world of data management, having the right tools can make all the difference. As a developer, you often find yourself working with databases and writing SQL queries to retrieve, manipulate, and analyze data. 
-<!--more-->
+<!-- more -->
 
 Enter Goduck - a powerful open-source project that simplifies your interaction with DuckDB, an efficient analytical database. In this blog post, we'll take you on a journey through the creation of a web-based DuckDB SQL query editor, inspired by popular tools like PostgREST, to help you boost your SQL workflow.
 
@@ -27,6 +27,8 @@ Enter Goduck - a powerful open-source project that simplifies your interaction w
 As a developer, you might have encountered scenarios where you needed a quick and efficient way to interact with your DuckDB database. Traditional database management tools can be cumbersome, and you may not always want to write SQL queries in a text editor. That's where Goduck comes to the rescue. It offers a user-friendly web interface that simplifies SQL query execution, providing a seamless experience similar to PostgREST.
 
 ![background](https://res.cloudinary.com/nathansweb/image/upload/v1693619846/senthilsweb.com/blog/sql-editor-duckdb.png)
+
+
 
 ## Technology Stack
 Goduck leverages a robust technology stack to provide its powerful capabilities:

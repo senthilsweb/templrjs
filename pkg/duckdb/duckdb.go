@@ -73,7 +73,8 @@ func initializeDB() error {
 	}*/
 
 	connStr := config.Config.Duckdb.Conn
-	log.Info("Connecting to DuckDB: %s", connStr)
+	log.Info("Connecting to DuckDB", connStr)
+	log.Debug(connStr)
 
 	if connStr == "" {
 		log.Info("Initializing DuckDB in memory")
