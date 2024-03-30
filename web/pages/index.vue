@@ -8,7 +8,7 @@ import InstagramPosts from 'components/InstagramPosts.vue';
     <TemplrJSHero api_end_point="/configs/hero"/>
     <BlogRecent />
     <Marquee api_end_point="/configs/tech-stack" />
-    <InstagramPosts/>
+    <!--<InstagramPosts/>-->
     </div>
   </NuxtLayout>
 </template>

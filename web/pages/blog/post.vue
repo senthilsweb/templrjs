@@ -13,8 +13,8 @@ const params = new URLSearchParams(window.location.search);
 
 const title = params.get('title'); // returns 'John'
 
-const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/entities/blogs?title.eq=${title}`);
-//console.log(`${useRuntimeConfig().public.API_BASE_URL}/entities/blogs?title.eq=${cms_page}`)
+const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/blogs?title.eq=${title}`);
+//console.log(`${useRuntimeConfig().public.API_BASE_URL}/blogs?title.eq=${cms_page}`)
 
 if (data) {
   if (Array.isArray(data.data)) {

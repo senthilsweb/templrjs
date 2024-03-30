@@ -39,7 +39,9 @@ if (data) {
         <div class="absolute top-16 bottom-0 right-0 hidden h-12 w-px bg-gradient-to-t from-gray-800 dark:block"></div>
         <div class="absolute top-28 bottom-0 right-0 hidden w-px bg-gray-800 dark:block"></div>
         <div class="sticky top-[4.5rem] -ml-0.5 h-[calc(100vh-4.5rem)] overflow-y-auto overflow-x-hidden py-16 pl-0.5">
-          <nav class="text-base lg:text-sm w-64 pr-8 xl:w-72 xl:pr-16"></nav>
+          <nav class="text-base lg:text-sm w-64 pr-8 xl:w-72 xl:pr-16">
+            <docnav :data="navigation[1].children" :title="page.title" />
+          </nav>
         </div>
       </div>
       <div class="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">

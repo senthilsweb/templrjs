@@ -14,8 +14,6 @@ import (
 	"runtime"
 	"strconv"
 
-	"templrjs/pkg/config"
-	"templrjs/pkg/duckdb"
 	"templrjs/pkg/router"
 
 	"github.com/gin-contrib/cors" // Add this line to your existing imports
@@ -41,10 +39,6 @@ func init() {
 	initLogger()
 	log.Info("Initialized Logger")
 
-	log.Info("Initialize Configuration")
-	config.Setup()
-	log.Info("Initialized Configuration")
-
 	log.Info("Initialize command line args")
 	flag.IntVar(&flagPort, "p", 8080, "port number for the api server")
 	flag.StringVar(&flagStaticDirPath, "d", "./dist", "Website directory path")
@@ -55,7 +49,6 @@ func init() {
 
 	//database.Setup()
 	log.Info("Initialize DuckDB")
-	duckdb.Setup()
 	log.Info("Initialized DuckDB")
 	//broker.Setup()
 

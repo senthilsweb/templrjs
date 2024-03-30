@@ -7,14 +7,12 @@
   </div>
 </template>
 
-
-
 <script setup>
 import { useNavigationsStore } from '~/stores/navigations';
 import { useThemeStore } from '~/stores/theme';
 import _ from 'lodash';
 console.log("--------------------------------------->>>>>ZynomiSocialLinks")
-const social_links = useNavigationsStore().navigatioins_by_module(props.module_name);
 const props = defineProps(['module_name']);
+const social_links = useNavigationsStore().navigatioins_by_module(props.module_name);
 </script>
 

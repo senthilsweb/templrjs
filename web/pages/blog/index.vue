@@ -216,7 +216,7 @@ const mobileFiltersOpen = ref(false);
 const { path } = useRoute();
 console.log('path=', path);
 
-const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/entities/blogs?limit=1000&order=id desc`);
+const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/blogs?limit=1000&order=id desc`);
 const articlesContent = ref([]);
 const filteredArticles = ref([]);
 

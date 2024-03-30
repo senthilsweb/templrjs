@@ -2,7 +2,7 @@
 import { parseMarkdown } from '@nuxtjs/mdc/runtime';
 import _ from 'lodash';
 
-const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/entities/blogs?limit=10&order=id desc`);
+const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/blogs?limit=10&order=id desc`);
 const articlesContent = ref([]);
 const filteredArticles = ref([]);
 
