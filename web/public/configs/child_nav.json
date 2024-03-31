@@ -18,7 +18,7 @@
     "children": [
       {
         "code": "about-footer",
-        "href": "/cms?title=senthilnathan-karuppaiah",
+        "href": "/cms/senthilnathan-karuppaiah",
         "icon": null,
         "name": "Bio",
         "css_class": null,
@@ -35,7 +35,7 @@
       },
       {
         "code": "partners-footer",
-        "href": "/resume?name=senthilnathan",
+        "href": "/resume/senthilnathan",
         "icon": null,
         "name": "Resume",
         "css_class": null,
