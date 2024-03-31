@@ -9,12 +9,12 @@ const page = useState('page');
 
 const { path } = useRoute();
 
-const params = new URLSearchParams(window.location.search);
+//const params = new URLSearchParams(window.location.search);
 
-const title = params.get('title'); // returns 'John'
+//const title = params.get('title'); // returns 'John'
 
-const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/entities/blogs?title.eq=${title}`);
-//console.log(`${useRuntimeConfig().public.API_BASE_URL}/entities/blogs?title.eq=${cms_page}`)
+const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/blogs?title.eq=${useRoute().params.title}`);
+//console.log(`${useRuntimeConfig().public.API_BASE_URL}/blogs?title.eq=${cms_page}`)
 
 if (data) {
   if (Array.isArray(data.data)) {
@@ -39,7 +39,7 @@ if (data) {
       </div>
       <div class="lg:col-span-3 sticky top-28 h-96 p-2 hidden lg:block justify-self-end">
         <h1 class="text-lg font-bold mb-4">Table Of Content</h1>
-        <NuxtLink v-for="link in page.toc.links" :key="link.id" :to="`#${link.id}`" class="block text-md mb-3">
+        <NuxtLink v-for="link in page.toc.links" :key="link.id" :to="`#${link.id}`" class="block text-sm text-zinc-600 hover:text-primary-600 font-bold mb-3">
           {{ link.text }}
         </NuxtLink>
       </div>

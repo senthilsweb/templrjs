@@ -18,7 +18,7 @@
     },
     {
         "code": "blogs-header-nav",
-        "href": "/cms?title=senthilnathan-karuppaiah",
+        "href": "/cms/senthilnathan-karuppaiah",
         "icon": "icon-park-twotone:user",
         "name": "About",
         "css_class": null,
@@ -34,7 +34,7 @@
     },
     {
         "code": "zense-header-nav",
-        "href": "/resume?name=senthilnathan",
+        "href": "/resume/senthilnathan",
         "icon": "icon-park-twotone:id-card-v",
         "name": "Resume",
         "css_class": "font-bold text-2xl",
@@ -85,11 +85,11 @@
     },
     {
         "code": "features-header-nav",
-        "href": "/templrjs",
+        "href": "/cms/templrjs",
         "icon": "icon-park-twotone:circles-seven",
         "name": "TemplrJS",
         "css_class": null,
-        "is_active": true,
+        "is_active": false,
         "sort_order": 5,
         "click_event": null,
         "description": null,
@@ -486,7 +486,7 @@
     },
     {
         "code": "secondary-button",
-        "href": "/docs/getting-started",
+        "href": "https://github.com/senthilsweb/templrjs",
         "icon": null,
         "name": "Get Started",
         "css_class": null,
@@ -550,7 +550,7 @@
     },
     {
         "code": "primary-button",
-        "href": "/features",
+        "href": "/cms/templrjs",
         "icon": null,
         "name": "Explore TemplrJS",
         "css_class": null,

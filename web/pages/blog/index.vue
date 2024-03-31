@@ -214,7 +214,7 @@ const filters = [
 
 const mobileFiltersOpen = ref(false);
 const { path } = useRoute();
-console.log('path=', path);
+//console.log('path=', path);
 
 const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/blogs?limit=1000&order=id desc`);
 const articlesContent = ref([]);
@@ -244,15 +244,15 @@ const searchData = computed(() => {
   return (
     filteredArticles.value.filter((data) => {
       const lowerTitle = data.data.title.toLocaleLowerCase();
-      console.log('lowerTitle Match = ', lowerTitle.search(searchPhrase.value) !== -1);
-      console.log('searchPhrase.value = ', searchPhrase.value.toLocaleLowerCase());
+      //console.log('lowerTitle Match = ', lowerTitle.search(searchPhrase.value) !== -1);
+      //console.log('searchPhrase.value = ', searchPhrase.value.toLocaleLowerCase());
       if (lowerTitle.search(searchPhrase.value.toLocaleLowerCase()) !== -1) return true;
       else return false;
     }) || []
   );
 });
 
-console.log('searchData = ', JSON.stringify(searchData.value));
+//console.log('searchData = ', JSON.stringify(searchData.value));
 
 const paginatedData = computed(() => {
   return (

@@ -8,7 +8,7 @@
     },
     "description": "Craft stunning web and mobile applications effortlessly with TemplrJS, an open-source rapid development platform. Say goodbye to coding from scratch and embrace seamless building and deployment.",
     "image": {
-        "url": "https://lztihcjfpbpkrcdtwsxg.supabase.co/storage/v1/object/public/assets/zytes.v8.isolates.png",
+        "url": "/i/blog/templrjs-architecture.png",
         "alt": "",
         "css_class": "zyn-nav-action-button",
         "click_event": null,
@@ -30,11 +30,11 @@
             "icon": "",
             "css": "",
             "event": "",
-            "href": "#",
+            "href": "/cms/templrjs",
             "text": "Explore TemplrJS",
             "css_class": "zyn-nav-action-button",
             "is_active": true,
-            "click_event": "noops",
+            "click_event": "hero_templrjs_click",
             "iconBackground": null,
             "iconForeground": null
         },
@@ -46,7 +46,7 @@
             "text": "Get Started",
             "css_class": "zyn-nav-action-button",
             "is_active": true,
-            "click_event": null,
+            "click_event": "hero_getstarted_click",
             "iconBackground": null,
             "iconForeground": null
         }

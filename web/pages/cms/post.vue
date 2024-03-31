@@ -14,7 +14,7 @@ function autogrow() {
 }
 
 function save() {
-  $fetch(`${useRuntimeConfig().public.API_BASE_URL}/entities/blogs`, {
+  $fetch(`${useRuntimeConfig().public.API_BASE_URL}/blogs`, {
     method: 'POST',
     body: { content: content.value, title: useNuxtApp().$s.slugify(title.value) },
   })

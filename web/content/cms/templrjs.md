@@ -1,7 +1,20 @@
-# TemplrJS
+---
+title: templrjs
+date: 2024-01-09T12:00:00.000Z
+description: TemplrJS is a comprehensive web application development framework designed for swift deployment. Ideally suited for edge computing scenarios, it harnesses the power of Vue.js, Nuxt.js, Tailwind CSS, Supabase and DuckDB/MotherDuck to provide developers with an efficient and streamlined experience.
+published: true
+industries: [Digital Engineering]
+coverimage: 
+ogImage: 
+author: Senthilnathan Karuppaiah
+avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
+type: Page
+tags: ["Low Code Platform", "Web App", "Blog", "Mobile Website"]
+---
+
 
 ## Introduction:
-TemplrJS is a comprehensive web application development framework designed for swift deployment. Ideally suited for edge computing scenarios, it harnesses the power of Vue.js, Nuxt.js, Tailwind CSS, and DuckDB/MotherDuck to provide developers with an efficient and streamlined experience.
+TemplrJS is a comprehensive web application development framework designed for swift deployment. Ideally suited for edge computing scenarios, it harnesses the power of Vue.js, Nuxt.js, Tailwind CSS, Supabase and  DuckDB/MotherDuck to provide developers with an efficient and streamlined experience.
 
 
 ## Key Features:  

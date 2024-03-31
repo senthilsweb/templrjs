@@ -1,12 +1,12 @@
 <template>
   <div>
-    <label v-if="show_label" :for="name" class="block text-sm font-medium text-gray-700">
+    <!--<label v-if="show_label" :for="name" class="block text-sm font-medium text-gray-700">
       {{ label }}
-    </label>
+    </label>-->
     <div class="mt-1">
-      <select @change="onChangeDropdown" :id="name" :autocomplete="name" :name="name" :readonly="readonly" :disabled="readonly" class="shadow-sm focus:ring-primary-600 focus:border-primary-600 block w-full text-sm font-medium border-gray-300">
-        <option value="">Select</option>
-        <option v-for="(item, index) in items" :key="index" :value="item.code" :selected="item.code === selectedValue">{{ item.name }}</option>
+      <select @change="onChangeDropdown" :id="name" :autocomplete="name" :name="name" :readonly="readonly" :disabled="readonly" class="h-8 mt-2 block w-full border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        <option value="">Select Schema</option>
+        <option v-for="(item, index) in items" :key="index" :value="item.code" :selected="item.code === selectedValue">{{ label }} : {{ item.name }}</option>
       </select>
     </div>
   </div>
