@@ -43,7 +43,7 @@ export default defineNuxtConfig({
     GOOGLE_MAP_TOKEN: process.env.GOOGLE_MAP_TOKEN,
     public: {
       API_BASE_URL: process.env.API_BASE_URL || '',//https://www.nathansweb.com
-      CONFIG_BASE_URL: process.env.CONFIG_BASE_URL || 'ANY PUBLIC HTTP URL',
+      CONFIG_BASE_URL: process.env.CONFIG_BASE_URL || 'ANY PUBLIC HTTP URL'
     },
   },
   extends: '@nuxthq/neo',

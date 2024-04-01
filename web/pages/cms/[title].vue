@@ -32,6 +32,9 @@ if (data) {
     <div class="container p-4 lg:p-0 max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12">
       <div class="col-span-12 lg:col-span-8">
         <div class="mx-auto text-base max-w-prose lg:max-w-none">
+          <figure class="relative">
+            <img class="post-cover rounded-lg" :src="page.data.coverimage" :alt="page.data.title" />
+          </figure>
           <div class="mt-8 text-sm text-zinc-600 prose prose-zinc max-w-none dark:prose-invert dark:text-zinc-400 prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-lead:text-zinc-500 dark:prose-lead:text-zinc-400 prose-a:font-semibold dark:prose-a:text-sky-400 prose-a:no-underline dark:prose-pre:ring-1 dark:prose-pre:ring-zinc-300/10 dark:prose-hr:border-zinc-800">
             <ContentRendererMarkdown :value="page.body" class="p-2" />
           </div>

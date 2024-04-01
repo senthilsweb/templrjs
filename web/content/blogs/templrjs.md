@@ -1,11 +1,11 @@
 ---
-title: "TemplrJS: The Open Source Powerhouse for Modern Web and Mobile Apps"
-date: 2023-12-07T12:00:00.000Z
+title: "Re-Introducing TemplrJS"
+date: 2024-03-30 23:38:35.621
 published: true
 description: Discover TemplrJS, the amalgamation of best-practice templates and cutting-edge development inspired by RedwoodJS for building high-performance web and mobile applications.
 industries: ['Technology','Software Development','Web Design']
-coverimage: /i/blog/templrjs-social-card.png
-ogImage: /i/blog/templrjs-social-card.png
+coverimage: https://res.cloudinary.com/nathansweb/image/upload/w_800,c_fit,l_text:Arial_60_bold:Re-Introducing%20TemplrJS:%20Another%20One%20of%20My%20Open%20Source%20Contributions,g_north_east,x_30,y_40/v1711924071/senthilsweb-scl-card-template_cyxogj.webp
+ogImage: https://res.cloudinary.com/nathansweb/image/upload/w_800,c_fit,l_text:Arial_60_bold:Re-Introducing%20TemplrJS:%20Another%20One%20of%20My%20Open%20Source%20Contributions,g_north_east,x_30,y_40/v1711924071/senthilsweb-scl-card-template_cyxogj.webp
 author: Senthilnathan Karuppaiah
 avatar: "https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg"
 type: Blog

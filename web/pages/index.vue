@@ -6,7 +6,7 @@ import InstagramPosts from 'components/InstagramPosts.vue';
       <!--<TemplrJSCarousel/>-->
       <TemplrJSHero api_end_point="/configs/hero" />
       <TemplrJSDocCard :data="data" class="m-2 pb-2 py-10" />
-      <!--<BlogRecent />-->
+      <BlogRecent />
       <TemplrJSMarquee api_end_point="/configs/tech-stack" />
       <!--<InstagramPosts/>-->
     </div>
