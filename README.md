@@ -73,3 +73,22 @@ TemplrJS is a comprehensive web application development framework designed for s
     - Create `letsencrypt` folder in the root where the binary is kept
     - Make sure the go server `templrjs` is running on port `8080`
     - Run `docker-compose up -d` to start the Traefik container.
+
+### MotherDuck Table
+
+Blog is dependent on table `posts`
+
+```sql
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY,
+    title TEXT NOT NULL,
+    cover_image TEXT,
+    article_type TEXT NOT NULL DEFAULT 'Blog',
+    abstract TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    modified_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    published boolean NOT NULL default true,
+    author TEXT,
+    article TEXT NOT NULL
+);
+```
