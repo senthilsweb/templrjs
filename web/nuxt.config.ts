@@ -5,8 +5,9 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
-  ssr: false,
-  target: 'static',
+  ssr: true,
+  //target: 'static',
+  nitro: {},
   sourcemap: false,
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
@@ -40,7 +41,7 @@ export default defineNuxtConfig({
     pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',
   },
   runtimeConfig: {
-    GOOGLE_MAP_TOKEN: process.env.GOOGLE_MAP_TOKEN,
+    //GOOGLE_MAP_TOKEN: process.env.GOOGLE_MAP_TOKEN,
     public: {
       API_BASE_URL: process.env.API_BASE_URL || '',//https://www.nathansweb.com
       CONFIG_BASE_URL: process.env.CONFIG_BASE_URL || 'ANY PUBLIC HTTP URL'
