@@ -2,14 +2,13 @@ name: 'senthilsweb/templrjs GitHub Actions'
 
 on:
   workflow_dispatch:
-    branches:
-    - main
 
 env:
-  NAME   : 'templrjs'
+  NAME: 'templrjs'
 
 jobs:
   docker:
+    if: github.ref == 'refs/heads/main'
     name: 'Build & Deploy'
     runs-on: ubuntu-latest
     steps:
@@ -31,7 +30,7 @@ jobs:
         id: vars
         shell: bash
         run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
           echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
       - name: Another step
@@ -46,17 +45,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
-        id: docker_build
         uses: docker/build-push-action@v3.1.1
         with:
           context: .
           push: true
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.NAME }}
-          tags: |
-            ${{ steps.meta.outputs.tags }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.NAME }}:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.NAME }}:${{ github.sha }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.NAME }}:build-${{ github.run_id }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
