@@ -1,94 +1,81 @@
-# TemplrJS
+# duckdb-studio
 
-## Introduction:
-TemplrJS is a comprehensive web application development framework designed for swift deployment. Ideally suited for edge computing scenarios, it harnesses the power of Vue.js, Nuxt.js, Tailwind CSS, and DuckDB/MotherDuck to provide developers with an efficient and streamlined experience.
+DuckDB Studio! A simple, yet powerful web utility designed to explore and interact with DuckDB databases. This tool is perfect for developers, data analysts, and hobbyists who seek an easy and efficient way to work with DuckDB databases either locally or remotely. DuckDB Studio serves as an extension and complementary solution to the [DuckDB Data API](https://github.com/senthilsweb/duckdb_data_api), enhancing its capabilities and user experience. 
 
+## Features
 
-## Key Features:  
+DuckDB Studio offers a range of features designed to simplify your data exploration:
+- **Easy Viewing:** Access and view databases and tables seamlessly.
+- **Table Exploration:** Navigate through your data with a friendly table view and pagination.
+- **SQL Query Execution:** Execute any SQL query directly from the interface.
+- **Prettify SQL:** Beautify your SQL queries for better readability and maintenance.
+- **Versatile Deployment:** Host DuckDB Studio on Vercel for free or run it on any computer with NodeJS.
 
-- **Unified Binary**: The entire application is packaged inside a singular Go-based binary, ensuring seamless execution.
-  
-- **Embedded Database Support**: Comes integrated with DuckDB. It defaults to an in-memory database, offering flexibility in using an existing database file or creating a new one based on configurations. The ideal choice is Serverless Managed DuckDB, MotherDuck 
-  
-- **Client-Only NuxtJS Design**: The default web application follows a client-only NuxtJS architecture, eliminating the need for server-side rendering (SSR).
-  
-- **Optimized for All Devices**: Tailored for both mobile and web platforms, every page is designed with a mobile-first approach, guaranteeing optimal mobile responsiveness.
+## Getting Started
 
-## Development Setup
+To get started with DuckDB Studio, you'll need to set up your development environment. Here are the environment variables required to configure your instance:
 
-### Prerequisites
-
-- Go: https://golang.org/doc/install
-- Node.js: https://nodejs.org/en/download/
-- Npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-
-### Installation
-
-1. Clone the repository: `git clone https://github.com/senthilsweb/templrjs.git`
-2. Navigate to the project directory: `cd project`
-3. Install Go dependencies: `go mod download`
-4. Install Node.js dependencies: `yarn install`
-6. Create a copy of `.env.sample` and name it `.env`: `cp .env.sample .env`
-7. Open the `.env` file in a text editor and set the `API_BASE_URL` variable to `http://localhost:<port>` where `<port>` is the port number that the Go server will run on.
-
-### Development
-
-1. Open a terminal and navigate to the root directory of the project.
-2. Run `go run .` to start the Go server.
-3. Once the Go server is running, open another terminal and navigate to the `/web` directory of the project.
-4. Run `npm run dev` to start the development server for the web project.
-5. Open a web browser and navigate to `http://localhost:3000` to view the web application.
-
-## Production Setup
-
-### Prerequisites
-
-- Go: https://golang.org/doc/install
-- Node.js: https://nodejs.org/en/download/
-- Npm: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-
-### Building & Installation
-
-1. Clone the repository: `git clone https://github.com/senthilsweb/templrjs.git`
-2. Navigate to the project directory: `cd templrjs`
-3. Install Go dependencies: `go mod download`
-4. Navigate to the web directory: `cd web` and Install Node.js dependencies: `npm i`
-5. Create a copy of `.env.sample` and name it `.env`: `cp .env.sample .env`
-6. Open the `.env` file in a text editor and set the `API_BASE_URL` variable to empty.
-7. Run `npm run generate` to build the web project.
-8. Navigate to the root directory of the project and run `sh move_dist.sh` to move the generated static files to the appropriate location.
-9. Run `go build -o templrjs -v .` to build the Go binary.
-
-### Deployment
-
-1. Copy the following files to the production linux server:
-    - Go binary `templrjs`
-    - `templrjs.duckdb` (if you are using duckdb)   
-    - `templrjs.duckdb.wal` (if you are using duckdb)
-    - `config.yml`
-    - `docker-compose.yml` (if you are using Traefik for reverse proxy)
-    - `rules.yml` (if you are using Traefik for reverse proxy)
-2. Run the Go binary to start the production server. `./templrjs -p 8080`
-3. If you are using Traefik for reverse proxy, 
-    - Create `letsencrypt` folder in the root where the binary is kept
-    - Make sure the go server `templrjs` is running on port `8080`
-    - Run `docker-compose up -d` to start the Traefik container.
-
-### MotherDuck Table
-
-Blog is dependent on table `posts`
-
-```sql
-CREATE TABLE posts (
-    id INTEGER PRIMARY KEY,
-    title TEXT NOT NULL,
-    cover_image TEXT,
-    article_type TEXT NOT NULL DEFAULT 'Blog',
-    abstract TEXT NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    modified_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    published boolean NOT NULL default true,
-    author TEXT,
-    article TEXT NOT NULL
-);
+```.env
+NUXT_SESSION_PASSWORD=your_secure_password
+NUXT_PUBLIC_LOGO_WEB=path/to/your/web/logo.svg
+NUXT_PUBLIC_LOGO_MOBILE=path/to/your/mobile/logo.svg
+NUXT_PUBLIC_DUCKDB_DATA_API_BASE_PATH=your_duckdb_data_api_endpoint
 ```
+
+### Development Environment
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/senthilsweb/duckdb-studio
+cd duckdb-studio
+```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+```
+
+3. **Run the development server:**
+
+```bash
+npm run dev
+```
+
+Visit `http://localhost:3000` to see DuckDB Studio in action.
+
+### Production Deployment
+
+DuckDB Studio can be deployed on various platforms. A common choice is Vercel, which offers free hosting:
+
+1. **Build your project for production:**
+
+```bash
+npm run build
+```
+
+2. **Start the production server:**
+
+```bash
+npm start
+```
+
+3. **Deploy to Vercel:**
+
+- Push your changes to a GitHub repository.
+- Connect your GitHub repository to Vercel.
+- Follow Vercel's prompts to deploy your DuckDB Studio instance.
+
+## To-Do Items
+
+- [ ] Automatic online API documentation for tables/entities.
+- [ ] Integrate SQLGlot for query transpilation to multiple data sources.
+- [ ] Develop an SQL Query Optimizer.
+- [ ] Implement features for enhanced data lineage insights.
+- [ ] Go binary for packing the app as appliance
+
+
+
+DuckDB Studio is inspired by and aims to complement the DuckDB ecosystem by providing an accessible and user-friendly interface for data exploration and management. Whether you're a seasoned data professional or just starting out, DuckDB Studio is designed to streamline your workflow and enhance your data interaction experiences.
+

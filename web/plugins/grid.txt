@@ -1,6 +1,0 @@
-import { defineNuxtPlugin } from '#app'
-import Grid from 'gridjs'
-import "gridjs/dist/theme/mermaid.css";
-export default defineNuxtPlugin((nuxtApp) => {
-    nuxtApp.provide('gridjs', Grid)
-})

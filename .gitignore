@@ -23,3 +23,10 @@ templrjs
 hist.txt
 hist.txt
 history.txt
+.node_modules
+/node_modules
+.nuxt
+.output
+/.output
+/.nuxt
+.env
