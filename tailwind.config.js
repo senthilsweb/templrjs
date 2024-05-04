@@ -10,7 +10,8 @@ module.exports = {
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
     './src/**/*.{js,jsx,ts,tsx,vue}',
-    "node_modules/tailvue/dist/tailvue.es.js"
+    "node_modules/tailvue/dist/tailvue.es.js",
+    './app.vue',
   ],
   safelist: [
     //orange

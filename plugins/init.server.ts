@@ -7,9 +7,11 @@ export default defineNuxtPlugin((nuxtApp) => {
     const propertiesStore = usePropertiesStore();
     const navigationsStore = useNavigationsStore();
     const companyStore = useCompanyStore();
+    const countryStore = useCountryStore();
 
     await propertiesStore.loadPropertiesIfNeeded(config.public);
     await navigationsStore.loadNavigationsIfNeeded(config.public);
     await companyStore.loadCompanyIfNeeded(config.public);
+    await countryStore.loadCountriesIfNeeded(config.public);
   });
 });

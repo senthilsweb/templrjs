@@ -1,0 +1,22 @@
+{
+    "menu": [
+        {
+            "name": "Business card",
+            "description": "",
+            "href": "/designer/business-card",
+            "icon": "",
+            "click_event": "noops",
+            "iconForeground": "text-indigo-700",
+            "iconBackground": "bg-indigo-50"
+        },
+        {
+            "name": "Social card",
+            "description": "",
+            "href": "/designer/social-card",
+            "icon": "",
+            "click_event": "noops",
+            "iconForeground": "text-indigo-700",
+            "iconBackground": "bg-indigo-50"
+        }
+    ]
+}

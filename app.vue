@@ -11,6 +11,50 @@
 <script setup>
 const page_meta = [];
 
+useHead({
+  //title: usePropertiesStore().app_page_head_title,
+  //description: usePropertiesStore().app_page_head_title,
+ //meta: page_meta,
+  /*meta: [
+		{
+			name: "description",
+			content: "Corporate intranet application",
+		},
+		{
+			property: "og:title",
+			content: "Corporate intranet application",
+		},
+		{
+			property: "og:description",
+			content: "Corporate intranet application",
+		},
+		{
+			property: "og:image",
+			content: "/logo.png",
+		},
+		{
+			property: "og:type",
+			content: "website",
+		},
+		{
+			property: "og:site_name",
+			content: "zytes",
+		},
+	],*/
+  script: [
+    {
+      hid: 'underscore',
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.4/underscore-min.js',
+      defer: true,
+    },
+    {
+      hid: 'chartjs',
+      src: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js',
+      defer: true,
+    },
+  ],
+});
+
 </script>
 <style>
 .zyn-button {

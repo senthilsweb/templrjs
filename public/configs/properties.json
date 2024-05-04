@@ -169,7 +169,7 @@
     },
     {
         "code": "logo-url",
-        "name": "https://lztihcjfpbpkrcdtwsxg.supabase.co/storage/v1/object/public/assets/fbmodel-templr.svg",
+        "name": "/logo.svg",
         "parent_code": "logo",
         "is_active": true
     },
@@ -199,7 +199,7 @@
     },
     {
         "code": "logo-url-dark",
-        "name": "https://lztihcjfpbpkrcdtwsxg.supabase.co/storage/v1/object/public/assets/fbmodel-templr.svg",
+        "name": "/logo-templr.svg",
         "parent_code": "logo",
         "is_active": true
     },

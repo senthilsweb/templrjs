@@ -28,11 +28,11 @@ export const useCountryStore = defineStore('country', {
       this.loaded = true; // Directly update loaded state
       console.log('Countries loaded');
     },
-    async loadCountriesIfNeeded() {
+    async loadCountriesIfNeeded(config) {
       if (this.loaded) return;
 
       try {
-        const response = await fetch(`${useRuntimeConfig().public.TEMPLRJS_CONFIG_ROOT_PATH}/countries.json`, { method: 'GET' });
+        const response = await fetch(`${config.TEMPLRJS_CONFIG_ROOT_PATH}/countries.json`, { method: 'GET' });
         if (!response.ok) {
           throw new Error('Failed to load countries');
         }

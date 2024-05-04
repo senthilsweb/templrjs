@@ -44,8 +44,9 @@ export default defineNuxtConfig({
       CONFIG_BASE_URL: process.env.CONFIG_BASE_URL || 'ANY PUBLIC HTTP URL',
       CLOUDINARY_BASE_URL: process.env.CLOUDINARY_BASE_URL || '',
       CLOUDINARY_PUBLIC_ID: process.env.CLOUDINARY_PUBLIC_ID || '',
-      TEMPLRJS_CONFIG_ROOT_PATH:process.env.TEMPLRJS_CONFIG_ROOT_PATH || ''
-    },
+      TEMPLRJS_CONFIG_ROOT_PATH:process.env.TEMPLRJS_CONFIG_ROOT_PATH || '',
+      SUPABASE_URL: process.env.SUPABASE_URL || 'https://lztihcjfpbpkrcdtwsxg.supabase.co',
+      SUPABASE_KEY: process.env.SUPABASE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx6dGloY2pmcGJwa3JjZHR3c3hnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjcyMjA1NzIsImV4cCI6MTk4Mjc5NjU3Mn0.eNqEj4UODjXnw6DFKKwT4aXGg3drWu3WSOxhD3Y0GcY'}
   },
   modules: [
     "@nuxt/content",
@@ -54,20 +55,45 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "nuxt-lodash",
     "@nuxtjs/robots",
-    "@pinia/nuxt"
+    "@pinia/nuxt",
+    "@nuxtjs/mdc",
+    "@nuxtjs/fontaine",
+    '@nuxtjs/supabase',
   ],
   mdc: {
     highlight: {
-      theme: {
-        default: "vitesse-light",
-        dark: "material-theme-palenight",
-      },
-    },
+      langs: ['javascript', 'css', 'html', 'sql','bash','go','json','yaml','properties','dockerfile'],
+      themes: [
+        'github-dark',
+        'vitesse-light',
+      ]
+    }
   },
   devtools: {
     enabled: false,
   },
   content: {
-    documentDriven: false,
-  }
+    documentDriven: true,
+    highlight: {
+      theme: {
+        // Default theme (same as single string)
+        default: 'github-dark',
+        // Theme used if `html.dark`
+        dark: 'github-dark',
+        // Theme used if `html.sepia`
+        sepia: 'monokai'
+      },
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml','sql','javascript'
+      ]
+    }
+  },
+  //extends: '@nuxt-themes/docus',
+  supabase: {
+    redirectOptions: {
+      login: '/login',
+      callback: '/confirm',
+      exclude: ['/','/signup','/forgotpassword','/cms/*','/blog*','/resume*'],
+      cookieRedirect: false,
+    },
+  },
 });
