@@ -1,0 +1,266 @@
+{
+    "$schema": "https://www.krakend.io/schema/v2.5/krakend.json",
+    "version": 3,
+    "name": "templrjs",
+    "cache_ttl": "3600s",
+    "timeout": "30s",
+    "extra_config": {
+      "telemetry/metrics": {
+        "collection_time": "30s",
+        "listen_address": ":8090"
+      },
+      "telemetry/logging": {
+        "level": "DEBUG",
+        "prefix": "[KRAKEND]",
+        "syslog": false,
+        "stdout": true
+      },
+      "telemetry/opencensus": {
+        "sample_rate": 100,
+        "reporting_period": 1,
+        "enabled_layers": {
+          "backend": true,
+          "router": true
+        },
+        "exporters": {
+          "jaeger": {
+            "endpoint": "http://jaeger:14268/api/traces",
+            "service_name": "krakend"
+          }
+        }
+      },
+      "security/cors": {
+        "allow_origins": [
+          "*"
+        ],
+        "allow_methods": [
+          "GET",
+          "HEAD",
+          "POST",
+          "PUT",
+          "PATCH",
+          "OPTIONS",
+          "DELETE"
+        ],
+        "allow_headers": [
+          "Origin",
+          "Authorization",
+          "Content-Type"
+        ],
+        "expose_headers": [
+          "Content-Length"
+        ],
+        "max_age": "12h"
+      },
+      "auth/revoker": {
+        "N": 10000000,
+        "P": 0.0000001,
+        "hash_name": "optimal",
+        "TTL": 1500,
+        "port": 1234,
+        "token_keys": [
+          "jti"
+        ]
+      }
+    },
+    "endpoints": [
+      {
+        "@comment": "Health check endpoint",
+        "endpoint": "/api/v1/health",
+        "input_headers": [
+          "Content-Type",
+          "Content-Length",
+          "Host",
+          "Accept"
+        ],
+        "method": "GET",
+        "backend": [
+          {
+            "url_pattern": "/__health",
+            "host": [
+              "http://krakend:8080"
+            ]
+          }
+        ]
+      },
+      {
+        "@comment": "Retrieve application information",
+        "endpoint": "/api/v1/info",
+        "input_headers": [
+          "Content-Type",
+          "Content-Length",
+          "Host",
+          "Accept"
+        ],
+        "method": "GET",
+        "backend": [
+          {
+            "url_pattern": "/",
+            "encoding": "no-op",
+            "host": [
+              "http://127.0.0.1"
+            ]
+          }
+        ],
+        "extra_config": {
+          "proxy": {
+            "static": {
+              "strategy": "always",
+              "data": {
+                "app_name": "$APP_NAME",
+                "api_version": "1.0.0.02122023",
+                "app_version": "1.0.0.03222024",
+                "app_description": "TemplrJS is the full-stack web framework built on NuxtJS, TailwindCSS, Supabase designed for edge computing to help build personal projects to small to medium size business application"
+              }
+            }
+          }
+        }
+      },
+      {
+        "@comment": "Supabase Sign-in with grant type as password",
+        "endpoint": "/api/v1/signin",
+        "input_headers": [
+          "Content-Type",
+          "Content-Length",
+          "Host",
+          "Accept"
+        ],
+        "method": "POST",
+        "backend": [
+          {
+            "url_pattern": "/auth/v1/token?grant_type=password",
+            "host": [
+              "$SUPABASE_URL"
+            ],
+            "extra_config": {
+              "backend/http": {
+                "return_error_details": "backend_alias"
+              },
+              "modifier/lua-backend": {
+                "pre": "print('Backend response, pre-logic:'); local r = request.load(); print(r:body());r:headers('apikey','$SUPABASE_KEY')"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "@comment": "Supabase new user creation",
+        "endpoint": "/api/v1/signup",
+        "input_headers": [
+          "Content-Type",
+          "Content-Length",
+          "Host",
+          "Accept"
+        ],
+        "method": "POST",
+        "backend": [
+          {
+            "url_pattern": "auth/v1/signup",
+            "host": [
+              "$SUPABASE_URL"
+            ],
+            "extra_config": {
+              "backend/http": {
+                "return_error_details": "backend_alias"
+              },
+              "modifier/lua-backend": {
+                "pre": "print('Backend response1, pre-logic:'); local r = request.load(); r:headers('apikey','$SUPABASE_KEY')",
+                "post": "print('Backend response1, post-logic:');local r = response.load(); local body = r:body(); print('Original Body: ', body); if type(body) == 'table' then local new_body = {}; new_body['data'] =  body ; r:body(cjson.encode(new_body)) else r:body(body) end;  print(r:body())"
+              }
+            },
+            "mapping": {
+              "data": "supabase"
+            }
+          }
+        ]
+      },
+      {
+        "@comment": "supabase Signout",
+        "endpoint": "/api/v1/signout",
+        "input_headers": [
+          "Content-Type",
+          "Content-Length",
+          "Host",
+          "Accept",
+          "Authorization"
+        ],
+        "method": "POST",
+        "backend": [
+          {
+            "url_pattern": "/auth/v1/logout",
+            "host": [
+              "$SUPABASE_URL"
+            ],
+            "extra_config": {
+              "backend/http": {
+                "return_error_details": "backend_alias"
+              },
+              "modifier/lua-backend": {
+                "pre": "print('Backend response, pre-logic:'); local r = request.load(); print(r:body());r:headers('apikey','$SUPABASE_KEY')"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "@comment": "List, filter and paginate entity",
+        "endpoint": "/api/v1/{entity}",
+        "input_query_strings": [
+          "*"
+        ],
+        "input_headers": [
+          "Content-Type",
+          "Content-Length",
+          "Host",
+          "Accept",
+          "range"
+        ],
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/{entity}",
+            "host": [
+              "$API_BASE_PATH_DUCK_DB"
+            ],
+            "extra_config": {
+              "backend/http": {
+                "return_error_details": "backend_alias"
+              }
+            },
+            "is_collection": true,
+            "encoding": "safejson"
+          }
+        ]
+      },
+      {
+        "@comment": "Get entity by surrogate key",
+        "endpoint": "/api/v1/{entity}/{id}",
+        "input_query_strings": [
+          "*"
+        ],
+        "input_headers": [
+          "Content-Type",
+          "Content-Length",
+          "Host",
+          "Accept",
+          "range"
+        ],
+        "method": "GET",
+        "output_encoding": "json",
+        "backend": [
+          {
+            "url_pattern": "/{entity}/{id}",
+            "host": [
+              "$API_BASE_PATH_DUCK_DB"
+            ],
+            "extra_config": {
+              "backend/http": {
+                "return_error_details": "backend_alias"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
