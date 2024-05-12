@@ -31,3 +31,5 @@ history.txt
 /.nuxt
 .env
 /krakend/configs/krakend.json
+/krakend/configs/entrypoint.sh
+/krakend/configs/krakend.template.json
