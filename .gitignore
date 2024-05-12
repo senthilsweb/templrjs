@@ -30,3 +30,4 @@ history.txt
 /.output
 /.nuxt
 .env
+/krakend/configs/krakend.json

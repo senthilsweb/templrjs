@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  krakend:
+    image: devopsfaith/krakend:watch
+    platform: linux/amd64
+    container_name: krakend
+    volumes:
+      - ./configs:/etc/krakend
+      - ./entrypoint.sh:/etc/krakend/entrypoint.sh
+    ports:
+      - "1226:1234"
+      - "1227:8080"
+      - "1228:8090"
+    environment:
+      - FC_ENABLE=1
+      - APP_NAME=TemplrJS
+      - API_BASE_PATH_DUCK_DB=https://duckdb-data-api.vercel.app
+      - SUPABASE_URL=https://lztihcjfpbpkrcdtwsxg.supabase.co
+      - SUPABASE_KEY=
+    entrypoint: ["/bin/sh", "/etc/krakend/entrypoint.sh"] #Make sure that you have `chmod +x entrypoint.sh`
+#    depends_on:
+#      - jaeger
+#  jaeger:
+#    image: jaegertracing/all-in-one:1
+#    ports:
+#      - "16686:16686"
+#      - "14268:14268"
