@@ -4,7 +4,7 @@ FROM devopsfaith/krakend:latest
 # Set any environment variables
 ENV FC_ENABLE=1 \
     MY_POD_NAMESPACE=templrjs \
-    ERP_NEXT_API_TOKEN="token 2b9f3de7c5bcc0a:ffbe06e23ad587e"
+    APP_NAME=templrjs
 
 # Copy local configuration files to the container
 COPY ./configs /etc/krakend

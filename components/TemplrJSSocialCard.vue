@@ -3,7 +3,7 @@
     <div id="blog-scl-card-container">
       <div class="absolute inset-0 z-10 mx-0 max-w-none overflow-hidden rounded-2xl">
         <div class="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] dark:[mask-image:linear-gradient(white,transparent)]">
-          <div :class="['absolute inset-0 opacity-40', `bg-gradient-to-r from-${props.color}-500 to-${props.color}-200`, `dark:from-${props.color}-500/30 dark:to-${props.color}-200/30`, '[mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:opacity-100']">
+          <div :class="['absolute inset-0 opacity-40', `bg-gradient-to-r from-green-500 to-green-200`, `dark:from-green-500/30 dark:to-green-200/30`, '[mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:opacity-100']">
             <svg aria-hidden="true" class="dark:fill-white/2.5 absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/40 stroke-black/50 mix-blend-overlay dark:stroke-white/5">
               <defs>
                 <pattern id=":S1:" width="72" height="56" patternUnits="userSpaceOnUse" x="-12" y="4"><path d="M.5 56V.5H72" fill="none"></path></pattern>
@@ -17,14 +17,12 @@
               </svg>
             </svg>
           </div>
-          <!--<svg viewBox="0 0 1113 440" aria-hidden="true" class="absolute left-1/2 top-0 ml-[-19rem] w-[69.5625rem] fill-white blur-[26px] dark:hidden"><path d="M.016 439.5s-9.5-300 434-300S882.516 20 882.516 20V0h230.004v439.5H.016Z"></path></svg>-->
-        </div>
+          </div>
       </div>
     </div>
     <div>
       <h1 class="text-2xl tracking-tight text-gray-900 dark:text-white">{{ props.title }}</h1>
       <p class="mt-2 text-sm text-slate-800">{{ props.description }}</p>
-
       <div class="flex items-center gap-2 mt-2">
         <svg class="h-6 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z" clip-rule="evenodd"></path>

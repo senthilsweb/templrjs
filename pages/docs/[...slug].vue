@@ -14,7 +14,6 @@
       <div class="min-w-0 max-w-2xl flex-auto px-4 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
         <div class="col-span-12 lg:col-span-8">
           <TemplrJSSocialCard :title="page.title" :description="page.description" :tags="page.tags" :author="page.author" :date="page.date" :color="green"/>
-        
           <div class="relative mx-auto text-base max-w-prose lg:max-w-none px-6 py-6">
             <!--Center main content (start)-->
             <article>
@@ -87,15 +86,4 @@ const {
   next,
   prev,
 } = useContent();
-
-const colorClasses = ['gray', 'red', 'yellow', 'green', 'pink', 'blue', 'indigo', 'purple', 'teal', 'cyan'];
-
-const randomColorClass = (color) => `bg-${color}-400/10 text-${color}-400 ring-${color}-400/20`;
-
-const tagsWithColors = computed(() => {
-  return page.value.tags.map((tag) => ({
-    text: tag,
-    colorClass: randomColorClass(colorClasses[Math.floor(Math.random() * colorClasses.length)]),
-  }));
-});
 </script>

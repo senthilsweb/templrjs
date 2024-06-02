@@ -1,12 +1,23 @@
-# fly.toml app configuration file generated for krakend on 2024-03-11T21:18:01-04:00
+# fly.toml app configuration file generated for api-healthbuddy on 2024-05-12T22:38:17-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'krakend'
-primary_region = 'ewr'
+app = 'api-templrjs'
+primary_region = 'sin'
 
 [build]
+
+[env]
+
+  SUPABASE_KEY = 'key-goes-here'
+  SUPABASE_URL = 'url-goes-here'
+  APP_NAME = 'TemplrJS'
+  APP_DESCRIPTION = 'TemplrJS is the full-stack web framework built on NuxtJS, TailwindCSS, Supabase designed for edge computing to help build personal projects to small to medium size business application'
+  API_VERSION = '1.0.0.02122023'
+  APP_VERSION = '1.0.0.03222024'
+  API_BASE_PATH_DUCK_DB = https://duckdb-data-api.vercel.app
+
 
 [http_service]
   internal_port = 8080
