@@ -14,6 +14,9 @@ tags: [Bio, About Me, Career]
 
 ## About Me
 
+<img src="https://res.cloudinary.com/nathansweb/image/upload/l_text:Arial_30:www.senthilsweb.com,co_rgb:808080,g_south_east,x_10,y_10/v1727025413/senthilsweb.com/avatars/senthil-face-photo-sep-2024.jpg" alt="Tilted and bordered image" class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800" width="300" height="300"/>
+
+
 I am a seasoned hands-on Software Architect with more than two decades of experience in product engineering and solution design. My journey in the tech industry began in 1999, and over the years, I've donned various roles, including Programmer, Team Lead, and Architect. With a relentless passion for innovation and technology, I've made significant contributions to startups, large enterprises, and multinational corporations.
 
 At present, I work as a Senior Engineering Manager at Hitachi Vantara, USA, specializing in the Pentaho Data Catalog, Product Development. In this role, I lead a global distributed team of Software Engineering professionals across Asia, Europe, and the Americas. I contribute significantly to Core Engineering, Production Engineering, Pre-Sales, and Customer Success, serving as a Developer Advocate for the Pentaho Data Catalog product suite. This suite includes Data Discovery, Data Provenance, Data Governance/Classification, Business Metadata Management, Master Data Management, and Data Quality assessment.
