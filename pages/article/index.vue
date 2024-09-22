@@ -13,13 +13,14 @@
         </div>
         <section aria-labelledby="blogs-heading" class="pb-24 pt-6">
           <h2 id="blogs-heading" class="sr-only">Blogs</h2>
+
           <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
             <!-- blog grid (start)-->
             <div class="lg:col-span-4">
               <ClientOnly>
                 <div class="flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-5 items-start mb-24">
                   <template v-for="article of paginatedData" :key="article.title">
-                    <BlogCard :path="`/blog/${useNuxtApp().$s.slugify(article.title)}`" :title="article.title" :date="article.date" :description="article.description" :image="article.coverimage" :alt="article.title" :og-image="article.coverimage" :tags="[]" :published="article.published" />
+                    <BlogCard :path="`/article/${article.title}`" :title="article.title" :date="article.created_at" :description="article.abstract" :image="article.cover_image" :alt="article.title" :og-image="article.cover_image" :tags="[]" :published="article.published" />
                   </template>
                   <template v-if="data?.length === 0">
                     <BlogEmpty />
@@ -27,7 +28,18 @@
                 </div>
               </ClientOnly>
 
-             
+              <!--<div class="mt-10 flex items-center justify-center gap-x-6">
+               
+                  <div class="flex justify-center items-center space-x-6">
+                    <button :disabled="pageNumber <= 1" @click="onPreviousPageClick">
+                      <Icon name="mdi:code-less-than" size="30" :class="{ 'text-sky-700': pageNumber > 1 }" />
+                    </button>
+                    <p>{{ pageNumber }} / {{ totalPage }}</p>
+                    <button :disabled="pageNumber >= totalPage" @click="onNextPageClick">
+                      <Icon name="mdi:code-greater-than" size="30" :class="{ 'text-sky-700': pageNumber < totalPage }" />
+                    </button>
+                  </div>
+                </div>-->
 
               <header class="space-y-1 mt-4">
                 <dl class="flex dark:border-gray-800">
@@ -60,6 +72,7 @@
     </div>
   </NuxtLayout>
 </template>
+
 <script setup>
 import { ref } from 'vue';
 import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems, TransitionChild, TransitionRoot } from '@headlessui/vue';
@@ -69,21 +82,51 @@ import { parseMarkdown } from '@nuxtjs/mdc/runtime';
 import _ from 'lodash';
 import dayjs from 'dayjs';
 
+
 const mobileFiltersOpen = ref(false);
 const { path } = useRoute();
-console.log(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"}}}`);
+//console.log('path=', path);
 
-const data = await $fetch(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"]}`);
+const savePosts = async (posts) => {
+  const API_BASE_URL = useRuntimeConfig().public.API_BASE_URL;
+  let i = 1;
+  try {
+    for (const post of posts) {
+      //console.log(post)
+      let record = await parseMarkdown(post);
+      //console.log("post =" + record.data.title)
+      const response = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/posts`, {
+        method: 'POST',
+        body: {
+          id: i,
+          title: useNuxtApp().$s.slugify(record.data.title),
+          cover_image: record.data.coverimage,
+          article_type: record.data.type,
+          abstract: record.data.description,
+          article: post,
+          created_at: dayjs(record.data.date),
+        },
+      });
+      i++;
+      console.log('Saved:', response);
+    }
+    console.log('All posts saved');
+  } catch (err) {
+    console.log(err.data);
+  }
+};
+
+const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/posts?select=id,title,created_at,cover_image,article_type,abstract,published&article_type.eq=Blog&title.neq=&order=created_at desc`);
 const articlesContent = ref([]);
 const filteredArticles = ref([]);
 
-if (data && _.isArray(data)) {
-  articlesContent.value = data;
-  filteredArticles.value = _.orderBy(articlesContent.value, (article) => new Date(_.get(article, 'date')), 'desc');
+if (data && _.isArray(data.data)) {
+  articlesContent.value = data.data;
+
+  filteredArticles.value = _.orderBy(articlesContent.value, (article) => new Date(_.get(article, 'created_at')), 'desc');
 }
 
-//console.log(JSON.stringify(filteredArticles.value))
-
+//console.log(JSON.stringify(articles))
 const searchPhrase = ref('');
 const elementPerPgae = ref(6);
 const pageNumber = ref(1);

@@ -18,6 +18,3 @@ I got back into writing to share my thoughts and reusable piece of work for the 
 <!--more-->
 
 All of the work in this website which includes every piece of technical details has been hand crafted using modern web frameworks, tools and technologies and it is in rigorous development. 
-
-
-

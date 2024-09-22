@@ -130,12 +130,16 @@ const data = ref({});
 //-----------------------------------------------------------------------------------------------------
 useNuxtApp().$bus.$on('evtSideBarGuide', async (args) => {
   isSideBarGuideOpen.value = !isSideBarGuideOpen.value;
-  const resp = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/entities/blogs?title.eq=getting-started-with-duckdb-sql-ide`);
-  if (resp && Array.isArray(resp.data)) {
-    //console.log('resp=', JSON.stringify(resp));
-    data.value = await parseMarkdown(resp.data[0].content);
-    //console.log('resp=',  JSON.stringify(data.value.data.title));
-  }
+
+const data = await $fetch(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$eq":"/blog/${useRoute().params.title}"}}}`);
+
+if (data && _.isArray(data)) {
+  data.value = data[0];
+
+} else {
+  data.value = { data: { title: 'Sorry, No content exists', body: '' }, toc: { links: [] } };
+}
+
 
   //data.value = {};
   progress.value = false;

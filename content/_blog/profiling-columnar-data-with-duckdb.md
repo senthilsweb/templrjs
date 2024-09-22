@@ -16,8 +16,6 @@ tags: [Data Profiling, DuckDB, CSV]
 
 DuckDB, an in-process SQL OLAP database management system, has risen as a potent tool for data analysts and engineers for profiling and analyzing large datasets. This guide walks you through the process of using DuckDB to profile columnar data files and extract meaningful statistics and distributions.
 
-<!-- more -->
-
 ## Profiling Columnar Data with DuckDB
 
 DuckDB simplifies data profiling by providing SQL-based tools that can directly work with CSV files. Here's how you can quickly profile your columnar data using DuckDB:

@@ -45,6 +45,7 @@ export default defineNuxtConfig({
       CLOUDINARY_BASE_URL: process.env.CLOUDINARY_BASE_URL || '',
       CLOUDINARY_PUBLIC_ID: process.env.CLOUDINARY_PUBLIC_ID || '',
       TEMPLRJS_CONFIG_ROOT_PATH:process.env.TEMPLRJS_CONFIG_ROOT_PATH || '',
+      TEMPLRJS_WEB_ROOT_PATH:process.env.TEMPLRJS_WEB_ROOT_PATH || 'http://localhost:3000',
       SUPABASE_URL: process.env.SUPABASE_URL || 'https://lztihcjfpbpkrcdtwsxg.supabase.co',
       SUPABASE_KEY: process.env.SUPABASE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx6dGloY2pmcGJwa3JjZHR3c3hnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjcyMjA1NzIsImV4cCI6MTk4Mjc5NjU3Mn0.eNqEj4UODjXnw6DFKKwT4aXGg3drWu3WSOxhD3Y0GcY'}
   },
@@ -74,6 +75,7 @@ export default defineNuxtConfig({
   },
   content: {
     documentDriven: true,
+    apiPrefix: 'api/_content', 
     highlight: {
       theme: {
         // Default theme (same as single string)
@@ -92,7 +94,7 @@ export default defineNuxtConfig({
     redirectOptions: {
       login: '/login',
       callback: '/confirm',
-      exclude: ['/','/signup','/forgotpassword','/cms/*','/blog*','/resume*'],
+      exclude: ['/','/signup','/forgotpassword','/cms/*','/blog*','/resume*','/article*','/api/_content/*','/duckdb/*','/docs/*'],
       cookieRedirect: false,
     },
   },

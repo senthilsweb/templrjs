@@ -1,12 +1,12 @@
 ---
-title: Templrjs Demo
-pageTitle: Templrjs Demo
+title: Using Makefiles to Bundle a Full-Stack App into a Go Binary
+pageTitle: Using Makefiles to Bundle a Full-Stack App into a Go Binary
 date: 2023-09-30T12:00:00.000Z
 published: true
 industries: []
 description: Creating a seamless deployment process can be a challenge when building full-stack applications. This blog will walk you through packaging a web frontend and a Go backend into a single binary, making deployment easier and more efficient.
-coverimage: https://images.unsplash.com/photo-1643140751093-ce43a9170fe8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3436&q=80
-ogImage: https://images.unsplash.com/photo-1643140751093-ce43a9170fe8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3436&q=80
+coverimage: https://plus.unsplash.com/premium_photo-1681488229881-d733064c22cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3446&q=80
+ogImage: https://plus.unsplash.com/premium_photo-1681488229881-d733064c22cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3446&q=80
 author: Senthilnathan Karuppaiah
 avatar: https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/Senthil-profile-picture-01_al07i5.jpg
 type: Blog
@@ -28,61 +28,6 @@ Key Features:
 - **Single Binary Deployment:** No need to manage separate servers for frontend and backend. Just deploy the binary and you're good to go!
 - **Embedded Database with DuckDB:** If no database configuration is provided, `TemplrJS` defaults to an in-memory database. If a database filename is specified and exists, the system will use it; otherwise, a new file will be created.
 - **Optimized Web Application:** The default web application is client-only, meaning no server-side rendering (SSR). Designed with a mobile-first approach, all pages are optimized for both mobile and web viewing.
-
-## Manual Packaging
-
-### Step 1: Setting Up the Frontend
-
-Navigate to the web project directory:
-
-```bash
-cd ./web
-```
-
-Before generating the build, clean up any previous build artifacts:
-
-```bash
-rm -rf ./dist
-```
-
-Then, install the necessary npm packages:
-
-```bash
-npm i
-```
-
-And generate the build:
-
-```bash
-npm run generate
-```
-
-### Step 2: Embedding the Frontend with the Go Backend
-
-Once the web frontend is built, we'll move its assets to the Go project's root directory:
-
-```bash
-cp -r ./web/dist ./dist
-```
-
-### Step 3: Building the Go Binary
-
-With the frontend assets in place, we can now build our Go binary:
-
-```bash
-go build -o templrjs_server -v .
-```
-
-This command compiles the Go code, embedding the `dist` folder, resulting in a single binary named `templrjs_server`.
-
-### Step 4: Packaging for Deployment
-
-Lastly, we'll package essential files into a ZIP for easy deployment:
-
-```bash
-ZIP_NAME="templrjs_bundle_`date +%s`.zip"
-zip $$ZIP_NAME templrjs_server templrjs.duckdb templrjs.duckdb.wal config.yml .env.sample
-```
 
 ## Packaging with Makefile
 
@@ -137,29 +82,58 @@ package:
 	@echo "Packaged into $$ZIP_NAME..."
 ```
 
+### Step 1: Setting Up the Frontend
 
-To execute the entire sequence, just run:
-
-```bash
-$ make
-```
-
-The `Makefile` breaks down the operations into individual tasks. You can also execute them individually if needed, like:
+Navigate to the web project directory:
 
 ```bash
-$ make clean-web-dist
+cd ./web
 ```
 
-or 
+Before generating the build, clean up any previous build artifacts:
 
 ```bash
-$ make generate-web
+rm -rf ./dist
 ```
 
-and so on.
+Then, install the necessary npm packages:
 
-Note: Before running this, ensure that you have `zip` installed, as the packaging task uses it. If you're on a system like Ubuntu, you can install it using `sudo apt-get install zip`.
+```bash
+npm i
+```
 
+And generate the build:
+
+```bash
+npm run generate
+```
+
+### Step 2: Embedding the Frontend with the Go Backend
+
+Once the web frontend is built, we'll move its assets to the Go project's root directory:
+
+```bash
+cp -r ./web/dist ./dist
+```
+
+### Step 3: Building the Go Binary
+
+With the frontend assets in place, we can now build our Go binary:
+
+```bash
+go build -o templrjs_server -v .
+```
+
+This command compiles the Go code, embedding the `dist` folder, resulting in a single binary named `templrjs_server`.
+
+### Step 4: Packaging for Deployment
+
+Lastly, we'll package essential files into a ZIP for easy deployment:
+
+```bash
+ZIP_NAME="templrjs_bundle_`date +%s`.zip"
+zip $$ZIP_NAME templrjs_server templrjs.duckdb templrjs.duckdb.wal config.yml .env.sample
+```
 
 ## Conclusion
 

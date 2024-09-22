@@ -28,7 +28,8 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <article class="flex flex-col w-full h-full bg-teal-50 hover:shadow-lg focus-within:ring ring-teal-300 transition-shadow duration-300 ease-in-out rounded-2xl shadow-sm">
-    <a :href="`/blog/${useNuxtApp().$s.slugify(title)}`" class="flex flex-col h-full">
+    <!--<a :href="`/article/${useNuxtApp().$s.slugify(title)}`" class="flex flex-col h-full">-->
+    <a :href="path" class="flex flex-col h-full">
       <img :src="image" class="h-48  w-full object-cover object-center mb-8 rounded-2xl p-2" loading="lazy" :alt="_.startCase(title)" />
       <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-500 mb-4 p-2">
         <!--<span>{{ author }}</span>-->

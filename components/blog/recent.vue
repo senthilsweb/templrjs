@@ -2,15 +2,14 @@
 import { parseMarkdown } from '@nuxtjs/mdc/runtime';
 import _ from 'lodash';
 
-
-const data = await $fetch(`${useRuntimeConfig().public.API_BASE_URL}/posts?select=id,title,created_at,cover_image,article_type,abstract,published&article_type.eq=Blog&title.neq=&order=created_at desc&limit=6`);
+console.log(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"],"limit":6,"sort":{"date":-1}}`)
+const data = await $fetch(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"],"limit":6,"sort":{"date":-1}}`);
 const articlesContent = ref([]);
 const filteredArticles = ref([]);
 
-
-if (data && _.isArray(data.data)) {
-  articlesContent.value = data.data;
-  filteredArticles.value = _.orderBy(articlesContent.value, (article) => new Date(_.get(article, 'created_at')), 'desc');
+if (data && _.isArray(data)) {
+  articlesContent.value = data;
+  filteredArticles.value = _.orderBy(articlesContent.value, (article) => new Date(_.get(article, 'date')), 'desc');
 }
 </script>
 
@@ -26,19 +25,19 @@ if (data && _.isArray(data.data)) {
       <template v-for="item in filteredArticles" :key="item.title">
         <article class="group border m-2 overflow-hidden rounded-2xl shadow-sm text-zinc-700">
           <a :href="`/blog/${useNuxtApp().$s.slugify(item.title)}`">
-            <img class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.02] transition-all duration-500" :src="item.cover_image" :alt="_.startCase(title)" />
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.02] transition-all duration-500" :src="item.coverimage" :alt="_.startCase(title)" />
             <div class="px-3 pb-4">
               <div class="text-black pt-3 pb-2">
                 <div class="flex items-center">
                   <LogoDate />
-                  {{ $dayjs(item.created_at).format('DD-MMM-YYYY') }}
+                  {{ $dayjs(item.date).format('DD-MMM-YYYY') }}
                 </div>
               </div>
               <h2 class="text-xl font-semibold text-black pb-1 group-hover:text-sky-700">
-                {{ _.startCase(title) }}
+                {{ _.startCase(item.title) }}
               </h2>
               <p class="text-ellipsis line-clamp-2 text-base">
-                {{ item.abstract }}
+                {{ item.description }}
               </p>
               <div class="flex group-hover:underline text-sky-700 items-center py-2">
                 <p>Read More</p>

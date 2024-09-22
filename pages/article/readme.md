@@ -1,0 +1,1 @@
+This has the working example to bring the blog content from DuckDB/Motherduck using custom REST API.
