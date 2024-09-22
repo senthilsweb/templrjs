@@ -39,9 +39,9 @@ import _ from 'lodash';
 
 const cloudinaryURL = ref('');
 const page = ref({});
-console.log(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`)
+console.log(`/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`)
 
-const data = await $fetch(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`);
+const data = await $fetch(`/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`);
 
 if (data && _.isArray(data)) {
   page.value = data[0];

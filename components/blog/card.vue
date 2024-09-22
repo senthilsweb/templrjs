@@ -32,7 +32,6 @@ withDefaults(defineProps<Props>(), {
     <a :href="path" class="flex flex-col h-full">
       <img :src="image" class="h-48  w-full object-cover object-center mb-8 rounded-2xl p-2" loading="lazy" :alt="_.startCase(title)" />
       <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-500 mb-4 p-2">
-        <!--<span>{{ author }}</span>-->
         <div class="flex-grow h-px bg-gray-200 mx-2"></div>
         <span>{{ $dayjs(date).format("DD-MMM-YYYY") }}</span>
       </div>

@@ -2,8 +2,8 @@
 import { parseMarkdown } from '@nuxtjs/mdc/runtime';
 import _ from 'lodash';
 
-console.log(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"],"limit":6,"sort":{"date":-1}}`)
-const data = await $fetch(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"],"limit":6,"sort":{"date":-1}}`);
+console.log(`/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"],"limit":6,"sort":{"date":-1}}`)
+const data = await $fetch(`/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"],"limit":6,"sort":{"date":-1}}`);
 const articlesContent = ref([]);
 const filteredArticles = ref([]);
 

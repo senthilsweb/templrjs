@@ -71,9 +71,9 @@ import dayjs from 'dayjs';
 
 const mobileFiltersOpen = ref(false);
 const { path } = useRoute();
-console.log(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"}}}`);
+console.log(`/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"}}}`);
 
-const data = await $fetch(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"]}`);
+const data = await $fetch(`/api/_content/query?_params={"where":{"_path":{"$contains":"/_blog/"},"type":{"$eq":"Blog"}},"only":["title","author","date","description","coverimage","type","tags","published","_path"]}`);
 const articlesContent = ref([]);
 const filteredArticles = ref([]);
 

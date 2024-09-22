@@ -21,5 +21,5 @@ onMounted(() => {
     </div>
   </div>
   <Footer v-if="showHeader"/>
-  <CommonsSideBarGuide form_title="Online Help" form_description="Handy SQL queries to practice against the sample Tickit database" />-->
+  <CommonsSideBarGuide form_title="Online Help" form_description="Handy SQL queries to practice against the sample Tickit database" />
 </template>

@@ -131,7 +131,7 @@ const data = ref({});
 useNuxtApp().$bus.$on('evtSideBarGuide', async (args) => {
   isSideBarGuideOpen.value = !isSideBarGuideOpen.value;
 
-const data = await $fetch(`${useRuntimeConfig().public.TEMPLRJS_WEB_ROOT_PATH}/api/_content/query?_params={"where":{"_path":{"$eq":"/blog/${useRoute().params.title}"}}}`);
+const data = await $fetch(`/api/_content/query?_params={"where":{"_path":{"$eq":"/blog/${useRoute().params.title}"}}}`);
 
 if (data && _.isArray(data)) {
   data.value = data[0];
