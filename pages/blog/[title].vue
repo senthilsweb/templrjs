@@ -1,35 +1,34 @@
 <template>
   <NuxtLayout name="landing">
     <ClientOnly>
-    <div class="container p-4 lg:p-0 max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12">
-      <div class="col-span-12 lg:col-span-8">
- 
-        <TemplrJSSocialCard :title="page.title" :description="page.description" :tags="page.tags" :author="page.author" :date="page.date" color="teal" :type="page.type" />
+      <div class="container p-4 lg:p-0 max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12">
+        <div class="col-span-12 lg:col-span-8">
+          <TemplrJSSocialCard :title="page.title" :description="page.description" :tags="page.tags" :author="page.author" :date="page.date" color="teal" :type="page.type" />
 
-        <div class="mx-auto text-base max-w-prose lg:max-w-none">
-          <div class="text-sm text-zinc-600 prose prose-zinc max-w-none dark:prose-invert dark:text-zinc-400 prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-lead:text-zinc-500 dark:prose-lead:text-zinc-400 prose-a:font-semibold dark:prose-a:text-sky-400 prose-a:no-underline dark:prose-pre:ring-1 dark:prose-pre:ring-zinc-300/10 dark:prose-hr:border-zinc-800">
-            <ContentRendererMarkdown :value="page.body" class="p-2" />
+          <div class="mx-auto text-base max-w-prose lg:max-w-none">
+            <div class="text-sm text-zinc-600 prose prose-zinc max-w-none dark:prose-invert dark:text-zinc-400 prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-lead:text-zinc-500 dark:prose-lead:text-zinc-400 prose-a:font-semibold dark:prose-a:text-sky-400 prose-a:no-underline dark:prose-pre:ring-1 dark:prose-pre:ring-zinc-300/10 dark:prose-hr:border-zinc-800">
+              <ContentRendererMarkdown :value="page.body" class="p-2" />
+            </div>
           </div>
         </div>
+        <div class="lg:col-span-3 sticky top-28 h-96 p-2 hidden lg:block justify-self-end">
+          <h1 class="text-lg font-bold mb-4">Table Of Content</h1>
+          <NuxtLink v-for="link in page.body.toc.links" :key="link.id" :to="`#${link.id}`" class="block text-sm text-zinc-600 hover:text-primary-600 font-bold mb-3">
+            {{ link.text }}
+          </NuxtLink>
+        </div>
+        <div class="hidden">
+          <div class="bg-gradient-to-r from-indigo-500 to-indigo-200">abc</div>
+          <div class="bg-gradient-to-r from-pink-500 to-pink-200">abc</div>
+          <div class="bg-gradient-to-r from-green-500 to-green-200">abc</div>
+          <div class="bg-gradient-to-r from-orange-500 to-orange-200">abc</div>
+          <div class="bg-gradient-to-r from-yellow-500 to-yellow-200">abc</div>
+          <div class="bg-gradient-to-r from-teal-500 to-teal-200">abc</div>
+          <div class="bg-gradient-to-r from-blue-500 to-blue-200">abc</div>
+          <div class="bg-gradient-to-r from-red-500 to-red-200">abc</div>
+        </div>
       </div>
-      <div class="lg:col-span-3 sticky top-28 h-96 p-2 hidden lg:block justify-self-end">
-        <h1 class="text-lg font-bold mb-4">Table Of Content</h1>
-        <NuxtLink v-for="link in page.body.toc.links" :key="link.id" :to="`#${link.id}`" class="block text-sm text-zinc-600 hover:text-primary-600 font-bold mb-3">
-          {{ link.text }}
-        </NuxtLink>
-      </div>
-      <div class="hidden">
-        <div class="bg-gradient-to-r from-indigo-500 to-indigo-200">abc</div>
-        <div class="bg-gradient-to-r from-pink-500 to-pink-200">abc</div>
-        <div class="bg-gradient-to-r from-green-500 to-green-200">abc</div>
-        <div class="bg-gradient-to-r from-orange-500 to-orange-200">abc</div>
-        <div class="bg-gradient-to-r from-yellow-500 to-yellow-200">abc</div>
-        <div class="bg-gradient-to-r from-teal-500 to-teal-200">abc</div>
-        <div class="bg-gradient-to-r from-blue-500 to-blue-200">abc</div>
-        <div class="bg-gradient-to-r from-red-500 to-red-200">abc</div>
-      </div>
-    </div>
-  </ClientOnly>
+    </ClientOnly>
   </NuxtLayout>
 </template>
 
@@ -39,7 +38,7 @@ import _ from 'lodash';
 
 const cloudinaryURL = ref('');
 const page = ref({});
-console.log(`/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`)
+console.log(`/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`);
 
 const data = await $fetch(`/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`);
 
