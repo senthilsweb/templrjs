@@ -9,7 +9,7 @@
         <div class="flex min-h-full items-center justify-center p-4 text-center">
           <TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95">
             <DialogPanel class="w-full max-w-md transform overflow-hidden rounded-2xl bg-primary-50 p-6 text-left align-middle shadow-xl transition-all">
-              <DialogTitle as="h3" class="text-md font-medium leading-6 text-gray-900">Zytes, Modern ERP software with programmable bots for small and medium businesses</DialogTitle>
+              <DialogTitle as="h3" class="text-md font-medium leading-6 text-gray-900">TemplarJS, Modern ERP software with programmable bots for small and medium businesses</DialogTitle>
               <DialogDescription>
                 This will permanently deactivate your account
               </DialogDescription>

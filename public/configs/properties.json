@@ -91,7 +91,7 @@
     },
     {
         "code": "og:title",
-        "name": "Zynomi - RPA and Low code platform",
+        "name": "TemplarJS - RPA and Low code platform",
         "parent_code": "social-media-head-metadata",
         "is_active": true
     },
@@ -109,7 +109,7 @@
     },
     {
         "code": "og:site_name",
-        "name": "Zynomi",
+        "name": "TemplarJS",
         "parent_code": "social-media-head-metadata",
         "is_active": true
     },
