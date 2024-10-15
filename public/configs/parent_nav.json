@@ -134,7 +134,7 @@
     },
     {
         "code": "linkedin",
-        "href": "https://www.linkedin.com/senthilsweb",
+        "href": "https://www.linkedin.com/in/senthilsweb/",
         "icon": "fa:linkedin-square",
         "name": "Linkedin",
         "css_class": null,
@@ -150,7 +150,7 @@
     },
     {
         "code": "stackoverflow",
-        "href": "https://www.linkedin.com/senthilsweb",
+        "href": "#",
         "icon": "fa:stack-overflow",
         "name": "Stackoverflow",
         "css_class": null,

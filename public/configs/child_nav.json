@@ -145,7 +145,7 @@
       "name": "CMS Editor",
       "description": "Craft and manage content effortlessly with intuitive markdowndown editor.",
       "href": "/cms/post",
-      "is_active": true,
+      "is_active": false,
       "css_class": null,
       "sort_order": 6,
       "click_event": "noops",

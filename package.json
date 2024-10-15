@@ -53,6 +53,8 @@
     "vue-underscore": "^0.1.4"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.66",
+    "@ai-sdk/vue": "^0.0.54",
     "@codemirror/lang-html": "^6.4.6",
     "@codemirror/lang-javascript": "^6.2.1",
     "@codemirror/lang-json": "^6.0.1",
@@ -73,6 +75,7 @@
     "@tailvue/nuxt": "^0.1.64",
     "@tailwindcss/forms": "^0.5.3",
     "@vue-hero-icons/solid": "^1.7.2",
+    "ai": "^3.4.10",
     "base64-arraybuffer": "^1.0.2",
     "clean": "^4.0.2",
     "codemirror": "^6.0.1",
