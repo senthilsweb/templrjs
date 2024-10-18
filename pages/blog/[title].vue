@@ -9,6 +9,7 @@
             <div class="text-sm text-zinc-600 prose prose-zinc max-w-none dark:prose-invert dark:text-zinc-400 prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal lg:prose-headings:scroll-mt-[8.5rem] prose-lead:text-zinc-500 dark:prose-lead:text-zinc-400 prose-a:font-semibold dark:prose-a:text-sky-400 prose-a:no-underline dark:prose-pre:ring-1 dark:prose-pre:ring-zinc-300/10 dark:prose-hr:border-zinc-800">
               <ContentRendererMarkdown :value="page.body" class="p-2" />
             </div>
+            <!--<BlogRelated />-->
           </div>
         </div>
         <div class="lg:col-span-3 sticky top-28 h-96 p-2 hidden lg:block justify-self-end">
@@ -28,8 +29,11 @@
           <div class="bg-gradient-to-r from-red-500 to-red-200">abc</div>
         </div>
       </div>
+      
     </ClientOnly>
+   
   </NuxtLayout>
+  
 </template>
 
 <script setup>
@@ -38,7 +42,7 @@ import _ from 'lodash';
 
 const cloudinaryURL = ref('');
 const page = ref({});
-console.log(`/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`);
+//console.log(`/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`);
 
 const data = await $fetch(`/api/_content/query?_params={"where":{"_path":{"$eq":"/_blog/${useRoute().params.title}"}},"only":["title","author","date","description","body","coverimage","type","tags","published"]}`);
 
