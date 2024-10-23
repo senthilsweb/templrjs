@@ -42,10 +42,12 @@ export default defineNuxtConfig({
       CLOUDINARY_BASE_URL: process.env.CLOUDINARY_BASE_URL || '',
       CLOUDINARY_PUBLIC_ID: process.env.CLOUDINARY_PUBLIC_ID || '',
       TEMPLRJS_CONFIG_ROOT_PATH: process.env.TEMPLRJS_CONFIG_ROOT_PATH || '',
-      SUPABASE_URL: process.env.SUPABASE_URL || 'https://lztihcjfpbpkrcdtwsxg.supabase.co',
-      SUPABASE_KEY: process.env.SUPABASE_KEY || 'your default secret key',
+      SUPABASE_URL: process.env.SUPABASE_URL || '',
+      SUPABASE_KEY: process.env.SUPABASE_KEY || ''
     },
-  },
+    private: {
+      OPENAI_KEY: process.env.OPENAI_KEY || '',
+  }},
   modules: ['@nuxt/content', '@tailvue/nuxt', '@nuxtjs/tailwindcss', 'nuxt-icon', 'nuxt-lodash', '@nuxtjs/robots', '@pinia/nuxt', '@nuxtjs/mdc', '@nuxtjs/fontaine', '@nuxtjs/supabase'],
   mdc: {
     highlight: {
@@ -76,7 +78,7 @@ export default defineNuxtConfig({
     redirectOptions: {
       login: '/login',
       callback: '/confirm',
-      exclude: ['/', '/signup', '/forgotpassword', '/cms/*', '/blog*', '/api/blog/*', '/resume*', '/article*', '/api/_content/*', '/docs/*'],
+      exclude: ['/', '/signup', '/chat','/support','/forgotpassword', '/cms/*', '/blog*', '/api/blog/*', '/api/blog/chat','/resume*', '/article*', '/api/_content/*', '/docs/*'],
       cookieRedirect: false,
     },
   },
