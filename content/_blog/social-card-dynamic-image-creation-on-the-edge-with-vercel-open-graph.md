@@ -12,7 +12,7 @@ type: Blog
 tags: ['DataObservability','DataEngineering','dbt','DuckDB','DataLineage','Analytics','DataLake','BusinessMetadataManagement','Vue.js','Nuxt.js','Open Source','Web Development','Low Code Platform']
 ---
 
-![Biker Gopher](https://media.licdn.com/dms/image/v2/D4E12AQEsgX2O7Akjnw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1725940154473?e=1733961600&v=beta&t=nPUz8GLHXmYFn7oY5tCjwx6HV7UgefByj1ZeYKD6acg)
+![Biker Gopher](/i/blog/Social-Card_Dynamic_Image_Creation_banner.PNG)
 
 Social-card: A dynamic image generator for business, profile, and social cards using Vercel Open Graph, Next.js, and TailwindCSS. Easily customize and create visually appealing cards for any purpose! 
 
@@ -56,11 +56,11 @@ http://localhost:3000/profile-card?name=<name>&email=<email>&mobile=<mobile>&tit
 https://social-card-five.vercel.app/profile-card?name=Biker%20Gopher&email=biker.gopher@email.com&mobile=%2B1%20222-222-2222&title=Solutions%20Architect&profile_image_url=https://github.com/ashleymcnamara/gophers/blob/master/Biker_Gopher.png?raw=true&website=www.senthilsweb.com&bg_color=pink
 ```
 
-![img1](https://media.licdn.com/dms/image/v2/D4E12AQGcwvIayR1zGA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1725940593203?e=1733961600&v=beta&t=45V8zDLas5aXMVziA1ouxUShpKvK52ZOK0b0pAVamDQ)
+![img1](/i/blog/Social-Card_Dynamic_Image_Creation_1.PNG)
 
-![img2](https://media.licdn.com/dms/image/v2/D4E12AQGZ4pZ14a1JmA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1725940603290?e=1733961600&v=beta&t=70Uvbh2rUSXK2bwhUFHbzSyEAWalHOZgRDWnmCQZJKQ)
+![img2](/i/blog/Social-Card_Dynamic_Image_Creation_2.PNG)
 
-![img3](https://media.licdn.com/dms/image/v2/D4E12AQFdHxNLLb-XQQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1725940613994?e=1733961600&v=beta&t=xv55QKzdbbkudrpbmknZjXOsbKMJ1JYlhBCG3aUiOgY)
+![img3](/i/blog/Social-Card_Dynamic_Image_Creation_3.PNG)
 
 ## Source Code
 

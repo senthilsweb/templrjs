@@ -11,7 +11,7 @@ avatar: "https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/
 type: Blog
 tags: ['DataObservability','DataEngineering','dbt','DuckDB','DataLineage','Analytics','DataLake','BusinessMetadataManagement','Vue.js','Nuxt.js','Open Source','Web Development','Low Code Platform']
 ---
-![Instagram Scraper Bot built as V8 Isolate](https://media.licdn.com/dms/image/v2/D4E12AQEUH-Ub9jU0yw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1725208447630?e=1733961600&v=beta&t=5Y8Eix41TsvxMTyCErvJa8nDJ1TSzqqW_ggTdGSkdhw)
+![Instagram Scraper Bot built as V8 Isolate](/i/blog/Scrape_and_Transform_Instagram_Posts_into_Blog_banner.jpg)
 <div class="relative flex items-center">Instagram Scraper Bot built as V8 Isolate</div>
 
 A simple, serverless tool that effortlessly fetches Instagram posts, complete with images, without the need for an API key! Whether you're a content creator, marketer, or small business owner, this tool can help you seamlessly repurpose your Instagram content for your blog or website.

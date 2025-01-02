@@ -34,7 +34,7 @@ The semantic model simplifies data retrieval by using natural language style syn
 
 In an enterprise environment with multiple technology/data stacks, unifying them into a single stack is often impractical. This often leads to the creation of multiple semantic data models for each stack, resulting in duplicated efforts. Platforms like **Malloy**, **LookerML**, **Cube**, **DBT**, and **ATScale** help create a unified and technology-agnostic interface to the Semantic Model, thereby contributing to technology consolidation and abstraction. This approach avoids duplicated effort, ensures scalability, and makes the solution future-proof.
 
-![Image Courtesy: AtScale ](https://media.licdn.com/dms/image/v2/D4E12AQGJ7573jssgxQ/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1721190780259?e=1733356800&v=beta&t=wmEaezwL7xpNB-kJC3tVmWpB2QL06N15HDyolbUPHvQ)
+![Image Courtesy: AtScale ](/i/blog/Introducing-Semantic-Data-Modeling-with-Malloy-and-DuckDB-1.PNG)
 <div class="relative flex items-center">Image Courtesy: AtScale </div>
 
 

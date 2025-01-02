@@ -12,7 +12,7 @@ type: Blog
 tags: ['DataObservability','DataEngineering','dbt','DuckDB','DataLineage','Analytics','DataLake','BusinessMetadataManagement','Vue.js','Nuxt.js','Open Source','Web Development','Low Code Platform']
 ---
 
-![Generic Data Lake Architecture](https://media.licdn.com/dms/image/v2/D4E12AQGd0z7NOOOKgg/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1713239030603?e=1733356800&v=beta&t=PyTyQ_bzxT_Ft1TtBxxm4Y0c3pI9m1deTiL_GI3TICM)
+![Generic Data Lake Architecture](/i/blog/Im-pleased-to-present-the-dbt-duckdb-tickit-pipeline-1.PNG)
 <div class="relative flex items-center">Generic Data Lake Architecture w ETL/ELT Data Pipeline</div>
 
 [https://github.com/senthilsweb/dbt-duckdb-tickit-pipeline](https://github.com/senthilsweb/dbt-duckdb-tickit-pipeline)
@@ -24,7 +24,7 @@ As a complement to this work, my open-source projects, <a href='https://github.c
 
 ### The Final Lineage Graph in DBT.
 
-![The final Data Lineage Graph](https://media.licdn.com/dms/image/v2/D4E12AQGwqWoAB3dZXA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1713235339199?e=1733356800&v=beta&t=kcS-FwvxwenV9kkBRaqX2VA0jTwcFBG4CbBUCyVwvmI)
+![The final Data Lineage Graph](/i/blog/Im-pleased-to-present-the-dbt-duckdb-tickit-pipeline-2.PNG)
 <div class="relative flex items-center">The final Data Lineage Graph</div>
 
 ### What's Inside?

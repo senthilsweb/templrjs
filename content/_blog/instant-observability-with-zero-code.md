@@ -11,12 +11,12 @@ avatar: "https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/
 type: Blog
 tags: ['DataObservability','DataEngineering','dbt','DuckDB','DataLineage','Analytics','DataLake','BusinessMetadataManagement','Vue.js','Nuxt.js','Open Source','Web Development','Low Code Platform']
 ---
-![Observability as Sidecar](https://media.licdn.com/dms/image/v2/D4E12AQFrB8Fn9MKjBw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1725161884179?e=1733961600&v=beta&t=4vrVs004QTVG9Bo0nUbi3MwLkTMl0DHyz0wsrv7s3zU)
+![Observability as Sidecar](/i/blog/Instant_Observability_with_Zero_Code_banner.JPG)
 <div class="relative flex items-center">Observability as Sidecar</div>
 
 Need observability in your existing applications? Look no further! I’ve developed a ready-to-use, zero-code solution that brings observability to your applications, regardless of the technology or platform. This Dockerized sidecar leverages OpenTelemetry and OpenObserve seamlessly integrate **telemetry** and **observability** without requiring any code changes.
 
-![Adding Observability as Sidecar](https://media.licdn.com/dms/image/v2/D4E12AQEZtvgWGz_aVQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1725161205510?e=1733356800&v=beta&t=rWJ62G0XvjJZtjdSkc0pj0Do0P6wMY25qBQhzxMVQPQ)
+![Adding Observability as Sidecar](/i/blog/Instant_Observability_with_Zero_Code_1.JPG)
 <div class="relative flex items-center">Adding Observability as Sidecar into your existing applications and microservices</div>
 
 ### Features:

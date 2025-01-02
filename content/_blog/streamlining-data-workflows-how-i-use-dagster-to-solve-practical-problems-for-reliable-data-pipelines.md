@@ -11,7 +11,7 @@ avatar: "https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/
 type: Blog
 tags: ['DataObservability','DataEngineering','dbt','DuckDB','DataLineage','Analytics','DataLake','BusinessMetadataManagement','Vue.js','Nuxt.js','Open Source','Web Development','Low Code Platform']
 ---
-
+![Streamlining Data Workflows](/i/blog/Streamlining-Data-Workflows_banner.PNG)
 I'm sharing a collection of my work in data engineering that showcases practical applications of Dagster for managing and orchestrating data pipelines. Through these examples, you'll discover how <a href="https://dagster.io/" class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400">Dagster</a> helps streamline and optimize various data processes.
 
 
@@ -30,13 +30,13 @@ Visit the GitHub repository <a href='https://github.com/senthilsweb/dagster-data
 
 ### Screenshots
 
-![The final result](https://media.licdn.com/dms/image/v2/D4E12AQHP7dcPbWdWCg/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1713665004997?e=1733356800&v=beta&t=N2lk01CoB1iav10k7rrgtE7Q0IO4WntTa86DlOSsr28)
+![The final result](/i/blog/Streamlining-Data-Workflows-1.PNG)
 <div class="relative flex items-center">The final result</div>
 
-![Pipeline run history](https://media.licdn.com/dms/image/v2/D4E12AQGfYSJ3G7Fc3Q/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1713665146115?e=1733356800&v=beta&t=v-lfKTXblrSh1n845JrlnBbqHgsd3iUmwQ8tI7ubaHE)
+![Pipeline run history](/i/blog/Streamlining-Data-Workflows-2.PNG)
 <div class="relative flex items-center">Pipeline run history</div>
 
-![Lineage vertical](https://media.licdn.com/dms/image/v2/D4E12AQEWCsQWWRl3aA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1713665168022?e=1733356800&v=beta&t=exRzmNtB3_Hgl9BbNVC6PWXRUdaW-IAr-WrZvy1kNqM)
+![Lineage vertical](/i/blog/Streamlining-Data-Workflows-3.PNG)
 <div class="relative flex items-center">Lineage vertical</div>
 
 **Disclaimer:** The PDF documents and ebooks used in these demonstrations are intended solely for demonstration purposes. Full access and further usage of these materials are subject to the applicable copyright laws.

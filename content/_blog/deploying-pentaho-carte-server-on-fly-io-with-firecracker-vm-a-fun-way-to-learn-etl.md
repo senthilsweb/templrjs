@@ -12,7 +12,7 @@ type: Blog
 tags: ['DataObservability','DataEngineering','dbt','DuckDB','DataLineage','Analytics','DataLake','BusinessMetadataManagement','Vue.js','Nuxt.js','Open Source','Web Development','Low Code Platform']
 ---
 
-![Be Part of Next Public Cloud](https://media.licdn.com/dms/image/v2/D4E12AQHvWH-AnceIUQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1727665400795?e=1733961600&v=beta&t=AZTFSK-SgjpyW_emnoJF83nQ-Gl4TOJds1uBrjSWWq4)
+![Be Part of Next Public Cloud](/i/blog/Deploying-Pentaho-Carte-Server-on-Flyio_banner.PNG)
 
 This is a quick guide on deploying the **Pentaho Carte Server** on <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="http://fly.io/">Fly.io</a> using **Firecracker VM**—a great way to learn and practice the Pentaho data platform with the Pentaho Data Integration **carte** server.
 

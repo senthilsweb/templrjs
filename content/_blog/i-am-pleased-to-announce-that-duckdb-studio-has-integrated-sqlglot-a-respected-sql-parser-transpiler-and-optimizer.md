@@ -26,7 +26,7 @@ tags:
  
 <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://sqlglot.com/sqlglot.html">SQLGlot</a> is a no-dependency SQL parser, transpiler, optimizer, and engine. It can be used to format SQL or translate between <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://github.com/tobymao/sqlglot/blob/main/sqlglot/dialects/__init__.py">21 different dialects</a> like <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://duckdb.org/" >DuckDB</a>, <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://prestodb.io/">Presto</a> / <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://trino.io/">Trino</a>, <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://spark.apache.org/" >Spark</a> / <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://www.databricks.com/" >Databricks</a>, Snowflake, and BigQuery. It aims to read a wide variety of SQL inputs and output syntactically and semantically correct SQL in the targeted dialects.
 
-![TickitDB](https://media.licdn.com/dms/image/v2/D4E12AQGqzZqJtsHE-Q/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1712889028795?e=1732752000&v=beta&t=xPRQ1E0UJzVUgFTm_bSH9jYf-emcJ8mpeJSAo_glKaQ)
+![TickitDB](/i/blog/Iam-pleased-to-announceDuckDB-Studio-has-integrated-SQLGlot-banner.GIF)
 
 ## So, what’s new?
 

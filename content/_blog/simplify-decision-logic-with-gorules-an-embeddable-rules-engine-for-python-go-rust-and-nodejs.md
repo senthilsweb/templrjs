@@ -12,7 +12,7 @@ type: Blog
 tags: ['DataObservability','DataEngineering','dbt','DuckDB','DataLineage','Analytics','DataLake','BusinessMetadataManagement','Vue.js','Nuxt.js','Open Source','Web Development','Low Code Platform']
 ---
 
-![GoRules](https://media.licdn.com/dms/image/v2/D4E12AQFR_nMBQiHc_w/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1726957912927?e=1733961600&v=beta&t=RCfJRX6ofaD614e9_bRtSLOfu3A4R0bBUYPnEu92mWw)
+![GoRules](/i/blog/simplify_decision_logic_with_go_rules_banner.PNG)
 
 ## Use Case
 
@@ -20,7 +20,7 @@ If you've worked with JBOSS Drools or other rule engines, you're probably all to
 
 That's why I'm excited to introduce <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://gorules.io/">GoRules Zen BRE</a>—an open-source Business Rules Engine (BRE) built in **Rust**, designed to support **Python, Go, Rust, and NodeJS**. Unlike other engines like <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://www.drools.org/">JBOSS Drools</a>, <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://github.com/cachecontrol/json-rules-engine">JSON Rules Engine</a>, or <a class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400" href="https://github.com/hyperjumptech/grule-rule-engine">Grule</a>, GoRules stands out for its **simplicity** and **multi-language support**, making it accessible to both developers and non-developers alike.
 
-![GoRulesTable](https://media.licdn.com/dms/image/v2/D4E12AQHHBD2cyJqE5w/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1726958577413?e=1733961600&v=beta&t=c4imzWhFflPMWanMAZj4fJgJMscwBLfTwxe7c9Poq2w)
+![GoRulesTable](/i/blog/simplify_decision_logic_with_go_rules_1.PNG)
 
 ## Why GoRules?
 

@@ -11,7 +11,7 @@ avatar: "https://res.cloudinary.com/nathansweb/image/upload/v1626488903/profile/
 type: Blog
 tags: ['DataObservability','DataEngineering','dbt','DuckDB','DataLineage','Analytics','DataLake','BusinessMetadataManagement','Vue.js','Nuxt.js','Open Source','Web Development','Low Code Platform']
 ---
-![Pentaho](https://media.licdn.com/dms/image/v2/D4E12AQEMoIxveSqPeQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1727616338802?e=1733961600&v=beta&t=SXXE4H_KMEK3XkZqWGEFT5Tv7jUClmGZPKM6Usp3mB4)
+![Pentaho](/i/blog/Pentaho-Versatile-Data-Engineering-for-All-Needs_banner.JPG)
 
 <a href="https://pentaho.com/" class="dark:text-teal-400 relative transition hover:text-teal-500 dark:hover:text-teal-400">Pentaho</a> remains a powerful and relevant tool in the data integration and analytics space. Its comprehensive features, cross-platform support, and strong community make it an excellent choice for organizations and developers alike. Whether you want to build complex data pipelines, design insightful reports, or dive into data analysis, Pentaho has the tools to help you succeed.
 
@@ -25,7 +25,7 @@ In today's fast-changing data world, having a reliable and flexible tool for dat
 - **Widely Mentioned in Literature:** Pentaho is featured in many data engineering and ETL books, showing its importance and wide use in the industry. Some notable books include:
 :: 
 
-![Image1](https://media.licdn.com/dms/image/v2/D4E12AQGAuXPIvs1rsQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1727616861222?e=1733961600&v=beta&t=QV0pcal3kjT7kqzmt83Knur0o5A04IyIgWtGq-FBZPc)
+![Image1](/i/blog/pentaho_versatile_data_engineering_for_all_needs_solutions.PNG)
 
 
 ### Why Pentaho Remains Relevant?
